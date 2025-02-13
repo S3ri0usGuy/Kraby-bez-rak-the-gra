@@ -62,8 +62,8 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 	/// </para>
 	/// <para>
 	/// <b>Note:</b> the passed save slot must be is not loaded in this method.
-	/// In order to load the save slot use the <see cref="SaveProviderFactory.CreateProvider" /> 
-	/// and <see cref="ISaveProvider.Load(SaveSlot)" /> methods.
+	/// In order to load the save slot use the <see cref="SavePersistenceFactory.CreateProvider" /> 
+	/// and <see cref="ISavePersistence.Load(SaveSlot)" /> methods.
 	/// </para>
 	/// </remarks>
 	/// <param name="slot">The save slot to be set as the current.</param>
@@ -87,7 +87,7 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 			_slot.saveData.componenentsData[savable.id] = savable.Save();
 		}
 
-		ISaveProvider provider = SaveProviderFactory.CreateProvider();
+		ISavePersistence provider = SavePersistenceFactory.CreateProvider();
 		provider.Save(_slot);
 	}
 }

@@ -2,22 +2,22 @@ using System.IO;
 using UnityEngine;
 
 /// <summary>
-/// A save provider which works with json files on the disk.
+/// A save persistance that uses JSON files.
 /// </summary>
-public sealed class JsonDiskSaveProvider : ISaveProvider
+public sealed class JsonDiskSavePersistence : ISavePersistence
 {
 	private readonly string _folderPath = Application.persistentDataPath;
 
 	/// <summary>
 	/// Creates an instance of the JSON disk provider.
 	/// </summary>
-	public JsonDiskSaveProvider() { }
+	public JsonDiskSavePersistence() { }
 
 	/// <summary>
 	/// Creates an instance of the JSON disk provider.
 	/// </summary>
 	/// <param name="folderPath">Path to the folder where data is stored. Application.persistantDataPath is used by default.</param>
-	public JsonDiskSaveProvider(string folderPath)
+	public JsonDiskSavePersistence(string folderPath)
 	{
 		_folderPath = folderPath;
 	}

@@ -1,7 +1,7 @@
 /// <summary>
 /// A factory class which creates a save provider for the current platform.
 /// </summary>
-public static class SaveProviderFactory
+public static class SavePersistenceFactory
 {
 	/// <summary>
 	/// Creates a save provider suitable for the current platform.
@@ -9,12 +9,12 @@ public static class SaveProviderFactory
 	/// <returns>
 	/// A save provider suitable for the current platform.
 	/// </returns>
-	public static ISaveProvider CreateProvider()
+	public static ISavePersistence CreateProvider()
 	{
 #if UNITY_WEBGL
 		return new JsonPlayerPrefsSaveProvider();
 #else
-		return new JsonDiskSaveProvider();
+		return new JsonDiskSavePersistence();
 #endif
 	}
 }

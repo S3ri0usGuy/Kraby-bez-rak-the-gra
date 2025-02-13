@@ -1,7 +1,7 @@
 /// <summary>
-/// An interface that provides methods for loading and saving game data.
+/// An interface that provides methods for loading, saving and deleting game data.
 /// </summary>
-public interface ISaveProvider
+public interface ISavePersistence
 {
 	/// <summary>
 	/// Loads data into the provided save slot.

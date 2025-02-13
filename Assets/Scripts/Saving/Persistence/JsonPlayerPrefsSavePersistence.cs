@@ -1,14 +1,14 @@
 using UnityEngine;
 
 /// <summary>
-/// A save provider which saves json string in the player prefs.
+/// A save persistance that uses <see cref="PlayerPrefs"> and JSON format.
 /// </summary>
-public sealed class JsonPlayerPrefsSaveProvider : ISaveProvider
+public sealed class JsonPlayerPrefsSavePersistence : ISavePersistence
 {
 	/// <summary>
 	/// Creates an instance of the JSON disk provider.
 	/// </summary>
-	public JsonPlayerPrefsSaveProvider() { }
+	public JsonPlayerPrefsSavePersistence() { }
 
 	private string SlotNameToKey(string slotName)
 	{
