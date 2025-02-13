@@ -18,7 +18,7 @@ public sealed class SaveSlot
 	/// <summary>
 	/// Gets/sets a save data.
 	/// </summary>
-	public SaveData saveData { get; set; }
+	public SaveData saveData { get; set; } = new();
 
 	/// <summary>
 	/// Creates an empty slot save.

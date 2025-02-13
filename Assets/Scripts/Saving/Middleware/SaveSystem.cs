@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
 
 /// <summary>
 /// A Unity object singleton which tracks savable objects,
@@ -78,6 +80,11 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 	/// <param name="slot">The save slot to be set as the current.</param>
 	public static void SetSave(SaveSlot slot)
 	{
+		if (slot.saveData == null)
+			slot.saveData = new();
+		if (slot.saveData.componenentsData == null)
+			slot.saveData.componenentsData = new();
+
 		_slot = slot ?? throw new ArgumentNullException(nameof(slot));
 	}
 
@@ -90,6 +97,38 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 		{
 			throw new InvalidOperationException("Attempted to save but there is no current save slot set.");
 		}
+
+#if UNITY_EDITOR
+		// Find non-unique IDs
+		Dictionary<string, List<ISavable>> idSavableList = new();
+		foreach (var savable in _savables)
+		{
+			if (idSavableList.ContainsKey(savable.id))
+			{
+				idSavableList[savable.id].Add(savable);
+			}
+			else
+			{
+				idSavableList[savable.id] = new() { savable };
+			}
+		}
+
+		foreach (var (id, savables) in idSavableList)
+		{
+			if (savables.Count <= 1) continue;
+
+			StringBuilder builder = new();
+			Debug.LogWarning($"Duplicated ({savables.Count}) save IDs were found: '{id}'.");
+
+			foreach (var savable in savables)
+			{
+				if (savable is UnityEngine.Object unityObject)
+				{
+					Debug.LogWarning($"The '{unityObject.name}' has a non-unique save ID.", unityObject);
+				}
+			}
+		}
+#endif
 
 		foreach (var savable in _savables)
 		{

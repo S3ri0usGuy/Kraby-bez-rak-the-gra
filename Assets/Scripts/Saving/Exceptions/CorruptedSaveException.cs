@@ -7,8 +7,9 @@ using System.Runtime.Serialization;
 /// </summary>
 public class CorruptedSaveException : Exception
 {
-	public CorruptedSaveException()
-		: base("The save data is corrupted.")
+	public override string Message => $"The save data is corrupted. {base.Message}";
+
+	public CorruptedSaveException() : base()
 	{ }
 
 	public CorruptedSaveException(string message)

@@ -6,7 +6,8 @@ public static class JsonHelper
 	private static readonly JsonSerializerSettings _settings = new()
 	{
 		TypeNameHandling = TypeNameHandling.Auto,
-		NullValueHandling = NullValueHandling.Ignore
+		NullValueHandling = NullValueHandling.Ignore,
+		Formatting = Formatting.Indented
 	};
 
 	/// <summary>

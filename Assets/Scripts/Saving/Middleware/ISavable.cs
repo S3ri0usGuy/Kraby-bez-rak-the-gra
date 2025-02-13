@@ -20,7 +20,7 @@ public interface ISavable
 	/// <summary>
 	/// Gets a unique identifier which is assigned to this object.
 	/// </summary>
-	public Guid id { get; }
+	public string id { get; }
 
 	/// <summary>
 	/// Loads a data into the object.

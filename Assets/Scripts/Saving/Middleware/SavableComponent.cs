@@ -13,10 +13,11 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 {
 	private TData _data;
 
-	[HideInInspector, SerializeField]
-	private Guid _guid = Guid.NewGuid();
+	[SerializeField]
+	[Tooltip("A unique identifier that represents this object.")]
+	private string _id = Guid.NewGuid().ToString();
 
-	public Guid id => _guid;
+	public string id => _id;
 
 	/// <summary>
 	/// Gets a data that is used when the data retrieval had failed.
@@ -29,7 +30,7 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 	/// <summary>
 	/// Gets a savable data assigned to this component.
 	/// </summary>
-	public TData data { get; private set; }
+	public TData data => _data;
 
 	protected virtual void Awake()
 	{
@@ -74,21 +75,21 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 			return;
 		}
 
-		if (data is not TData unboxedData)
+		if (data is TData unboxedData)
+		{
+			_data = unboxedData;
+		}
+		else
 		{
 			_data = fallbackData;
 
 			Debug.LogWarning(
 				$"The data was expected to have a type '{typeof(TData).Name}', " +
 				$"but was '{data.GetType().Name}' instead.\n" +
-				$"Save GUID: {_guid}.",
+				$"Save string: {_id}.",
 				gameObject);
-
-			OnLoad();
-			return;
 		}
 
-		_data = unboxedData;
 		OnLoad();
 	}
 

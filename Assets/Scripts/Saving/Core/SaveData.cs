@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 /// <summary>
@@ -9,5 +8,5 @@ public sealed class SaveData
 	/// <summary>
 	/// Gets/sets a dictionary that maps a unique identifier to the component's data.
 	/// </summary>
-	public Dictionary<Guid, object> componenentsData { get; set; }
+	public Dictionary<string, object> componenentsData { get; set; } = new();
 }
