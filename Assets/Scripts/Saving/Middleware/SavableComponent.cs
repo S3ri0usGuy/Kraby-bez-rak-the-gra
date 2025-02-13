@@ -44,6 +44,14 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 		SaveSystem.instance.AddSavable(this);
 	}
 
+	protected virtual void OnDestroy()
+	{
+		if (SaveSystem.exists) // Prevents a bug which happens when the game is exited
+		{
+			SaveSystem.instance.RemoveSavable(this);
+		}
+	}
+
 	/// <summary>
 	/// A method that is called after loading and before saving
 	/// to ensure that data is valid. 
