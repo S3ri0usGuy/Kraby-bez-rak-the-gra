@@ -12,6 +12,15 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 	private readonly HashSet<ISavable> _savables = new();
 
 	/// <summary>
+	/// Gets a current save slot. Nullable.
+	/// </summary>
+	/// <remarks>
+	/// Be warned that changing this object's values directly might lead 
+	/// to an unexpected behaviour.
+	/// </remarks>
+	public SaveSlot currentSaveSlot => _slot;
+
+	/// <summary>
 	/// Starts tracking a savable object and initializes it with a save data.
 	/// </summary>
 	/// <remarks>
@@ -62,7 +71,7 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 	/// </para>
 	/// <para>
 	/// <b>Note:</b> the passed save slot must be is not loaded in this method.
-	/// In order to load the save slot use the <see cref="SavePersistenceFactory.CreateProvider" /> 
+	/// In order to load the save slot use the <see cref="SavePersistenceFactory.CreatePersistence" /> 
 	/// and <see cref="ISavePersistence.Load(SaveSlot)" /> methods.
 	/// </para>
 	/// </remarks>
@@ -87,7 +96,7 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 			_slot.saveData.componenentsData[savable.id] = savable.Save();
 		}
 
-		ISavePersistence provider = SavePersistenceFactory.CreateProvider();
+		ISavePersistence provider = SavePersistenceFactory.CreatePersistence();
 		provider.Save(_slot);
 	}
 }

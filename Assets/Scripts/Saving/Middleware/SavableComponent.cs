@@ -69,14 +69,14 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 	{
 		if (data == null)
 		{
-			_data = null;
+			_data = fallbackData;
 			OnLoad();
 			return;
 		}
 
 		if (data is not TData unboxedData)
 		{
-			_data = null;
+			_data = fallbackData;
 
 			Debug.LogWarning(
 				$"The data was expected to have a type '{typeof(TData).Name}', " +

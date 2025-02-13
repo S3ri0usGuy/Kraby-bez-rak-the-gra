@@ -4,15 +4,15 @@
 public static class SavePersistenceFactory
 {
 	/// <summary>
-	/// Creates a save provider suitable for the current platform.
+	/// Creates a save persistence suitable for the current platform.
 	/// </summary>
 	/// <returns>
-	/// A save provider suitable for the current platform.
+	/// A save persistence suitable for the current platform.
 	/// </returns>
-	public static ISavePersistence CreateProvider()
+	public static ISavePersistence CreatePersistence()
 	{
 #if UNITY_WEBGL
-		return new JsonPlayerPrefsSaveProvider();
+		return new JsonPlayerPrefsSavePersistence();
 #else
 		return new JsonDiskSavePersistence();
 #endif
