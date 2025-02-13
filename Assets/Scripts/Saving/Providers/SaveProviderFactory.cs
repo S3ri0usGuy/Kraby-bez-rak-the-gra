@@ -11,6 +11,10 @@ public static class SaveProviderFactory
 	/// </returns>
 	public static ISaveProvider CreateProvider()
 	{
+#if UNITY_WEBGL
+		return new JsonPlayerPrefsSaveProvider();
+#else
 		return new JsonDiskSaveProvider();
+#endif
 	}
 }
