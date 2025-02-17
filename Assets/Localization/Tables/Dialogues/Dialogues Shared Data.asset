@@ -14,7 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: Dialogues
   m_TableCollectionNameGuidString: 8600c5b7fc58eab4395a04b59313f353
-  m_Entries: []
+  m_Entries:
+  - m_Id: 734503644274688
+    m_Key: option_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734604173352960
+    m_Key: option_no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734647777337344
+    m_Key: test_phrase_1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742883104497664
+    m_Key: test_phrase_1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743327407120384
+    m_Key: test_phrase_2_No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743643502452736
+    m_Key: test_phrase_2_Yes
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -9,37 +9,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Dialogues_en-US
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: VoiceLines_en-US
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en-US
-  m_SharedData: {fileID: 11400000, guid: 8600c5b7fc58eab4395a04b59313f353, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 1572d0a2e78c3f54d8d4ddf206fbe339, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 734503644274688
-    m_Localized: Yes
+  - m_Id: 18397110272
+    m_Localized: 8c57fe53638492d448b8bf580f916628
     m_Metadata:
       m_Items: []
-  - m_Id: 734604173352960
-    m_Localized: No
+  - m_Id: 11422982316032
+    m_Localized: ab6db8295c8737a4480e51936eb28d9f
     m_Metadata:
       m_Items: []
-  - m_Id: 734647777337344
-    m_Localized: Escape this cruel reality
+  - m_Id: 11559045537792
+    m_Localized: 07cd2259ebf28d54a86018f12e3be6a4
     m_Metadata:
       m_Items: []
-  - m_Id: 742883104497664
-    m_Localized: Right now!
+  - m_Id: 11562434535424
+    m_Localized: c74446d766d606a4895a921bd160cdc7
     m_Metadata:
       m_Items: []
-  - m_Id: 743327407120384
-    m_Localized: WAKE THE FUCK UP!!!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 743643502452736
-    m_Localized: Hey, you. You're finally (a)wo(a)ke!
+  - m_Id: 11601894547456
+    m_Localized: 01f036419fc8a854cbf9eeb3ec486bb0
     m_Metadata:
       m_Items: []
   references:

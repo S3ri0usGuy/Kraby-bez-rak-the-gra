@@ -10,49 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85337671d674cd541ab491ef9be98654, type: 3}
-  m_Name: TestDialogue1
+  m_Name: TestDialogue2-Yes
   m_EditorClassIdentifier: 
   _phrases:
-  - _personId: 1
+  - _personId: 0
     _text:
-      m_TableReference:
-        m_TableCollectionName: GUID:8600c5b7fc58eab4395a04b59313f353
-      m_TableEntryReference:
-        m_KeyId: 734647777337344
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    _audioClip:
-      m_TableReference:
-        m_TableCollectionName: GUID:1572d0a2e78c3f54d8d4ddf206fbe339
-      m_TableEntryReference:
-        m_KeyId: 11422982316032
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-    _duration: 0
-  - _personId: 1
-    _text:
-      m_TableReference:
-        m_TableCollectionName: GUID:8600c5b7fc58eab4395a04b59313f353
-      m_TableEntryReference:
-        m_KeyId: 742883104497664
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    _audioClip:
-      m_TableReference:
-        m_TableCollectionName: GUID:1572d0a2e78c3f54d8d4ddf206fbe339
-      m_TableEntryReference:
-        m_KeyId: 11559045537792
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-    _duration: 0
-  _options:
-  - _text:
       m_TableReference:
         m_TableCollectionName: GUID:8600c5b7fc58eab4395a04b59313f353
       m_TableEntryReference:
@@ -61,18 +23,36 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    _nextNode: {fileID: 11400000, guid: 097dd3b1b240eba4f8e3390685398cfc, type: 2}
-  - _text:
+    _audioClip:
+      m_TableReference:
+        m_TableCollectionName: GUID:1572d0a2e78c3f54d8d4ddf206fbe339
+      m_TableEntryReference:
+        m_KeyId: 18397110272
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+    _duration: 8
+  - _personId: 1
+    _text:
       m_TableReference:
         m_TableCollectionName: GUID:8600c5b7fc58eab4395a04b59313f353
       m_TableEntryReference:
-        m_KeyId: 734604173352960
+        m_KeyId: 743643502452736
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    _nextNode: {fileID: 11400000, guid: 16348b85c526171458b8f2f26b3c8749, type: 2}
-  _nextNode: {fileID: 0}
+    _audioClip:
+      m_TableReference:
+        m_TableCollectionName: GUID:1572d0a2e78c3f54d8d4ddf206fbe339
+      m_TableEntryReference:
+        m_KeyId: 11601894547456
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+    _duration: 0
+  _options: []
+  _nextNode: {fileID: 11400000}
   references:
     version: 2
     RefIds: []

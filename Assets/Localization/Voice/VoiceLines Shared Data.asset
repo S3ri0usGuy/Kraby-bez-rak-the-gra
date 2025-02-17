@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: VoiceLines Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: VoiceLines
+  m_TableCollectionNameGuidString: 1572d0a2e78c3f54d8d4ddf206fbe339
+  m_Entries:
+  - m_Id: 18397110272
+    m_Key: test_sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11422982316032
+    m_Key: test_phrase_1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11559045537792
+    m_Key: test_phrase_1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11562434535424
+    m_Key: test_phrase_2_No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11601894547456
+    m_Key: test_phrase_2_Yes
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - rid: 7345467055600566346
+  m_KeyGenerator:
+    rid: 7345467055600566345
+  references:
+    version: 2
+    RefIds:
+    - rid: 7345467055600566345
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1739830596347
+    - rid: 7345467055600566346
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 18397110272
+          m_TableCodes:
+          - en-US
+          - pl-PL
+        - m_KeyId: 11422982316032
+          m_TableCodes:
+          - en-US
+          - pl-PL
+        - m_KeyId: 11559045537792
+          m_TableCodes:
+          - en-US
+          - pl-PL
+        - m_KeyId: 11562434535424
+          m_TableCodes:
+          - en-US
+          - pl-PL
+        - m_KeyId: 11601894547456
+          m_TableCodes:
+          - en-US
+          - pl-PL
+        m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

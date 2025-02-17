@@ -10,36 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-Assets-Shared
+  m_Name: Localization-Assets-English (United States) (en-US)
   m_EditorClassIdentifier: 
-  m_GroupName: Localization-Assets-Shared
-  m_GUID: 69ce76275a0a2c34f8cd0c68b6864cd6
+  m_GroupName: Localization-Assets-English (United States) (en-US)
+  m_GUID: 91ff4a2d050f084459ccdeb003b1185a
   m_SerializeEntries:
-  - m_GUID: 1572d0a2e78c3f54d8d4ddf206fbe339
-    m_Address: Assets/Localization/Voice/VoiceLines Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 220ef341c086c4e4c8e7e1226ae91ddb
-    m_Address: Assets/Localization/Tables/General Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8600c5b7fc58eab4395a04b59313f353
-    m_Address: Assets/Localization/Tables/Dialogues/Dialogues Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8c57fe53638492d448b8bf580f916628
-    m_Address: ExampleSound
+  - m_GUID: 01f036419fc8a854cbf9eeb3ec486bb0
+    m_Address: test_phrase_2_Yes_enUS
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
-    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07cd2259ebf28d54a86018f12e3be6a4
+    m_Address: test_phrase_1_2_enUS
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab6db8295c8737a4480e51936eb28d9f
+    m_Address: test_phrase_1_1_enUS
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c74446d766d606a4895a921bd160cdc7
+    m_Address: test_phrase_2_No_enUS
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 5df763821935c8540b5811454e07cb8e, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: fe6f45125023fb1409729e615f806e78, type: 2}
-    - {fileID: 11400000, guid: 7d3a615b547e3c04d91f23f09ec4cb27, type: 2}
+    - {fileID: 11400000, guid: 46c9c9e3b32ee1040999afb9b6b55eb7, type: 2}
+    - {fileID: 11400000, guid: 0c81f5e9e780b5f428dc8d5185daeb59, type: 2}

@@ -17,7 +17,31 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 8600c5b7fc58eab4395a04b59313f353, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 734503644274688
+    m_Localized: Tak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734604173352960
+    m_Localized: Nie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734647777337344
+    m_Localized: "A gdyby\u015B tak spr\xF3bowa\u0142 Escape'em?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742883104497664
+    m_Localized: "Co by\u015B na to powiedzia\u0142?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743327407120384
+    m_Localized: WSTAWAJ DO KURWY!!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743643502452736
+    m_Localized: Samuraju, masz malutki przycisk.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
