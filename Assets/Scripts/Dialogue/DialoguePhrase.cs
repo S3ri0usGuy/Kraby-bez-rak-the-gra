@@ -20,7 +20,8 @@ public class DialoguePhrase
 	private LocalizedAudioClip _audioClip;
 	[SerializeField]
 	[Tooltip("A duration of the phrase in seconds. " +
-		"If the audio clip is assigned, its duration is taken instead.")]
+		"If the audio clip is assigned and this value is zero or negative, " +
+		"the clip's duration is taken instead.")]
 	private float _duration;
 
 	/// <summary>
@@ -40,7 +41,8 @@ public class DialoguePhrase
 	/// Gets a duration of the phrase.
 	/// </summary>
 	/// <remarks>
-	/// This property is not used if the <see cref="audioClip" /> is assigned.
+	/// This property is not used if it's zero or negative and 
+	/// the <see cref="audioClip" /> is assigned.
 	/// </remarks>
 	public float duration => _duration;
 }
