@@ -12,6 +12,7 @@ public class DialoguePlayer : MonoBehaviour
 	private DialogueNode _currentNode;
 	private readonly List<DialoguePreloadedPhrase> _preloadedPhrases = new();
 	private readonly List<string> _speakerNames = new();
+	private readonly List<string> _options = new();
 
 	private IDialogueListener _listener;
 	private bool _isPlaying = false;
@@ -42,6 +43,15 @@ public class DialoguePlayer : MonoBehaviour
 	/// </summary>
 	public UnityEvent ended => _ended;
 
+	private void End()
+	{
+		_listener.OnEnded(_currentNode);
+		_listener = null;
+		_isPlaying = false;
+
+		_ended.Invoke();
+	}
+
 	private float GetPhraseDuration(DialoguePhrase phrase,
 		DialoguePreloadedPhrase loadedPhrase)
 	{
@@ -55,6 +65,7 @@ public class DialoguePlayer : MonoBehaviour
 	{
 		_preloadedPhrases.Clear();
 		_speakerNames.Clear();
+		_options.Clear();
 
 		foreach (var speaker in _speakers)
 		{
@@ -80,6 +91,13 @@ public class DialoguePlayer : MonoBehaviour
 			DialoguePreloadedPhrase loadedPhrase = new(audio, text);
 			_preloadedPhrases.Add(loadedPhrase);
 		}
+
+		foreach (var option in _currentNode.options)
+		{
+			var optionAsyncOperation = option.text.GetLocalizedStringAsync();
+			yield return new WaitUntil(() => optionAsyncOperation.IsDone);
+			_options.Add(optionAsyncOperation.Result);
+		}
 	}
 
 	private IEnumerator PlayPhrases()
@@ -90,6 +108,9 @@ public class DialoguePlayer : MonoBehaviour
 		for (int i = 0; i < _currentNode.phrases.Count; i++)
 		{
 			var phrase = _currentNode.phrases[i];
+			DialoguePhraseContext phraseContext = new(_currentNode, phrase, i);
+
+			_listener.OnPhraseStarted(phraseContext);
 
 			if (phrase.speakerIndex >= _speakers.Length)
 			{
@@ -109,10 +130,40 @@ public class DialoguePlayer : MonoBehaviour
 			float duration = GetPhraseDuration(phrase, preloadedPhrase);
 			yield return new WaitForSeconds(duration);
 
-			// TODO: add callbacks
-
-			// TODO: add options
+			_listener.OnPhraseEnded(phraseContext);
 		}
+
+		if (_currentNode.options.Count > 0)
+		{
+			yield return new WaitUntil(() => _options.Count >= _currentNode.options.Count);
+
+			DialogueOptionController.instance.RequestOption(_options, OnOptionSelected);
+		}
+		else
+		{
+			DialogueNode next = _currentNode.nextNode ? _currentNode.nextNode : _currentNode;
+			_listener.OnNodeEnded(_currentNode, next);
+			End();
+		}
+	}
+
+	private void OnOptionSelected(int optionIndex)
+	{
+		var option = _currentNode.options[optionIndex];
+
+		_listener.OnNodeEnded(_currentNode, option.nextNode);
+
+		PlayNode(option.nextNode);
+
+		DialogueOptionContext context = new(_currentNode, option, optionIndex);
+		_listener.OnOptionChosen(context);
+	}
+
+	private void PlayNode(DialogueNode node)
+	{
+		_currentNode = node;
+		StartCoroutine(PreloadPhrases());
+		StartCoroutine(PlayPhrases());
 	}
 
 	private void InternalPlay(DialogueNode node, IDialogueListener listener)
@@ -122,11 +173,8 @@ public class DialoguePlayer : MonoBehaviour
 
 		_listener = listener;
 		_isPlaying = true;
-		_currentNode = node;
 
-		StartCoroutine(PreloadPhrases());
-
-		StartCoroutine(PlayPhrases());
+		PlayNode(node);
 
 		_started.Invoke();
 	}
