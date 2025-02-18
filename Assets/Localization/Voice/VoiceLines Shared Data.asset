@@ -35,6 +35,14 @@ MonoBehaviour:
     m_Key: test_phrase_2_Yes
     m_Metadata:
       m_Items: []
+  - m_Id: 342483285155840
+    m_Key: horn_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342507385626624
+    m_Key: horn_no
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 7345467055600566346
@@ -68,6 +76,14 @@ MonoBehaviour:
           - en-US
           - pl-PL
         - m_KeyId: 11601894547456
+          m_TableCodes:
+          - en-US
+          - pl-PL
+        - m_KeyId: 342483285155840
+          m_TableCodes:
+          - en-US
+          - pl-PL
+        - m_KeyId: 342507385626624
           m_TableCodes:
           - en-US
           - pl-PL

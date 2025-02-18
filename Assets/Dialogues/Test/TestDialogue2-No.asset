@@ -27,11 +27,11 @@ MonoBehaviour:
       m_TableReference:
         m_TableCollectionName: GUID:1572d0a2e78c3f54d8d4ddf206fbe339
       m_TableEntryReference:
-        m_KeyId: 18397110272
+        m_KeyId: 342507385626624
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
-    _duration: 8
+    _duration: 2
   - _speakerIndex: 1
     _text:
       m_TableReference:

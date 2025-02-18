@@ -15,6 +15,13 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 69ce76275a0a2c34f8cd0c68b6864cd6
   m_SerializeEntries:
+  - m_GUID: 13efbc98e7c1c9e4ca95f8712909474e
+    m_Address: Horn_Yes
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1572d0a2e78c3f54d8d4ddf206fbe339
     m_Address: Assets/Localization/Voice/VoiceLines Shared Data.asset
     m_ReadOnly: 1
@@ -24,6 +31,13 @@ MonoBehaviour:
     m_Address: Assets/Localization/Tables/General Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 36fb391a7d63c5541a30893198238036
+    m_Address: Horn_No
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Locale-pl-PL
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8600c5b7fc58eab4395a04b59313f353
     m_Address: Assets/Localization/Tables/Dialogues/Dialogues Shared Data.asset
