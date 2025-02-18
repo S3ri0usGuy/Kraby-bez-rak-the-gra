@@ -44,17 +44,17 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 
 	void IDialogueListener.OnPhraseStarted(DialoguePhraseContext context)
 	{
-		Debug.Log($"Phrase #{context.phraseIndex} has started");
+
 	}
 
 	void IDialogueListener.OnPhraseEnded(DialoguePhraseContext context)
 	{
-		Debug.Log($"Phrase #{context.phraseIndex} has ended");
+
 	}
 
 	void IDialogueListener.OnOptionChosen(DialogueOptionContext context)
 	{
-		Debug.Log($"Option {context.optionIndex} has been chosen.");
+
 	}
 
 	void IDialogueListener.OnNodeEnded(DialogueNode node, DialogueNode nextNode)
@@ -64,6 +64,6 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 
 	void IDialogueListener.OnEnded(DialogueNode node)
 	{
-		Debug.Log("The dialogue has ended.");
+
 	}
 }
