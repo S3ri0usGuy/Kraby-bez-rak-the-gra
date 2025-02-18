@@ -9,9 +9,9 @@ using UnityEngine.Localization;
 public class DialoguePhrase
 {
 	[SerializeField]
-	[Tooltip("An ID of the person who says this phrase. " +
+	[Tooltip("An index of the speaker who says this phrase. " +
 		"Usually, it's 0 for the player and 1 for the NPC.")]
-	private int _personId;
+	private int _speakerIndex;
 	[SerializeField]
 	[Tooltip("A localized text of the phrase.")]
 	private LocalizedString _text;
@@ -25,10 +25,10 @@ public class DialoguePhrase
 	private float _duration;
 
 	/// <summary>
-	/// Gets an ID of the person who says this phrase.
+	/// Gets an index of the speaker who says this phrase.
 	/// Usually, it's 0 for the player and 1 for the NPC.
 	/// </summary>
-	public int personId => _personId;
+	public int speakerIndex => _speakerIndex;
 	/// <summary>
 	/// Gets a localized string used for this phrase.
 	/// </summary>

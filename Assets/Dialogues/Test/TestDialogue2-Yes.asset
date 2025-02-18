@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestDialogue2-Yes
   m_EditorClassIdentifier: 
   _phrases:
-  - _personId: 0
+  - _speakerIndex: 0
     _text:
       m_TableReference:
         m_TableCollectionName: GUID:8600c5b7fc58eab4395a04b59313f353
@@ -32,7 +32,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
     _duration: 8
-  - _personId: 1
+  - _speakerIndex: 1
     _text:
       m_TableReference:
         m_TableCollectionName: GUID:8600c5b7fc58eab4395a04b59313f353

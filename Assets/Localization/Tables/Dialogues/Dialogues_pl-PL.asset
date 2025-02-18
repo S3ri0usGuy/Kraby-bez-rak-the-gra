@@ -42,6 +42,14 @@ MonoBehaviour:
     m_Localized: Samuraju, masz malutki przycisk.
     m_Metadata:
       m_Items: []
+  - m_Id: 1009952064643072
+    m_Localized: Ty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1010075733696512
+    m_Localized: "Kto\u015B"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -39,6 +39,14 @@ MonoBehaviour:
     m_Key: test_phrase_2_Yes
     m_Metadata:
       m_Items: []
+  - m_Id: 1009952064643072
+    m_Key: test_name_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1010075733696512
+    m_Key: test_name_1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
