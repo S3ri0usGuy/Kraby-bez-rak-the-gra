@@ -125,7 +125,8 @@ public class DialoguePlayer : MonoBehaviour
 			var preloadedPhrase = _preloadedPhrases[i];
 			_speakers[phrase.speakerIndex].PlayPhrase(preloadedPhrase);
 
-			Debug.Log($"{_speakerNames[phrase.speakerIndex]}: {_preloadedPhrases[i].text}");
+			string subtitle = $"{_speakerNames[phrase.speakerIndex]}: {_preloadedPhrases[i].text}";
+			SubtitlesDisplayer.instance.Display(subtitle, phrase.duration, SubtitlePriority.Dialogue);
 
 			float duration = GetPhraseDuration(phrase, preloadedPhrase);
 			yield return new WaitForSeconds(duration);
