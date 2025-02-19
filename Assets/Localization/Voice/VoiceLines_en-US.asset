@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: VoiceLines_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 1572d0a2e78c3f54d8d4ddf206fbe339, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 18397110272
+    m_Localized: 8c57fe53638492d448b8bf580f916628
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11422982316032
+    m_Localized: ab6db8295c8737a4480e51936eb28d9f
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11559045537792
+    m_Localized: 07cd2259ebf28d54a86018f12e3be6a4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11562434535424
+    m_Localized: c74446d766d606a4895a921bd160cdc7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11601894547456
+    m_Localized: 01f036419fc8a854cbf9eeb3ec486bb0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342483285155840
+    m_Localized: 13efbc98e7c1c9e4ca95f8712909474e
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342507385626624
+    m_Localized: 36fb391a7d63c5541a30893198238036
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

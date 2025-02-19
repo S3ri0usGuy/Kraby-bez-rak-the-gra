@@ -17,7 +17,39 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 8600c5b7fc58eab4395a04b59313f353, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 734503644274688
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734604173352960
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734647777337344
+    m_Localized: Escape this cruel reality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742883104497664
+    m_Localized: Right now!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743327407120384
+    m_Localized: WAKE THE FUCK UP!!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743643502452736
+    m_Localized: Hey, you. You're finally (a)wo(a)ke!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1009952064643072
+    m_Localized: You
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1010075733696512
+    m_Localized: Someone
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
