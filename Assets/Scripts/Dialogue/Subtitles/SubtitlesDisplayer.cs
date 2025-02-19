@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class SubtitlesDisplayer : SingletonMonoBehaviour<SubtitlesDisplayer>
 {
-	private bool _subtitleActive;
+	private bool _subtitleActive = false;
 	private Coroutine _subtitleCoroutine;
 
 	private SubtitlePriority _currentSubtitlePriority;
@@ -19,6 +19,19 @@ public class SubtitlesDisplayer : SingletonMonoBehaviour<SubtitlesDisplayer>
 		"Priorities lowest than this value will be ignored.")]
 	private SubtitlePriority _priorityFilter = SubtitlePriority.Lowest;
 
+	[SerializeField]
+	[Tooltip("A format that defines how speaker name is displayed. '{0}' represents " +
+		"the speaker's name")]
+	private string _speakerNameFormat = "<b>{0}</b>: ";
+
+	[SerializeField]
+	[Range(0f, 1f)]
+	[Tooltip("A ratio that defines how long it takes for the typing animation. " +
+		"For example, 50% means that all symbols are printed after a half of " +
+		"the phrase duration had passed, and 0% means that all symbols are printed " +
+		"immediately.")]
+	private float _typeAnimationRatio = 0.8f;
+
 	/// <summary>
 	/// Gets/sets the lowest priority of the subtitle that can be shown.
 	/// Priorities less important than this value will be ignored.
@@ -29,14 +42,22 @@ public class SubtitlesDisplayer : SingletonMonoBehaviour<SubtitlesDisplayer>
 		set => _priorityFilter = value;
 	}
 
-	private IEnumerator ShowSubtitle(string subtitle, float duration)
+	private IEnumerator ShowSubtitle(string subtitlePrefix, string subtitle, float duration)
 	{
 		_subtitleActive = true;
-		_label.text = subtitle;
+		_label.text = subtitlePrefix;
 		_label.gameObject.SetActive(true);
 
-		for (float t = 0f; t < duration; t += Time.deltaTime)
-			yield return null;
+		float typingDuration = duration * _typeAnimationRatio;
+		float symbolDuration = typingDuration / subtitle.Length;
+
+		for (int i = 0; i < subtitle.Length; i++)
+		{
+			_label.text += subtitle[i];
+			yield return new WaitForSeconds(symbolDuration);
+		}
+
+		yield return new WaitForSeconds(duration - typingDuration);
 
 		_label.gameObject.SetActive(false);
 		_subtitleActive = false;
@@ -51,7 +72,9 @@ public class SubtitlesDisplayer : SingletonMonoBehaviour<SubtitlesDisplayer>
 	/// A priority of the subtitle. The subtitles with the less important priority
 	/// are overridden by the subtitles with the more important priority.
 	/// </param>
-	public void Display(string subtitle, float duration, SubtitlePriority priority)
+	/// <param name="speaker">An optional speaker's name.</param>
+	public void Display(string subtitle, float duration, SubtitlePriority priority,
+		string speaker = null)
 	{
 		// Apply subtitles filter
 		if (priority > _priorityFilter)
@@ -64,8 +87,10 @@ public class SubtitlesDisplayer : SingletonMonoBehaviour<SubtitlesDisplayer>
 			StopCoroutine(_subtitleCoroutine);
 
 		_currentSubtitlePriority = priority;
-		_label.text = subtitle;
 
-		_subtitleCoroutine = StartCoroutine(ShowSubtitle(subtitle, duration));
+		string subtitlePrefix = string.IsNullOrEmpty(speaker) ?
+			"" : string.Format(_speakerNameFormat, speaker);
+
+		_subtitleCoroutine = StartCoroutine(ShowSubtitle(subtitlePrefix, subtitle, duration));
 	}
 }
