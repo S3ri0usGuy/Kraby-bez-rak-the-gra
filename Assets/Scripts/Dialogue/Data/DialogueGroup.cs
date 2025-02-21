@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 
@@ -21,6 +23,35 @@ public class DialogueGroup : ScriptableObject
 	public IReadOnlyList<DialogueNode> dialogues => _dialogues;
 
 #if UNITY_EDITOR
+	private void OnValidate()
+	{
+		var duplicateNames = _dialogues
+			.GroupBy(x => x.name)
+			.Where(g => g.Count() > 1)
+			.ToList();
+
+		if (duplicateNames.Count > 0)
+		{
+			StringBuilder builder = new();
+			builder.AppendLine($"The {name} dialogue group has nodes with duplicate names. " +
+				$"If not fixed, this will lead to an unexpected saving and loading " +
+				$"behaviour.");
+			builder.AppendLine();
+			foreach (var group in duplicateNames)
+			{
+				builder.AppendLine($"\"{group.Key}\":");
+				foreach (var node in group)
+				{
+					string assetPath = AssetDatabase.GetAssetPath(node);
+
+					builder.AppendLine($"-- \"{assetPath}\"");
+				}
+				builder.AppendLine();
+			}
+			Debug.LogWarning(builder.ToString());
+		}
+	}
+
 	public void LoadNodes()
 	{
 		string assetPath = AssetDatabase.GetAssetPath(this);
@@ -42,6 +73,8 @@ public class DialogueGroup : ScriptableObject
 			EditorUtility.SetDirty(this);
 			_dialogues = newNodes;
 		}
+
+		OnValidate();
 	}
 #endif
 }
