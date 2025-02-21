@@ -8,9 +8,9 @@ using UnityEngine;
 /// the dialogue's initiation. Also, it allows additional components
 /// to perform custom behaviour on dialogue events (will be implemented in future).
 /// </remarks>
+[DisallowMultipleComponent]
 public class DialogueActor : MonoBehaviour, IDialogueListener
 {
-	// TODO: integrate with the save system
 	// TODO: add dialogue events
 
 	// A node that will be played next
@@ -23,9 +23,27 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 	[SerializeField]
 	private DialoguePlayer _dialoguePlayer;
 
+	/// <summary>
+	/// Gets a node that will be played when initiating the dialogue.
+	/// </summary>
+	public DialogueNode nextNode => _nextNode;
+
 	private void Start()
 	{
 		_nextNode = _firstNode;
+	}
+
+	/// <summary>
+	/// Sets the next node to a specific value.
+	/// </summary>
+	/// <param name="node">The node to be played next.</param>
+	/// <exception cref="System.ArgumentNullException" />
+	public void SetNextNode(DialogueNode node)
+	{
+		if (!node)
+			throw new System.ArgumentNullException(nameof(node));
+
+		_nextNode = node;
 	}
 
 	/// <summary>

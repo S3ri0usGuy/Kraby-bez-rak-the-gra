@@ -12,6 +12,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dialogue Group", menuName = "Dialogue/Group")]
 public class DialogueGroup : ScriptableObject
 {
+	private IReadOnlyDictionary<string, DialogueNode> _nameToDialogue = null;
+
 	[SerializeField]
 	[Tooltip("Dialogue nodes that were found. " +
 		"Don't change this list manually because you will lose changes.")]
@@ -21,6 +23,20 @@ public class DialogueGroup : ScriptableObject
 	/// Gets a collection of dialogue nodes associated with this group.
 	/// </summary>
 	public IReadOnlyList<DialogueNode> dialogues => _dialogues;
+
+	/// <summary>
+	/// Gets a readonly dictionary that maps a name to the dialogue node.
+	/// </summary>
+	public IReadOnlyDictionary<string, DialogueNode> nameToDialogue
+	{
+		get
+		{
+			if (_nameToDialogue != null) return _nameToDialogue;
+
+			_nameToDialogue = _dialogues.ToDictionary(x => x.name, x => x);
+			return _nameToDialogue;
+		}
+	}
 
 #if UNITY_EDITOR
 	private void OnValidate()
