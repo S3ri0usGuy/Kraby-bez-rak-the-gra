@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c344bf28d4ddb634ea370fb8edc56ffc, type: 3}
+  m_Name: TestDialogueGroup
+  m_EditorClassIdentifier: 
+  _dialogues:
+  - {fileID: 11400000, guid: 479ccedc3cf7139409787b98714d6d95, type: 2}
+  - {fileID: 11400000, guid: 16348b85c526171458b8f2f26b3c8749, type: 2}
+  - {fileID: 11400000, guid: 097dd3b1b240eba4f8e3390685398cfc, type: 2}

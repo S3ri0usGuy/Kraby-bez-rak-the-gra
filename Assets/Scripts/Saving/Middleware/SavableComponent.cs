@@ -30,7 +30,11 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 	/// <summary>
 	/// Gets a savable data assigned to this component.
 	/// </summary>
-	public TData data => _data;
+	public TData data
+	{
+		get => _data;
+		protected set => _data = value;
+	}
 
 	protected virtual void Awake()
 	{
@@ -56,9 +60,6 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 	/// A method that is called after loading and before saving
 	/// to ensure that data is valid. 
 	/// </summary>
-	/// <remarks>
-	/// When implemented, it must
-	/// </remarks>
 	/// <param name="data">
 	/// The data to validate, cannot be <see cref="null" />.
 	/// </param>
@@ -85,6 +86,7 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 
 		if (data is TData unboxedData)
 		{
+			Validate(unboxedData);
 			_data = unboxedData;
 		}
 		else
@@ -104,6 +106,7 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 	public object Save()
 	{
 		OnSave();
+		Validate(_data);
 		return _data;
 	}
 }
