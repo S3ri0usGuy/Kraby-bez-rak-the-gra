@@ -39,7 +39,5 @@ public class DialogueSpeaker : MonoBehaviour
 			_audioSource.Play();
 		}
 		_audioSource.clip = phrase.audioClip;
-
-		// TODO: subtitles
 	}
 }
