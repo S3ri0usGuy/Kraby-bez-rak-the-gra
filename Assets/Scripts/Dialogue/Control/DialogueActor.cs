@@ -30,7 +30,7 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 
 	private void Start()
 	{
-		_nextNode = _firstNode;
+		if (!_nextNode) _nextNode = _firstNode;
 	}
 
 	/// <summary>
