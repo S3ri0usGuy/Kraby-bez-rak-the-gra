@@ -23,6 +23,10 @@ public class DialogueNodeTrigger : MonoBehaviour
 	[Tooltip("An event that is called when the node ends.")]
 	private UnityEvent _ended;
 
+	[SerializeField, Min(0)]
+	[Tooltip("An index of the phrase which activates the trigger.")]
+	private int _phraseIndex = 0;
+
 	/// <summary>
 	/// An event that is called when the node ends.
 	/// </summary>
@@ -57,7 +61,15 @@ public class DialogueNodeTrigger : MonoBehaviour
 
 	private void OnPhraseStarted(DialoguePhraseContext context)
 	{
-		if (context.phraseIndex == 0 && IsTargetNode(context.node))
+		if (_phraseIndex >= context.node.phrases.Count)
+		{
+			Debug.LogWarning($"The phraseIndex ({_phraseIndex}) is incorrect and the " +
+				$"dialogue node trigger ({context.node.name}) will never start.",
+				gameObject);
+			return;
+		}
+
+		if (context.phraseIndex == _phraseIndex && IsTargetNode(context.node))
 		{
 			_started.Invoke();
 		}
