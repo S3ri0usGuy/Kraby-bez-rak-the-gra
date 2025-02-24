@@ -6,13 +6,11 @@ using UnityEngine;
 /// <remarks>
 /// It's responsible for preserving the next node of the dialogue and for
 /// the dialogue's initiation. Also, it allows additional components
-/// to perform custom behaviour on dialogue events (will be implemented in future).
+/// to perform custom behaviour on dialogue events.
 /// </remarks>
 [DisallowMultipleComponent]
 public class DialogueActor : MonoBehaviour, IDialogueListener
 {
-	// TODO: add dialogue events
-
 	// A node that will be played next
 	private DialogueNode _nextNode;
 
@@ -27,6 +25,34 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 	/// Gets a node that will be played when initiating the dialogue.
 	/// </summary>
 	public DialogueNode nextNode => _nextNode;
+
+	public delegate void PhraseStartedHandler(DialoguePhraseContext context);
+	public delegate void PhraseEndedHandler(DialoguePhraseContext context);
+	public delegate void OptionChosenHandler(DialogueOptionContext context);
+	public delegate void NodeEndedHandler(DialogueNode node, DialogueNode nextNode);
+	public delegate void DialogueEndedHandler(DialogueNode node);
+
+	/// <summary>
+	/// An event that is triggered when the phrase has started.
+	/// </summary>
+	public event PhraseStartedHandler phraseStarted;
+	/// <summary>
+	/// An event that is triggered when the phrase has ended.
+	/// </summary>
+	public event PhraseEndedHandler phraseEnded;
+	/// <summary>
+	/// An event that is triggered when any dialogue option is chosen.
+	/// </summary>
+	public event OptionChosenHandler optionChosen;
+	/// <summary>
+	/// An event that is triggered when any dialogue node has ended playing.
+	/// </summary>
+	public event NodeEndedHandler nodeEnded;
+	/// <summary>
+	/// An event that is triggered when an entire dialogue ended (the player
+	/// has exited the dialogue state).
+	/// </summary>
+	public event DialogueEndedHandler dialogueEnded;
 
 	private void Start()
 	{
@@ -62,26 +88,27 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 
 	void IDialogueListener.OnPhraseStarted(DialoguePhraseContext context)
 	{
-
+		phraseStarted?.Invoke(context);
 	}
 
 	void IDialogueListener.OnPhraseEnded(DialoguePhraseContext context)
 	{
-
+		phraseEnded?.Invoke(context);
 	}
 
 	void IDialogueListener.OnOptionChosen(DialogueOptionContext context)
 	{
-
+		optionChosen?.Invoke(context);
 	}
 
 	void IDialogueListener.OnNodeEnded(DialogueNode node, DialogueNode nextNode)
 	{
 		_nextNode = nextNode;
+		nodeEnded?.Invoke(node, nextNode);
 	}
 
 	void IDialogueListener.OnEnded(DialogueNode node)
 	{
-
+		dialogueEnded?.Invoke(node);
 	}
 }
