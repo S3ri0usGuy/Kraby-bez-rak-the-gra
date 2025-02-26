@@ -23,6 +23,9 @@ public class DialoguePhrase
 		"If the audio clip is assigned and this value is zero or negative, " +
 		"the clip's duration is taken instead.")]
 	private float _duration;
+	[SerializeField]
+	[Tooltip("Check if it's not possible to skip the phrase.")]
+	private bool _unskippable = false;
 
 	/// <summary>
 	/// Gets an index of the speaker who says this phrase.
@@ -45,4 +48,8 @@ public class DialoguePhrase
 	/// the <see cref="audioClip" /> is assigned.
 	/// </remarks>
 	public float duration => _duration;
+	/// <summary>
+	/// Gets a flag that determines whether the phrase cannot be skipped.
+	/// </summary>
+	public bool unskippable => _unskippable;
 }

@@ -93,4 +93,16 @@ public class SubtitlesDisplayer : SingletonMonoBehaviour<SubtitlesDisplayer>
 
 		_subtitleCoroutine = StartCoroutine(ShowSubtitle(subtitlePrefix, subtitle, duration));
 	}
+
+	/// <summary>
+	/// Cancels the currently shown subtitle.
+	/// </summary>
+	public void Cancel()
+	{
+		if (_subtitleActive)
+			StopCoroutine(_subtitleCoroutine);
+
+		_label.gameObject.SetActive(false);
+		_subtitleActive = false;
+	}
 }
