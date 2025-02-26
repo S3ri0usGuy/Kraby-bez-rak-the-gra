@@ -20,6 +20,8 @@ public class DialogueNode : ScriptableObject
 	[Tooltip("Options that are given to the player after the last phrase. " +
 		"If empty, the dialogue will end.")]
 	private DialogueOption[] _options;
+	[SerializeField]
+	private DialogueAnswerParams _answerParams;
 
 	[SerializeField]
 	[Tooltip("A next node that is set as current after this started playing. " +
@@ -36,6 +38,10 @@ public class DialogueNode : ScriptableObject
 	/// after the last phrase. If empty, the dialogue will end.
 	/// </summary>
 	public IReadOnlyList<DialogueOption> options => _options;
+	/// <summary>
+	/// Get the answer parameters that are used for this node's options.
+	/// </summary>
+	public DialogueAnswerParams answerParams => _answerParams;
 
 	/// <summary>
 	/// Gets a next node that is set as current after this started playing.
