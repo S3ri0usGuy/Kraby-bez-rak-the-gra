@@ -32,6 +32,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
     _duration: 0
+    _unskippable: 0
   - _speakerIndex: 1
     _text:
       m_TableReference:
@@ -51,6 +52,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
     _duration: 0
+    _unskippable: 0
   _options:
   - _text:
       m_TableReference:
@@ -72,6 +74,9 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _nextNode: {fileID: 11400000, guid: 16348b85c526171458b8f2f26b3c8749, type: 2}
+  _answerParams:
+    _answerType: 2
+    _timeToAnswer: 5
   _nextNode: {fileID: 0}
   references:
     version: 2
