@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 /// <summary>
 /// A component that is responsible for playing the dialogue nodes
@@ -9,6 +11,8 @@ using UnityEngine.Events;
 /// </summary>
 public class DialoguePlayer : MonoBehaviour
 {
+	public const float phraseSkipDelay = 0.2f;
+
 	private DialogueNode _currentNode;
 	private readonly List<DialoguePreloadedPhrase> _preloadedPhrases = new();
 	private readonly List<string> _speakerNames = new();
@@ -16,6 +20,7 @@ public class DialoguePlayer : MonoBehaviour
 
 	private IDialogueListener _listener;
 	private bool _isPlaying = false;
+	private bool _skipPhrase = false;
 
 	[SerializeField]
 	[Tooltip("An array of speakers. The first one is usually the player (main character).")]
@@ -100,6 +105,23 @@ public class DialoguePlayer : MonoBehaviour
 		}
 	}
 
+	private void PlayPhrase(DialoguePhrase phrase,
+		DialoguePreloadedPhrase preloadedPhrase, float duration)
+	{
+		_speakers[phrase.speakerIndex].PlayPhrase(preloadedPhrase);
+
+		string subtitle = preloadedPhrase.text;
+		string speakerName = _speakerNames[phrase.speakerIndex];
+		SubtitlesDisplayer.instance.Display(
+			subtitle, duration, SubtitlePriority.Dialogue, speakerName);
+	}
+
+	private void CancelPhrase(DialoguePhrase phrase)
+	{
+		_speakers[phrase.speakerIndex].Stop();
+		SubtitlesDisplayer.instance.Cancel();
+	}
+
 	private IEnumerator PlayPhrases()
 	{
 		// Wait for the speaker names to load
@@ -108,31 +130,39 @@ public class DialoguePlayer : MonoBehaviour
 		for (int i = 0; i < _currentNode.phrases.Count; i++)
 		{
 			var phrase = _currentNode.phrases[i];
-			DialoguePhraseContext phraseContext = new(_currentNode, phrase, i);
-
-			_listener.OnPhraseStarted(phraseContext);
-
 			if (phrase.speakerIndex >= _speakers.Length)
 			{
 				Debug.LogWarning($"The speakerIndex {phrase.speakerIndex} is invalid. " +
 					$"The phrase (index: {i}) is skipped.", gameObject);
 				continue;
 			}
+			DialoguePhraseContext phraseContext = new(_currentNode, phrase, i);
 
 			// Wait for the phrase to load
 			yield return new WaitUntil(() => _preloadedPhrases.Count >= i + 1);
 
+			_listener.OnPhraseStarted(phraseContext);
+
 			var preloadedPhrase = _preloadedPhrases[i];
 			float duration = GetPhraseDuration(phrase, preloadedPhrase);
 
-			_speakers[phrase.speakerIndex].PlayPhrase(preloadedPhrase);
+			PlayPhrase(phrase, preloadedPhrase, duration);
 
-			string subtitle = _preloadedPhrases[i].text;
-			string speakerName = _speakerNames[phrase.speakerIndex];
-			SubtitlesDisplayer.instance.Display(
-				subtitle, duration, SubtitlePriority.Dialogue, speakerName);
+			// Wait for the phrase to end
+			_skipPhrase = false;
+			if (!phrase.unskippable) InputSystem.onEvent += OnInputEvent;
+			for (float t = 0f; t < duration; t += Time.deltaTime)
+			{
+				if (t >= phraseSkipDelay && _skipPhrase)
+				{
+					CancelPhrase(phrase);
+					break;
+				}
+				_skipPhrase = false;
 
-			yield return new WaitForSeconds(duration);
+				yield return null;
+			}
+			if (!phrase.unskippable) InputSystem.onEvent -= OnInputEvent;
 
 			_listener.OnPhraseEnded(phraseContext);
 		}
@@ -196,5 +226,13 @@ public class DialoguePlayer : MonoBehaviour
 		}
 
 		InternalPlay(node, listener);
+	}
+
+	private void OnInputEvent(InputEventPtr eventPtr, InputDevice device)
+	{
+		if (InputUtils.AnyKeyDown(eventPtr, device))
+		{
+			_skipPhrase = true;
+		}
 	}
 }
