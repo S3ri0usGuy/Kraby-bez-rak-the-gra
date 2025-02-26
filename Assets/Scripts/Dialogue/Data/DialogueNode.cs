@@ -13,9 +13,12 @@ public class DialogueNode : ScriptableObject
 	/// </summary>
 	public const int maxDialogueOptions = 4;
 
+	[Header("Phrases")]
 	[SerializeField]
 	[Tooltip("An ordered collection of phrases in the node.")]
 	private DialoguePhrase[] _phrases;
+
+	[Header("Answering")]
 	[SerializeField]
 	[Tooltip("Options that are given to the player after the last phrase. " +
 		"If empty, the dialogue will end.")]
@@ -23,6 +26,7 @@ public class DialogueNode : ScriptableObject
 	[SerializeField]
 	private DialogueAnswerParams _answerParams;
 
+	[Header("Branching")]
 	[SerializeField]
 	[Tooltip("A next node that is set as current after this started playing. " +
 		"If this node has options, this parameter will probably not do anything. " +
