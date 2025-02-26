@@ -40,4 +40,15 @@ public class DialogueSpeaker : MonoBehaviour
 		}
 		_audioSource.clip = phrase.audioClip;
 	}
+
+	/// <summary>
+	/// Cancels playing a phrase.
+	/// </summary>
+	/// <remarks>
+	/// Does nothing if no phrases are playing.
+	/// </remarks>
+	public void Stop()
+	{
+		_audioSource.Stop();
+	}
 }
