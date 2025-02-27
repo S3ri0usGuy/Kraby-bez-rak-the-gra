@@ -13,15 +13,17 @@ public class DialogueOption
 		"May differ from the actual phrase.")]
 	private LocalizedString _text;
 	[SerializeField]
-	[Tooltip("The next dialogue node that this option leads to.")]
-	private DialogueNode _nextNode;
+	[Tooltip("Parameters that decide to which node this option leads. " +
+		"If no nodes are available in the branches, the option will not be visible.")]
+	private DialogueBranching _branching;
 
 	/// <summary>
 	/// Gets a short localized text description of the option.
 	/// </summary>
 	public LocalizedString text => _text;
 	/// <summary>
-	/// Gets the next dialogue node that this option leads to.
+	/// Gets the parameters that decide to which node this option leads.
+	/// If no nodes are available in the branches, the option will not be visible.
 	/// </summary>
-	public DialogueNode nextNode => _nextNode;
+	public DialogueBranching branching => _branching;
 }
