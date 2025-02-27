@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,6 +21,8 @@ public class DialogueOptionController : SingletonMonoBehaviour<DialogueOptionCon
 	private DialogueOptionButton _optionButtonPrefab;
 	[SerializeField]
 	private Transform _dialogueOptionsParent;
+	[SerializeField]
+	private ProgressTimer _timer;
 
 	private void Start()
 	{
@@ -34,11 +37,16 @@ public class DialogueOptionController : SingletonMonoBehaviour<DialogueOptionCon
 		}
 	}
 
-	private void OnButtonClicked(DialogueOptionButton button)
+	private void SelectOption(int optionIndex)
 	{
 		_window.SetActive(false);
-		_callback?.Invoke(button.optionIndex);
+		_callback?.Invoke(optionIndex);
 		_callback = null; // Make sure it's one-time call only
+	}
+
+	private void OnButtonClicked(DialogueOptionButton button)
+	{
+		SelectOption(button.optionIndex);
 	}
 
 	private void SetButtonsActive(int count)
@@ -49,15 +57,57 @@ public class DialogueOptionController : SingletonMonoBehaviour<DialogueOptionCon
 		}
 	}
 
+	private IEnumerator ForcedChoiceCountdown(DialogueAnswerParams answerParams, int optionsCount)
+	{
+		if (answerParams.answerType == DialogueAnswerType.Default)
+		{
+			if (_timer) _timer.gameObject.SetActive(false);
+			yield break;
+		}
+
+		if (_timer)
+		{
+			_timer.gameObject.SetActive(true);
+			_timer.StartCountdown(answerParams.timeToAnswer);
+		}
+
+		yield return new WaitForSeconds(answerParams.timeToAnswer);
+
+		int choiceIndex = answerParams.answerType switch
+		{
+			DialogueAnswerType.TimedPickFirst => 0,
+			DialogueAnswerType.TimedPickRandom => Random.Range(0, optionsCount),
+
+			_ => throw new System.ArgumentException(
+				$"Invalid answer type ({(int)answerParams.answerType}).",
+				nameof(answerParams)
+				)
+		};
+		SelectOption(choiceIndex);
+
+		if (_timer)
+		{
+			_timer.gameObject.SetActive(false);
+		}
+	}
+
 	/// <summary>
 	/// Enables the player to select a dialogue option.
 	/// </summary>
+	/// <param name="options">A collection of all available options.</param>
+	/// <param name="answerParams">Behaviour parameters.</param>
 	/// <param name="callback">
 	/// A one-time callback that is called when the option is selected.
 	/// </param>
-	public void RequestOption(IReadOnlyList<string> options, DialogueOptionCallback callback)
+	/// <exception cref="System.ArgumentNullException" />
+	public void RequestOption(IReadOnlyList<string> options,
+		DialogueAnswerParams answerParams, DialogueOptionCallback callback)
 	{
+		if (answerParams == null) throw new System.ArgumentNullException(nameof(answerParams));
+
 		_callback = callback ?? throw new System.ArgumentNullException(nameof(callback));
+
+		StopAllCoroutines();
 
 		SetButtonsActive(options.Count);
 		for (int i = 0; i < options.Count; i++)
@@ -66,5 +116,7 @@ public class DialogueOptionController : SingletonMonoBehaviour<DialogueOptionCon
 		}
 
 		_window.SetActive(true);
+
+		StartCoroutine(ForcedChoiceCountdown(answerParams, options.Count));
 	}
 }

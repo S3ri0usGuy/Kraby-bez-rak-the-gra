@@ -171,7 +171,8 @@ public class DialoguePlayer : MonoBehaviour
 		{
 			yield return new WaitUntil(() => _options.Count >= _currentNode.options.Count);
 
-			DialogueOptionController.instance.RequestOption(_options, OnOptionSelected);
+			DialogueOptionController.instance.RequestOption(_options,
+				_currentNode.answerParams, OnOptionSelected);
 		}
 		else
 		{
