@@ -28,10 +28,10 @@ public class DialogueNode : ScriptableObject
 
 	[Header("Branching")]
 	[SerializeField]
-	[Tooltip("A next node that is set as current after this started playing. " +
-		"If this node has options, this parameter will probably not do anything. " +
-		"Leave empty to set this node as the current.")]
-	private DialogueNode _nextNode;
+	[Tooltip("A branching that decides which node will be set as current after this node. " +
+		"If this node has at least one availble option, this parameter will be ignored. " +
+		"If branching fails, this node will remain the current.")]
+	private DialogueBranching _branching;
 
 	/// <summary>
 	/// Gets an ordered collection of phrases in the node.
@@ -48,9 +48,9 @@ public class DialogueNode : ScriptableObject
 	public DialogueAnswerParams answerParams => _answerParams;
 
 	/// <summary>
-	/// Gets a next node that is set as current after this started playing.
-	/// If this node has options, this parameter will probably not do anything. 
-	/// If <see langword="null"/>, this node will be set as the current."
+	/// A branching that decides which node will be set as current after this node.
+	/// If this node has at least one availble option, this parameter will be ignored.
+	/// If branching returns <see langword="null"/>, this node will remain the current.
 	/// </summary>
-	public DialogueNode nextNode => _nextNode;
+	public DialogueBranching branching => _branching;
 }

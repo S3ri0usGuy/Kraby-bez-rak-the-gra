@@ -176,7 +176,9 @@ public class DialoguePlayer : MonoBehaviour
 		}
 		else
 		{
-			DialogueNode next = _currentNode.nextNode ? _currentNode.nextNode : _currentNode;
+			DialogueNode next = _currentNode.branching.SelectNode();
+			if (!next) next = _currentNode;
+
 			_listener.OnNodeEnded(_currentNode, next);
 			End();
 		}

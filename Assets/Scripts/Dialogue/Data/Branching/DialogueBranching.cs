@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -54,4 +55,30 @@ public class DialogueBranching
 	/// with all satisfied conditions is selected.
 	/// </summary>
 	public IReadOnlyList<DialogueBranch> branches => _branches;
+
+	/// <summary>
+	/// Selects the first available node.
+	/// </summary>
+	/// <returns>
+	/// The first available dialogue node from the <see cref="branches" /> or
+	/// the <see cref="defaultNextNode" />. Can be <see langword="null" />
+	/// </returns>
+	public DialogueNode SelectNode()
+	{
+		foreach (var branch in branches)
+		{
+			if (!branch.node)
+			{
+				Debug.LogWarning("A branch without valid node was detected.");
+				continue;
+			}
+
+			if (branch.conditions.All(x => x.IsSatisfiedFor(branch.node, this)))
+			{
+				return branch.node;
+			}
+		}
+
+		return _defaultNextNode;
+	}
 }
