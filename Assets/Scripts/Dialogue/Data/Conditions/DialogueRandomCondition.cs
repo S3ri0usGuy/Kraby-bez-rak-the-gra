@@ -10,7 +10,7 @@ public class DialogueRandomCondition : DialogueCondition
 	[Tooltip("A probability of the condition to be satisfied.")]
 	private float _probability = 0.5f;
 
-	public override bool IsSatisfiedFor(DialogueNode node, DialogueBranching branching, DialogueActor actor)
+	public override bool IsSatisfiedFor(DialogueNode node, DialogueBranching branching)
 	{
 		return RandomUtils.Bool(_probability);
 	}
