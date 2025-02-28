@@ -16,7 +16,13 @@ public class DialoguePlayer : MonoBehaviour
 	private DialogueNode _currentNode;
 	private readonly List<DialoguePreloadedPhrase> _preloadedPhrases = new();
 	private readonly List<string> _speakerNames = new();
-	private readonly List<string> _options = new();
+
+	// Texts for each option after converting to the current locale
+	private readonly List<string> _optionTexts = new();
+	// Available options of the current node
+	private readonly List<DialogueOption> _options = new();
+	// Nodes to which options are mapped
+	private readonly List<DialogueNode> _optionNodes = new();
 
 	private IDialogueListener _listener;
 	private bool _isPlaying = false;
@@ -70,7 +76,7 @@ public class DialoguePlayer : MonoBehaviour
 	{
 		_preloadedPhrases.Clear();
 		_speakerNames.Clear();
-		_options.Clear();
+		_optionTexts.Clear();
 
 		foreach (var speaker in _speakers)
 		{
@@ -97,11 +103,11 @@ public class DialoguePlayer : MonoBehaviour
 			_preloadedPhrases.Add(loadedPhrase);
 		}
 
-		foreach (var option in _currentNode.options)
+		foreach (var option in _options)
 		{
 			var optionAsyncOperation = option.text.GetLocalizedStringAsync();
 			yield return new WaitUntil(() => optionAsyncOperation.IsDone);
-			_options.Add(optionAsyncOperation.Result);
+			_optionTexts.Add(optionAsyncOperation.Result);
 		}
 	}
 
@@ -167,16 +173,18 @@ public class DialoguePlayer : MonoBehaviour
 			_listener.OnPhraseEnded(phraseContext);
 		}
 
-		if (_currentNode.options.Count > 0)
+		if (_options.Count > 0)
 		{
-			yield return new WaitUntil(() => _options.Count >= _currentNode.options.Count);
+			yield return new WaitUntil(() => _optionTexts.Count >= _options.Count);
 
-			DialogueOptionController.instance.RequestOption(_options,
+			DialogueOptionController.instance.RequestOption(_optionTexts,
 				_currentNode.answerParams, OnOptionSelected);
 		}
 		else
 		{
-			DialogueNode next = _currentNode.nextNode ? _currentNode.nextNode : _currentNode;
+			DialogueNode next = _currentNode.branching.SelectNode();
+			if (!next) next = _currentNode;
+
 			_listener.OnNodeEnded(_currentNode, next);
 			End();
 		}
@@ -184,11 +192,12 @@ public class DialoguePlayer : MonoBehaviour
 
 	private void OnOptionSelected(int optionIndex)
 	{
-		var option = _currentNode.options[optionIndex];
+		var option = _options[optionIndex];
+		var nextNode = _optionNodes[optionIndex];
 
-		_listener.OnNodeEnded(_currentNode, option.nextNode);
+		_listener.OnNodeEnded(_currentNode, nextNode);
 
-		PlayNode(option.nextNode);
+		PlayNode(nextNode);
 
 		DialogueOptionContext context = new(_currentNode, option, optionIndex);
 		_listener.OnOptionChosen(context);
@@ -197,6 +206,19 @@ public class DialoguePlayer : MonoBehaviour
 	private void PlayNode(DialogueNode node)
 	{
 		_currentNode = node;
+		_options.Clear();
+		_optionNodes.Clear();
+
+		foreach (var option in node.options)
+		{
+			var optionNode = option.branching.SelectNode();
+			if (optionNode)
+			{
+				_options.Add(option);
+				_optionNodes.Add(optionNode);
+			}
+		}
+
 		StartCoroutine(PreloadPhrases());
 		StartCoroutine(PlayPhrases());
 	}

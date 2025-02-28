@@ -32,6 +32,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
     _duration: 2
+    _unskippable: 0
   - _speakerIndex: 1
     _text:
       m_TableReference:
@@ -51,8 +52,17 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
     _duration: 0
+    _unskippable: 0
   _options: []
-  _nextNode: {fileID: 11400000, guid: 479ccedc3cf7139409787b98714d6d95, type: 2}
+  _answerParams:
+    _answerType: 0
+    _timeToAnswer: 5
+  _branching:
+    _defaultNextNode: {fileID: 11400000, guid: 479ccedc3cf7139409787b98714d6d95, type: 2}
+    _branches:
+    - _node: {fileID: 11400000}
+      _conditions:
+      - {fileID: 11400000, guid: 9feb58cc2920f714987228ff73b52faf, type: 2}
   references:
     version: 2
     RefIds: []
