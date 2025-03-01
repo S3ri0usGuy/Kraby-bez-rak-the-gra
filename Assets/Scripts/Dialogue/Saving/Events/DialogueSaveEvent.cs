@@ -8,7 +8,7 @@ public class DialogueSaveEvent : ScriptableObject
 	private string _id = "dialogue_event";
 
 	/// <summary>
-	/// Gets the unique identifier of the event
+	/// Gets the unique identifier of the event.
 	/// </summary>
 	public string id => _id;
 }
