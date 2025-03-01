@@ -28,6 +28,13 @@ public class DialogueSaveEventCondition : DialogueCondition
 
 	public override bool IsSatisfiedFor(DialogueNode node, DialogueBranching branching)
 	{
+		if (!_event)
+		{
+			Debug.LogError($"The dialogue event condition \"{name}\" " +
+				$"has no dialogue event assigned to it.", this);
+			return false;
+		}
+
 		return GetState() == _targetState;
 	}
 }
