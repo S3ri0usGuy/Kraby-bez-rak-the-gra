@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047d99fb0865100419395abaf5c313a4, type: 3}
+  m_Name: TestDialogue2-NoWasChosenCondition
+  m_EditorClassIdentifier: 
+  _targetState: 0
+  _event: {fileID: 11400000, guid: 6a0a0b43f7ff24b4d827676353c3f755, type: 2}

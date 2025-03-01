@@ -64,8 +64,11 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _branching:
-      _defaultNextNode: {fileID: 11400000, guid: 097dd3b1b240eba4f8e3390685398cfc, type: 2}
-      _branches: []
+      _defaultNextNode: {fileID: 0}
+      _branches:
+      - _node: {fileID: 11400000, guid: 097dd3b1b240eba4f8e3390685398cfc, type: 2}
+        _conditions:
+        - {fileID: 11400000, guid: b471ac9eb14cd1749a696d0e95a430db, type: 2}
   - _text:
       m_TableReference:
         m_TableCollectionName: GUID:8600c5b7fc58eab4395a04b59313f353
