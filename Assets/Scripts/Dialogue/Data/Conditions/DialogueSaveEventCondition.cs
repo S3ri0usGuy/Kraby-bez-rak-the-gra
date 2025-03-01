@@ -3,6 +3,7 @@ using UnityEngine;
 /// <summary>
 /// An dialogue event that checks the save event key.
 /// </summary>
+[CreateAssetMenu(fileName = "DialogueRandomCondition", menuName = "Dialogue/Conditions/Save Event")]
 public class DialogueSaveEventCondition : DialogueCondition
 {
 	public enum DialogueEventState

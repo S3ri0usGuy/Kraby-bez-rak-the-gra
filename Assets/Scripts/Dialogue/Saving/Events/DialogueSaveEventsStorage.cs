@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,14 +7,19 @@ using System.Linq;
 /// </summary>
 public class DialogueSaveEventsStorage : SavableComponent<DialogueEventsSaveData>
 {
+	protected override DialogueEventsSaveData fallbackData => new()
+	{
+		keys = Array.Empty<string>()
+	};
+
 	/// <summary>
 	/// Gets a hash set containing dialogue save event keys.
 	/// </summary>
-	public HashSet<string> keys { get; private set; }
+	public HashSet<string> keys { get; private set; } = new();
 
 	protected override void OnLoad()
 	{
-		keys = new(data.keys);
+		keys = new(data.keys ?? Array.Empty<string>());
 	}
 
 	protected override void OnSave()
