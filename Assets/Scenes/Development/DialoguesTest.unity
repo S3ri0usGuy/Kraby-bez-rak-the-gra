@@ -881,6 +881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1302503604}
   - component: {fileID: 1302503605}
+  - component: {fileID: 1302503606}
   m_Layer: 0
   m_Name: TestDialogue2-No
   m_TagString: Untagged
@@ -931,6 +932,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1302503606}
+        m_TargetAssemblyTypeName: DialogueSaveEventAction, Assembly-CSharp
+        m_MethodName: Perform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _ended:
     m_PersistentCalls:
       m_Calls:
@@ -947,6 +960,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _phraseIndex: 1
+--- !u!114 &1302503606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302503603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610f8eff18c7e5d40ad3e2d5f6d4632e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 6a0a0b43f7ff24b4d827676353c3f755, type: 2}
+  _action: 0
 --- !u!1 &1439296357
 GameObject:
   m_ObjectHideFlags: 0

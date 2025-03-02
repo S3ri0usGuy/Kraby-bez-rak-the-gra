@@ -59,10 +59,7 @@ MonoBehaviour:
     _timeToAnswer: 5
   _branching:
     _defaultNextNode: {fileID: 11400000, guid: 479ccedc3cf7139409787b98714d6d95, type: 2}
-    _branches:
-    - _node: {fileID: 11400000}
-      _conditions:
-      - {fileID: 11400000, guid: 9feb58cc2920f714987228ff73b52faf, type: 2}
+    _branches: []
   references:
     version: 2
     RefIds: []
