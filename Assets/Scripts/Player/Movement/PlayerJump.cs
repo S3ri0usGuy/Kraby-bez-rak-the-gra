@@ -39,7 +39,7 @@ public class PlayerJump : MonoBehaviour
 	{
 		if (!enabled || !gameObject.activeInHierarchy)
 			return false;
-		if (_movement.isFreezed)
+		if (_movement.isFreezed || !_movement.isGrounded)
 			return false;
 
 		_movement.Jump(_jumpVelocity);
