@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 	private int _freezeCount = 0;
 
 	private bool _isGrounded = true;
+	private bool _isSprinting = true;
 	private float _coyoteTimer = 0f;
 
 	private float _velocityY;
@@ -29,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField]
 	[Tooltip("Movement speed of the player.")]
 	private ModifiableFloat _speed = new(12f, minValue: 0f);
+	[SerializeField]
+	[Tooltip("Sprint boost (multiplier).")]
+	private ModifiableFloat _sprintBoost = new(1.5f, minValue: 1f);
 
 	[Header("Gravity")]
 	[SerializeField]
@@ -50,6 +54,10 @@ public class PlayerMovement : MonoBehaviour
 	/// Gets a modifiable movement speed of the player.
 	/// </summary>
 	public ModifiableFloat movementSpeed => _speed;
+	/// <summary>
+	/// Gets a modifiable sprint speed boost.
+	/// </summary>
+	public ModifiableFloat sprintBoost => _sprintBoost;
 
 	/// <summary>
 	/// Gets a modifiable gravity (vertical speed acceleration) of the player.
@@ -92,6 +100,17 @@ public class PlayerMovement : MonoBehaviour
 	/// Gets a current speed of the player.
 	/// </summary>
 	public float currentSpeed { get; private set; }
+
+	/// <summary>
+	/// Gets/sets a flag that indicates whether the player should sprint.
+	/// If the speed is 0, this value has no effect but still can be <see langword="true" />.
+	/// Additionally, the player cannot sprint while midair.
+	/// </summary>
+	public bool isSprinting
+	{
+		get => _isSprinting;
+		set => _isSprinting = value;
+	}
 
 	public float verticalSpeed => _velocityY;
 
@@ -185,7 +204,15 @@ public class PlayerMovement : MonoBehaviour
 
 		if (_freezeCount > 0) return;
 
-		currentSpeed = _speed * axis.magnitude;
+		if (_isSprinting && _isGrounded && axis.magnitude > 0f)
+		{
+			currentSpeed = _speed * _sprintBoost;
+		}
+		else
+		{
+			currentSpeed = _speed * axis.magnitude;
+		}
+
 		if (!Mathf.Approximately(currentSpeed, 0f))
 		{
 			currentSpeed = Mathf.Max(currentSpeed, _minSpeed);

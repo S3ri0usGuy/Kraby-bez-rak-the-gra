@@ -29,22 +29,38 @@ public class MovementInputHandler : MonoBehaviour
 	{
 		_actions.move.performed += OnMovementPerformed;
 		_actions.jump.performed += _jumpBuffer.PerformedListener;
+		_actions.sprint.performed += OnSprintPerformed;
+		_actions.sprint.canceled += OnSprintCanceled;
 
 		_movement.axis = _actions.move.ReadValue<Vector2>();
+		_movement.isSprinting = false;
 	}
 
 	private void OnDisable()
 	{
 		_actions.move.performed -= OnMovementPerformed;
 		_actions.jump.performed -= _jumpBuffer.PerformedListener;
+		_actions.sprint.performed -= OnSprintPerformed;
+		_actions.sprint.canceled -= OnSprintCanceled;
 
 		StopAllCoroutines();
 
 		_movement.axis = Vector2.zero;
+		_movement.isSprinting = false;
 	}
 
 	private void OnMovementPerformed(InputAction.CallbackContext context)
 	{
 		_movement.axis = context.ReadValue<Vector2>();
+	}
+
+	private void OnSprintPerformed(InputAction.CallbackContext context)
+	{
+		_movement.isSprinting = true;
+	}
+
+	private void OnSprintCanceled(InputAction.CallbackContext context)
+	{
+		_movement.isSprinting = false;
 	}
 }
