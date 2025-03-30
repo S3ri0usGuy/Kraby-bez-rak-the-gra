@@ -5,7 +5,7 @@ using UnityEngine.Localization;
 /// A component that represents an object that "speaks".
 /// </summary>
 [RequireComponent(typeof(AudioSource))]
-public class DialogueSpeaker : MonoBehaviour
+public class DialogueSpeaker : DialogueSpeakerBase
 {
 	private AudioSource _audioSource;
 
@@ -16,7 +16,7 @@ public class DialogueSpeaker : MonoBehaviour
 	/// <summary>
 	/// Gets a localized name of the speaker.
 	/// </summary>
-	public new LocalizedString name => _name;
+	public override LocalizedString speakerName => _name;
 
 	private void Awake()
 	{
@@ -30,7 +30,7 @@ public class DialogueSpeaker : MonoBehaviour
 	/// The audio clip will be ignored if it's <see langword="null" />.
 	/// </remarks>
 	/// <param name="phrase">A phrase to be played.</param>
-	public void PlayPhrase(DialoguePreloadedPhrase phrase)
+	public override void PlayPhrase(DialoguePreloadedPhrase phrase)
 	{
 		_audioSource.Stop();
 		if (phrase.audioClip)
@@ -47,7 +47,7 @@ public class DialogueSpeaker : MonoBehaviour
 	/// <remarks>
 	/// Does nothing if no phrases are playing.
 	/// </remarks>
-	public void Stop()
+	public override void Stop()
 	{
 		_audioSource.Stop();
 	}
