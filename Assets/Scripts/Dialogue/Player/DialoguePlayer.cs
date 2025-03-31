@@ -30,7 +30,7 @@ public class DialoguePlayer : MonoBehaviour
 
 	[SerializeField]
 	[Tooltip("An array of speakers. The first one is usually the player (main character).")]
-	private DialogueSpeaker[] _speakers;
+	private DialogueSpeakerBase[] _speakers;
 
 	[SerializeField]
 	[Tooltip("An event that is triggered when the dialogue has started playing.")]
@@ -80,7 +80,7 @@ public class DialoguePlayer : MonoBehaviour
 
 		foreach (var speaker in _speakers)
 		{
-			var nameAsyncOperation = speaker.name.GetLocalizedStringAsync();
+			var nameAsyncOperation = speaker.speakerName.GetLocalizedStringAsync();
 			yield return new WaitUntil(() => nameAsyncOperation.IsDone);
 			_speakerNames.Add(nameAsyncOperation.Result);
 		}

@@ -1,0 +1,22 @@
+using UnityEngine;
+using UnityEngine.Events;
+
+/// <summary>
+/// An interactable object that calls an event when interacted with.
+/// </summary>
+public class EventInteractable : Interactable
+{
+	[SerializeField]
+	private UnityEvent _event;
+
+	public override bool CanBeInteractedWith(Player player)
+	{
+		return true;
+	}
+
+	public override bool Interact(Player player)
+	{
+		_event.Invoke();
+		return true;
+	}
+}
