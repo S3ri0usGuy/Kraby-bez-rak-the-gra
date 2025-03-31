@@ -6,19 +6,23 @@ using UnityEngine;
 /// </summary>
 public class Clock : SingletonMonoBehaviour<Clock>
 {
-	private int _minutesLeft = 60 * 24;
+	private int _minutesLeft = -1;
 
 	[SerializeField]
 	[Tooltip("How many minutes player is given at the start.")]
 	private int _minutesAtStart = 60 * 24;
 
 	/// <summary>
-	/// Gets a number of minutes left.
+	/// Gets/sets a number of minutes left.
 	/// </summary>
+	/// <remarks>
+	/// Please, consider using the <see cref="SpendMinutes(int)" /> method instead
+	/// of directly setting this property unless you know what you are doing.
+	/// </remarks>
 	public int minutesLeft
 	{
 		get => _minutesLeft;
-		private set
+		set
 		{
 			if (value <= 0)
 			{
@@ -35,6 +39,11 @@ public class Clock : SingletonMonoBehaviour<Clock>
 	}
 
 	/// <summary>
+	/// Gets a number of minutes that player is given at the start.
+	/// </summary>
+	public int minutesAtStart => _minutesAtStart;
+
+	/// <summary>
 	/// An event that is triggered when the in-game time changes.
 	/// </summary>
 	public Action<Clock> timeUpdated;
@@ -47,7 +56,7 @@ public class Clock : SingletonMonoBehaviour<Clock>
 	protected override void Awake()
 	{
 		base.Awake();
-		_minutesLeft = _minutesAtStart;
+		if (_minutesLeft == -1) _minutesLeft = _minutesAtStart;
 	}
 
 	public void SpendMinutes(int minutes)

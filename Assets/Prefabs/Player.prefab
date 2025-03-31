@@ -450,6 +450,65 @@ MonoBehaviour:
   _target: {fileID: 2682713552509663914}
   _movement: {fileID: 8071002768384477643}
   _yAxisThreshold: -0.1
+--- !u!1 &1693578041884701718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3974216078320560098}
+  - component: {fileID: 1838120078739031963}
+  - component: {fileID: 461929490183140148}
+  m_Layer: 3
+  m_Name: Clock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3974216078320560098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693578041884701718}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7119086467292122724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1838120078739031963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693578041884701718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0906aa1be750273419910addfa632edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minutesAtStart: 1440
+--- !u!114 &461929490183140148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693578041884701718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9af280732ba5e4398daf89f59ea658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: ingame_clock
 --- !u!1 &1994533861749571748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1076,7 @@ Transform:
   - {fileID: 5957870956636181333}
   - {fileID: 2682713552509663914}
   - {fileID: 9049308865856208928}
+  - {fileID: 3974216078320560098}
   - {fileID: 1410108630627435345}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
