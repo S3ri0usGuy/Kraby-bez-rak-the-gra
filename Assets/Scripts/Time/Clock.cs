@@ -46,12 +46,12 @@ public class Clock : SingletonMonoBehaviour<Clock>
 	/// <summary>
 	/// An event that is triggered when the in-game time changes.
 	/// </summary>
-	public Action<Clock> timeUpdated;
+	public event Action<Clock> timeUpdated;
 
 	/// <summary>
 	/// An event that is triggered when all minutes have been spent.
 	/// </summary>
-	public Action<Clock> timeOver;
+	public event Action<Clock> timeOver;
 
 	protected override void Awake()
 	{
@@ -67,7 +67,7 @@ public class Clock : SingletonMonoBehaviour<Clock>
 			return;
 		}
 
-		if (minutes < minutesLeft)
+		if (minutesLeft < minutes)
 		{
 			Debug.LogWarning($"Requested to spend {minutes}, but only {minutesLeft} minutes are left.");
 			minutesLeft = 0;
