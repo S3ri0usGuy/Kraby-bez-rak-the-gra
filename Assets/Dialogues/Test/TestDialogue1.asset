@@ -79,8 +79,11 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _branching:
-      _defaultNextNode: {fileID: 11400000, guid: 16348b85c526171458b8f2f26b3c8749, type: 2}
-      _branches: []
+      _defaultNextNode: {fileID: 0}
+      _branches:
+      - _node: {fileID: 11400000, guid: 16348b85c526171458b8f2f26b3c8749, type: 2}
+        _conditions:
+        - {fileID: 11400000, guid: ed42e5881d9821049bd3d74e1f80cbc9, type: 2}
   _answerParams:
     _answerType: 2
     _timeToAnswer: 5
