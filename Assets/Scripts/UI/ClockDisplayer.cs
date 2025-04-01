@@ -13,10 +13,13 @@ public class ClockDisplayer : MonoBehaviour
 
 	private void Start()
 	{
-		_clock = Clock.instance;
-		_clock.timeUpdated += OnUpdated;
+		if (Clock.exists)
+		{
+			_clock = Clock.instance;
+			_clock.timeUpdated += OnUpdated;
 
-		UpdateTime();
+			UpdateTime();
+		}
 	}
 
 	private void UpdateTime()
