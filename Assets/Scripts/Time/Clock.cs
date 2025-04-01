@@ -67,14 +67,6 @@ public class Clock : SingletonMonoBehaviour<Clock>
 			return;
 		}
 
-		if (minutesLeft < minutes)
-		{
-			Debug.LogWarning($"Requested to spend {minutes}, but only {minutesLeft} minutes are left.");
-			minutesLeft = 0;
-		}
-		else
-		{
-			minutesLeft -= minutes;
-		}
+		minutesLeft -= minutes;
 	}
 }
