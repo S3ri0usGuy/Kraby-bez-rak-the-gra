@@ -53,6 +53,13 @@ MonoBehaviour:
     - Locale-en-US
     - Locale-pl-PL
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c3d4c4b5a4044b498a350e69e1fa44a
+    m_Address: Michele_Narrator_Dlg1_Yes3
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 744e109c41352994db2685ec1b9ac6ec
     m_Address: Assets/Dialogues/Michele/MicheleDialogues Shared Data.asset
     m_ReadOnly: 1
