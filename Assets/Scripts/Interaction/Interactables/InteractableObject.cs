@@ -9,6 +9,10 @@ public abstract class Interactable : MonoBehaviour
 	[Tooltip("An action name displayed on the UI canvas.")]
 	private string _actionName;
 
+	[SerializeField]
+	[Tooltip("If checked, then this object will not be interactable when the time was spent.")]
+	private bool _requiresTime = true;
+
 	/// <summary>
 	/// Gets an action name displayed on the UI canvas.
 	/// </summary>
@@ -21,7 +25,24 @@ public abstract class Interactable : MonoBehaviour
 	/// <returns>
 	/// A flag determining whether the object is interactable at this moment.
 	/// </returns>
-	public abstract bool CanBeInteractedWith(Player player);
+	protected abstract bool CanBeInteractedWith(Player player);
+
+	/// <summary>
+	/// Checks whether the object is interactable at this moment.
+	/// </summary>
+	/// <param name="player">A player that wants to interact with the object.</param>
+	/// <returns>
+	/// A flag determining whether the object is interactable at this moment.
+	/// </returns>
+	public bool IsInteractable(Player player)
+	{
+		if (Clock.exists && _requiresTime && Clock.instance.minutesLeft <= 0)
+		{
+			return false;
+		}
+
+		return CanBeInteractedWith(player);
+	}
 
 	/// <summary>
 	/// A method that is called when the player presses the "interact" button.

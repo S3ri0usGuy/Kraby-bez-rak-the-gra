@@ -225,9 +225,6 @@ public class DialoguePlayer : MonoBehaviour
 
 	private void InternalPlay(DialogueNode node, IDialogueListener listener)
 	{
-		// TODO: switch camera position
-		// TODO: block input
-
 		_listener = listener;
 		_isPlaying = true;
 

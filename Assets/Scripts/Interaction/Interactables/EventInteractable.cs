@@ -9,7 +9,7 @@ public class EventInteractable : Interactable
 	[SerializeField]
 	private UnityEvent _event;
 
-	public override bool CanBeInteractedWith(Player player)
+	protected override bool CanBeInteractedWith(Player player)
 	{
 		return true;
 	}

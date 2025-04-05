@@ -38,7 +38,7 @@ MonoBehaviour:
     _answerType: 0
     _timeToAnswer: 5
   _branching:
-    _defaultNextNode: {fileID: 0}
+    _defaultNextNode: {fileID: 11400000, guid: 5316bd2648c7fe74fb25857532cb2745, type: 2}
     _branches: []
   references:
     version: 2

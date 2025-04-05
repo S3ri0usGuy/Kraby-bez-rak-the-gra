@@ -24,15 +24,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 662898057216
-    m_Key: michele_p_dlg1_yes
-    m_Metadata:
-      m_Items: []
-  - m_Id: 676445659136
-    m_Key: michele_p_dlg1_no
+    m_Key: michele_p_dlg1_yes1
     m_Metadata:
       m_Items: []
   - m_Id: 160139026735104
     m_Key: michele_dlg1_yes2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 676445659136
+    m_Key: michele_p_dlg1_no
     m_Metadata:
       m_Items: []
   m_Metadata:
