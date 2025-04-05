@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.Localization.Tables;
 
 /// <summary>
 /// A component that is responsible for playing the dialogue nodes
@@ -80,9 +81,16 @@ public class DialoguePlayer : MonoBehaviour
 
 		foreach (var speaker in _speakers)
 		{
-			var nameAsyncOperation = speaker.speakerName.GetLocalizedStringAsync();
-			yield return new WaitUntil(() => nameAsyncOperation.IsDone);
-			_speakerNames.Add(nameAsyncOperation.Result);
+			if (speaker.speakerName.TableReference.ReferenceType != TableReference.Type.Empty)
+			{
+				var nameAsyncOperation = speaker.speakerName.GetLocalizedStringAsync();
+				yield return new WaitUntil(() => nameAsyncOperation.IsDone);
+				_speakerNames.Add(nameAsyncOperation.Result);
+			}
+			else
+			{
+				_speakerNames.Add(null);
+			}
 		}
 
 		foreach (var phrase in _currentNode.phrases)

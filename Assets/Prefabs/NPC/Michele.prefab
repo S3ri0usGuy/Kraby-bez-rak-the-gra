@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1089758382589296973}
-  - component: {fileID: 5498662724718871715}
-  - component: {fileID: 2101857601910428059}
   m_Layer: 0
   m_Name: Dlg1-Yes
   m_TagString: Untagged
@@ -30,16 +28,140 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5979879405986013709}
+  - {fileID: 7054035207785299984}
   m_Father: {fileID: 3546271629156824075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5498662724718871715
+--- !u!1 &4576321243900624625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7054035207785299984}
+  - component: {fileID: 7229473546119391022}
+  - component: {fileID: 4834651463803723095}
+  m_Layer: 0
+  m_Name: NarratorScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7054035207785299984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576321243900624625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1089758382589296973}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7229473546119391022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427441610830166199}
+  m_GameObject: {fileID: 4576321243900624625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5a161e10a5c434ea551b40dcc52c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetNode: {fileID: 11400000, guid: 9a083d1fd1969ed438422ef9564e0566, type: 2}
+  _started:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4834651463803723095}
+        m_TargetAssemblyTypeName: NarrationAction, Assembly-CSharp
+        m_MethodName: ShowScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _ended:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4834651463803723095}
+        m_TargetAssemblyTypeName: NarrationAction, Assembly-CSharp
+        m_MethodName: HideScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _phraseIndex: 2
+--- !u!114 &4834651463803723095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576321243900624625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429cd86598f374343b12347b60db3a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5687224060582102755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5979879405986013709}
+  - component: {fileID: 3968243159474973247}
+  - component: {fileID: 5389815433664009162}
+  m_Layer: 0
+  m_Name: SpendTime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5979879405986013709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687224060582102755}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1089758382589296973}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3968243159474973247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687224060582102755}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab5a161e10a5c434ea551b40dcc52c66, type: 3}
@@ -52,7 +174,7 @@ MonoBehaviour:
   _ended:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2101857601910428059}
+      - m_Target: {fileID: 5389815433664009162}
         m_TargetAssemblyTypeName: SpendTimeAction, Assembly-CSharp
         m_MethodName: Perform
         m_Mode: 1
@@ -65,13 +187,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _phraseIndex: 0
---- !u!114 &2101857601910428059
+--- !u!114 &5389815433664009162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427441610830166199}
+  m_GameObject: {fileID: 5687224060582102755}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0490254f1f3c849439ca25acc6230121, type: 3}
@@ -156,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5370541392418113586, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
       propertyPath: m_Name
-      value: Michele Variant
+      value: Michele
       objectReference: {fileID: 0}
     - target: {fileID: 5990903845403365547, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

@@ -10,12 +10,9 @@ public class DialogueSpeaker : DialogueSpeakerBase
 	private AudioSource _audioSource;
 
 	[SerializeField]
-	[Tooltip("A localized name of the speaker.")]
+	[Tooltip("An optional localized name of the speaker.")]
 	private LocalizedString _name;
 
-	/// <summary>
-	/// Gets a localized name of the speaker.
-	/// </summary>
 	public override LocalizedString speakerName => _name;
 
 	private void Awake()

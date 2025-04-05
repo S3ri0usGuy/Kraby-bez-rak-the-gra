@@ -43,6 +43,11 @@ MonoBehaviour:
     m_Localized: "P\xF3jmy na pohybel skurwysynom!\r"
     m_Metadata:
       m_Items: []
+  - m_Id: 188522179698688
+    m_Localized: "Pili\u015Bcie przez ca\u0142y dzie\u0144. Nigdy nie zapomnisz tego
+      dnia. Tylko \u017Ce <i>zapomnisz</i>, bo film ci si\u0119 urwa\u0142."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
