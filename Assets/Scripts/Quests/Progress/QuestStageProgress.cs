@@ -1,9 +1,7 @@
-using UnityEngine;
-
 /// <summary>
 /// A class that shows the progress of the quest objective.
 /// </summary>
-public class QuestStageProgress : MonoBehaviour
+public class QuestStageProgress
 {
 	/// <summary>
 	/// Gets the stage.
@@ -11,7 +9,13 @@ public class QuestStageProgress : MonoBehaviour
 	public QuestStage stage { get; }
 
 	/// <summary>
-	/// Gets the state of the quest stage.
+	/// Gets/sets the state of the quest stage.
 	/// </summary>
-	public QuestStageState state { get; }
+	public QuestStageState state { get; set; }
+
+	public QuestStageProgress(QuestStage stage, QuestStageState state)
+	{
+		this.stage = stage;
+		this.state = state;
+	}
 }

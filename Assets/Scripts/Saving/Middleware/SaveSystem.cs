@@ -5,7 +5,7 @@ using UnityEngine;
 
 /// <summary>
 /// A Unity object singleton which tracks savable objects,
-/// keeps the save slot in memory and allows data saving..
+/// keeps the save slot in memory and allows data saving.
 /// </summary>
 public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 {
