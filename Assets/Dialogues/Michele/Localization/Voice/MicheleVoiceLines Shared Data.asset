@@ -31,6 +31,10 @@ MonoBehaviour:
     m_Key: michele_p_dlg1_no
     m_Metadata:
       m_Items: []
+  - m_Id: 160139026735104
+    m_Key: michele_dlg1_yes2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 4023525476927275010
@@ -60,6 +64,10 @@ MonoBehaviour:
           - en-US
           - pl-PL
         - m_KeyId: 648851333120
+          m_TableCodes:
+          - en-US
+          - pl-PL
+        - m_KeyId: 160139026735104
           m_TableCodes:
           - en-US
           - pl-PL

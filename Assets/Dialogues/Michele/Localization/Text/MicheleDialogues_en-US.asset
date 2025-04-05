@@ -39,6 +39,10 @@ MonoBehaviour:
     m_Localized: Michele
     m_Metadata:
       m_Items: []
+  - m_Id: 159787116240896
+    m_Localized: "Let\u2019s drink these bastards to hell!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -39,6 +39,10 @@ MonoBehaviour:
     m_Localized: Michele
     m_Metadata:
       m_Items: []
+  - m_Id: 159787116240896
+    m_Localized: "P\xF3jmy na pohybel skurwysynom!\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
