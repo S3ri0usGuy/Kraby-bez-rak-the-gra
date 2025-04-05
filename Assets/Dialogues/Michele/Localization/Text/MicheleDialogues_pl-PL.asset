@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 895396716544
-    m_Localized: "Wieczorem do woja idziemy. Chod\u017C si\u0119 napij!\r"
+    m_Localized: "Wieczorem do woja idziemy. Chod\u017A si\u0119 napij!\r"
     m_Metadata:
       m_Items: []
   - m_Id: 3058772582400
@@ -31,8 +31,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3100556238848
-    m_Localized: "Niechce pi\u0107, chce sp\u0119dzi\u0107 sw\xF3j ostatni dzie\u0144
-      wolno\u015Bci inaczej."
+    m_Localized: "Nie chc\u0119 pi\u0107, chc\u0119 sp\u0119dzi\u0107 sw\xF3j ostatni
+      dzie\u0144 wolno\u015Bci inaczej."
     m_Metadata:
       m_Items: []
   - m_Id: 17616341934080
@@ -45,7 +45,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 188522179698688
     m_Localized: "Pili\u015Bcie przez ca\u0142y dzie\u0144. Nigdy nie zapomnisz tego
-      dnia. Tylko \u017Ce <i>zapomnisz</i>, bo film ci si\u0119 urwa\u0142."
+      dnia. Tylko \u017Ce zapomnisz, bo film ci si\u0119 urwa\u0142."
     m_Metadata:
       m_Items: []
   references:

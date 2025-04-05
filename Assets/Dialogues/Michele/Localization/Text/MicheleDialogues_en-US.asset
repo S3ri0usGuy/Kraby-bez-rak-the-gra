@@ -45,7 +45,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 188522179698688
     m_Localized: "You drank all day. You\u2019ll never forget this day. Except you
-      <i>will</i> \u2014 you blacked out."
+      will \u2014 you blacked out."
     m_Metadata:
       m_Items: []
   references:
