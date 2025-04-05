@@ -61,7 +61,7 @@ public class DialogueBranching
 	/// </summary>
 	/// <returns>
 	/// The first available dialogue node from the <see cref="branches" /> or
-	/// the <see cref="defaultNextNode" />. Can be <see langword="null" />
+	/// the <see cref="defaultNextNode" />. Can be <see langword="null" />.
 	/// </returns>
 	public DialogueNode SelectNode()
 	{

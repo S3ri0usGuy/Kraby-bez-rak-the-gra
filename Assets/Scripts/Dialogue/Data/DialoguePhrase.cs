@@ -10,7 +10,7 @@ public class DialoguePhrase
 {
 	[SerializeField]
 	[Tooltip("An index of the speaker who says this phrase. " +
-		"Usually, it's 0 for the player and 1 for the NPC.")]
+		"Usually, it's 0 for the player, 1 for the NPC, 2 for the narrator.")]
 	private int _speakerIndex;
 	[SerializeField]
 	[Tooltip("A localized text of the phrase.")]

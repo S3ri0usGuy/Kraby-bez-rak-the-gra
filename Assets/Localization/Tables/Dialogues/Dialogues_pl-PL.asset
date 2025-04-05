@@ -50,6 +50,10 @@ MonoBehaviour:
     m_Localized: "Kto\u015B"
     m_Metadata:
       m_Items: []
+  - m_Id: 17459501356392448
+    m_Localized: Pier
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

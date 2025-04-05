@@ -7,7 +7,7 @@ using UnityEngine.Localization;
 public abstract class DialogueSpeakerBase : MonoBehaviour
 {
 	/// <summary>
-	/// Gets a localized name of the speaker.
+	/// Gets a localized name of the speaker. Can be <see langword="null" />.
 	/// </summary>
 	public abstract LocalizedString speakerName { get; }
 

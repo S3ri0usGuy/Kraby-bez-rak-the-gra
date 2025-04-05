@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-Asset-Tables-Polish (Poland) (pl-PL)
   m_GUID: 3b94646835c3f294fa4a8528e7ed7cc6
   m_SerializeEntries:
+  - m_GUID: 0614d92cf2c7a74428a2f3568fdc7033
+    m_Address: MicheleVoiceLines_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 965a56a02415bea49ba165c2011267e5
     m_Address: VoiceLines_pl-PL
     m_ReadOnly: 1

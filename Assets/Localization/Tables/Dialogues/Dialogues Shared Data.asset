@@ -47,6 +47,10 @@ MonoBehaviour:
     m_Key: test_name_1
     m_Metadata:
       m_Items: []
+  - m_Id: 17459501356392448
+    m_Key: player_name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
