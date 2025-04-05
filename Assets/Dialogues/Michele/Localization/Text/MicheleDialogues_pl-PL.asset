@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MicheleDialogues_pl-PL
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl-PL
+  m_SharedData: {fileID: 11400000, guid: 744e109c41352994db2685ec1b9ac6ec, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 423105503232
+    m_Localized: "O witaj. Hik... Ty jeszcz trze\u017Awy?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 895396716544
+    m_Localized: "Wieczorem do woja idziemy. Chod\u017C si\u0119 napij!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3058772582400
+    m_Localized: "Dwa razy nie musisz m\xF3wi\u0107."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3100556238848
+    m_Localized: "Niechce pi\u0107, chce sp\u0119dzi\u0107 sw\xF3j ostatni dzie\u0144
+      wolno\u015Bci inaczej."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17616341934080
+    m_Localized: Michele
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
