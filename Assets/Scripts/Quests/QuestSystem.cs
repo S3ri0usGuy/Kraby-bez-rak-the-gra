@@ -117,13 +117,38 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 			}
 
 			oldState = progress.state;
-			progress.state = state;
 		}
 		else
 		{
-			_quests[quest] = new QuestProgress(quest, state);
+			// Set the state to None by default to prevent warnings
+			progress = _quests[quest] = new QuestProgress(quest, QuestState.None);
 			questStarted?.Invoke(this, quest);
 		}
+
+		if (state == QuestState.Completed || state == QuestState.Failed)
+		{
+			List<(QuestStage, QuestStageState)> valuesToSet = new();
+			foreach (var (stage, stageState) in progress.stages)
+			{
+				if (stageState != QuestStageState.Active)
+					continue;
+
+				var action = state == QuestState.Completed ? stage.actionOnQuestPassed : stage.actionOnQuestFailed;
+
+				if (action == QuestStage.StateAction.None)
+					continue;
+
+				var newStageState = action == QuestStage.StateAction.Pass ? QuestStageState.Completed : QuestStageState.Failed;
+				valuesToSet.Add((stage, newStageState));
+			}
+			// Prevents the "Collection was modified" error
+			foreach (var (stage, stageState) in valuesToSet)
+			{
+				SetStageState(stage, stageState);
+			}
+		}
+
+		progress.state = state;
 
 		QuestStateUpdatedEventArgs eventArgs = new(quest, oldState, state);
 		questStateUpdated?.Invoke(this, eventArgs);

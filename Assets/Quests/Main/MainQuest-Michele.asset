@@ -22,6 +22,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   _quest: {fileID: 11400000, guid: 44bd6bf8684f4224d9ab075c9c4d1706, type: 2}
+  _actionOnQuestPassed: 1
+  _actionOnQuestFailed: 1
   references:
     version: 2
     RefIds: []
