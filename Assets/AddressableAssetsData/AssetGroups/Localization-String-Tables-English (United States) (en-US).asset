@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 188f3b9872eb5ab4abe301e4cbe20a42
+    m_Address: AugustinDialogues_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1eba33e19d63e9c4ab5ba9917da1ce83
     m_Address: Engings_en-US
     m_ReadOnly: 1
@@ -47,6 +53,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d101541abbe5fc45ae7b07ac7967fe6
     m_Address: ClemenceDialogues_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb2e3d42a74c42a4c98fc187312c0a9f
+    m_Address: NobodyEndingDialogue_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US

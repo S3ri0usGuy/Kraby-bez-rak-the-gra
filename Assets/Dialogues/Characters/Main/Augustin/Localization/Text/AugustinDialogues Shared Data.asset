@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: AugustinDialogues Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: AugustinDialogues
+  m_TableCollectionNameGuidString: ecbed950db5c59c409df212ce4a6c430
+  m_Entries:
+  - m_Id: 9249333248
+    m_Key: augustin_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60705054720
+    m_Key: dlg1_1_augustin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 420807024640
+    m_Key: dlg1_2_augustin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 490776403968
+    m_Key: dlg1_3_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1192558960640
+    m_Key: dlg1_4_augustin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1504359325696
+    m_Key: dlg1_yes1_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2315294449664
+    m_Key: dlg1_yes2_augustin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2349868097536
+    m_Key: dlg1_yes3_narrator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3799834796032
+    m_Key: dlg1_no_pier
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4023525515376722011
+  references:
+    version: 2
+    RefIds:
+    - rid: 4023525515376722011
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1743963030430

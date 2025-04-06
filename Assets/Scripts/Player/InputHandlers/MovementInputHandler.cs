@@ -28,6 +28,7 @@ public class MovementInputHandler : MonoBehaviour
 	private void OnEnable()
 	{
 		_actions.move.performed += OnMovementPerformed;
+		_actions.move.canceled += OnMovementCanceled;
 		_actions.jump.performed += _jumpBuffer.PerformedListener;
 		_actions.sprint.performed += OnSprintPerformed;
 		_actions.sprint.canceled += OnSprintCanceled;
@@ -52,6 +53,11 @@ public class MovementInputHandler : MonoBehaviour
 	private void OnMovementPerformed(InputAction.CallbackContext context)
 	{
 		_movement.axis = context.ReadValue<Vector2>();
+	}
+
+	private void OnMovementCanceled(InputAction.CallbackContext obj)
+	{
+		_movement.axis = Vector2.zero;
 	}
 
 	private void OnSprintPerformed(InputAction.CallbackContext context)

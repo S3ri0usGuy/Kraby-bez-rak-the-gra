@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85337671d674cd541ab491ef9be98654, type: 3}
-  m_Name: EndingDefaultPretext
+  m_Name: NobodyEndingCueNode
   m_EditorClassIdentifier: 
   _phrases:
   - _speakerIndex: 0
     _text:
       m_TableReference:
-        m_TableCollectionName: GUID:23714e90e44598240afe776eabac972d
+        m_TableCollectionName: GUID:da54fd1a4bb4ad844a543faea8ebee12
       m_TableEntryReference:
-        m_KeyId: 5721923584
+        m_KeyId: 6590144512
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -31,21 +31,15 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
-    _duration: 16
-    _unskippable: 0
+    _duration: 12
+    _unskippable: 1
   _options: []
   _answerParams:
     _answerType: 0
     _timeToAnswer: 5
   _branching:
-    _defaultNextNode: {fileID: 11400000, guid: 3e8ba4ed344818e4986b17d2d2572bdc, type: 2}
-    _branches:
-    - _node: {fileID: 11400000, guid: d3f0369ea371711429cb3ee27503883a, type: 2}
-      _conditions:
-      - {fileID: 11400000, guid: 5f217afa9379ee640b59132d14edaa61, type: 2}
-    - _node: {fileID: 11400000, guid: 2e1b8b487bfea5246a94aa11a803f06f, type: 2}
-      _conditions:
-      - {fileID: 11400000, guid: 4576a87ac654c8f4a86269e4c6e29dfc, type: 2}
+    _defaultNextNode: {fileID: 0}
+    _branches: []
   references:
     version: 2
     RefIds: []

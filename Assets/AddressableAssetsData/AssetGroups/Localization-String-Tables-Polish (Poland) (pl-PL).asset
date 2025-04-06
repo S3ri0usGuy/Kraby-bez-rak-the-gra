@@ -27,6 +27,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl-PL
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66559705c2a2bd043a40a8e6821856c9
+    m_Address: AugustinDialogues_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77e06cad84ad6be41a3bbd0bee7ac372
+    m_Address: NobodyEndingDialogue_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a023f58a45b6f0b4baa3407865f0a7ce
     m_Address: Quests_pl-PL
     m_ReadOnly: 1

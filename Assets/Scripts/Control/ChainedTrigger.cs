@@ -23,7 +23,7 @@ public class ChainedTrigger : Trigger
 		{
 			trigger.triggered += OnTriggered;
 		}
-		_wasTriggered = true;
+		_wasTriggered = false;
 	}
 
 	private void OnTriggered(Trigger trigger)
