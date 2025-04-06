@@ -31,8 +31,8 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
-    _duration: 8
-    _unskippable: 0
+    _duration: 16
+    _unskippable: 1
   - _speakerIndex: 0
     _text:
       m_TableReference:
@@ -51,8 +51,8 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
-    _duration: 3
-    _unskippable: 0
+    _duration: 6
+    _unskippable: 1
   _options: []
   _answerParams:
     _answerType: 0

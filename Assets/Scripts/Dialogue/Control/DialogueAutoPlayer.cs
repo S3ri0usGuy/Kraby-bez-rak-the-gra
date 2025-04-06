@@ -1,26 +1,35 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// A component that auto plays the dialogue until it ends on the same node twice.
 /// </summary>
 [DisallowMultipleComponent]
-[RequireComponent(typeof(DialoguePlayer))]
+[RequireComponent(typeof(DialogueActor))]
 public class DialogueAutoPlayer : MonoBehaviour
 {
-	private DialoguePlayer _player;
+	private DialogueActor _actor;
+	private DialogueNode _previousNode;
+
+	[SerializeField]
+	[Tooltip("An event that is triggered when the auto player stopped.")]
+	private UnityEvent _ended;
 
 	private void Awake()
 	{
-		_player = GetComponent<DialoguePlayer>();
-	}
-
-	private void OnEnable()
-	{
-		_player.ended.AddListener(OnDialogueEnded);
+		_actor = GetComponent<DialogueActor>();
+		_actor.dialoguePlayer.ended.AddListener(OnDialogueEnded);
 	}
 
 	private void OnDialogueEnded()
 	{
+		if (_actor.nextNode == _previousNode)
+		{
+			_ended.Invoke();
+			return;
+		}
 
+		_previousNode = _actor.nextNode;
+		_actor.InitiateDialogue();
 	}
 }

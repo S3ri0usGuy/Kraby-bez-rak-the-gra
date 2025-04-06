@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Engings_pl-PL
+  m_Name: Endings_pl-PL
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: pl-PL
@@ -28,7 +28,7 @@ MonoBehaviour:
     m_Localized: "Opr\xF3cz ciebie by\u0142o paru m\u0119\u017Cczyzn z twojej osady,
       kojarzy\u0142e\u015B twarze ka\u017Cdego z nich. Gdy mieli\u015Bcie ju\u017C
       wyruszy\u0107 podbieg\u0142a do ciebie Cl\xE9mence. Poca\u0142owa\u0142a w
-      policzek i w\u0142o\u017Cy\u0142a ci w r\u0119ce chustk\u0119  "
+      policzek i w\u0142o\u017Cy\u0142a ci w r\u0119ce chustk\u0119."
     m_Metadata:
       m_Items: []
   - m_Id: 125238616064
@@ -36,7 +36,7 @@ MonoBehaviour:
       kojarzy\u0142e\u015B twarze ka\u017Cdego z nich. Gdy wyruszyli\u015Bcie spojrza\u0142e\u015B
       m\u0119\u017Cczyzn\u0119 na niedalekim wzg\xF3rzu. przyodziany by\u0142 w biel
       a na plecach mia\u0142 skrzyd\u0142a. Przesta\u0142e\u015B si\u0119 ba\u0107.
-      wiedzia\u0142e\u015B \u017Ce b\xF3g nie pozwoli ci umrze\u0107 "
+      wiedzia\u0142e\u015B \u017Ce b\xF3g nie pozwoli ci umrze\u0107."
     m_Metadata:
       m_Items: []
   - m_Id: 128778608640
@@ -48,13 +48,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 978213249024
-    m_Localized: "Z tego dnia ni\u017C wi\u0119cej nie pami\u0119tasz "
+    m_Localized: "Z tego dnia nic wi\u0119cej nie pami\u0119tasz."
     m_Metadata:
       m_Items: []
   - m_Id: 1178109583360
     m_Localized: "Opr\xF3cz ciebie by\u0142o paru m\u0119\u017Cczyzn z twojej osady,
       kojarzy\u0142e\u015B twarze ka\u017Cdego z nich. Niekt\xF3rych \u017Cegna\u0142y
-      matki i ojcowie, innych \u017Cony. Ciebie jednak nie \u017Cegna\u0142 nikt"
+      matki i ojcowie, innych \u017Cony. Ciebie jednak nie \u017Cegna\u0142 nikt."
     m_Metadata:
       m_Items: []
   references:

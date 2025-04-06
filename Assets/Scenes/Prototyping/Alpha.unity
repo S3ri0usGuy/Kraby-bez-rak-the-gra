@@ -2760,9 +2760,11 @@ GameObject:
   m_Component:
   - component: {fileID: 668095218}
   - component: {fileID: 668095220}
-  - component: {fileID: 668095219}
+  - component: {fileID: 668095222}
+  - component: {fileID: 668095221}
+  - component: {fileID: 668095223}
   m_Layer: 0
-  m_Name: Begining
+  m_Name: Beginning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2777,27 +2779,12 @@ Transform:
   m_GameObject: {fileID: 668095217}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.86, y: 0.9, z: -1.72}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 236002459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &668095219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668095217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b26935c501f4d46b68c1b7da81868c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _performOnEnable: 0
-  _stage: {fileID: 11400000, guid: 930019a1cc227bb44ac1b3d1edf20a2f, type: 2}
-  _action: 2
 --- !u!114 &668095220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2810,15 +2797,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5a161e10a5c434ea551b40dcc52c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetNode: {fileID: 11400000, guid: 68200630572e811408eee048a1a32114, type: 2}
+  _targetNode: {fileID: 11400000, guid: a6dee8980070d5741b524a3c90ae15be, type: 2}
   _started:
     m_PersistentCalls:
       m_Calls: []
   _ended:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 668095219}
-        m_TargetAssemblyTypeName: QuestStageAction, Assembly-CSharp
+      - m_Target: {fileID: 668095222}
+        m_TargetAssemblyTypeName: QuestAction, Assembly-CSharp
         m_MethodName: Perform
         m_Mode: 1
         m_Arguments:
@@ -2829,7 +2816,70 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 668095221}
+        m_TargetAssemblyTypeName: PlayerLockAction, Assembly-CSharp
+        m_MethodName: Lock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 668095223}
+        m_TargetAssemblyTypeName: NarrationAction, Assembly-CSharp
+        m_MethodName: ShowScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _phraseIndex: 0
+--- !u!114 &668095221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668095217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f49c1f59ee1ca84090e381e7a6cdc83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &668095222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668095217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daff5ecd29fdccc479a68d8eb2da8d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _performOnEnable: 0
+  _quest: {fileID: 11400000, guid: 1f5bea21876b2324fb42e20a0e5d8929, type: 2}
+  _action: 1
+--- !u!114 &668095223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668095217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429cd86598f374343b12347b60db3a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &755420077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3099,8 +3149,8 @@ GameObject:
   - component: {fileID: 1071971656}
   - component: {fileID: 1071971660}
   - component: {fileID: 1071971659}
-  - component: {fileID: 1071971658}
-  - component: {fileID: 1071971657}
+  - component: {fileID: 1071971661}
+  - component: {fileID: 1071971662}
   m_Layer: 0
   m_Name: GameEndingDialogue
   m_TagString: Untagged
@@ -3125,32 +3175,6 @@ Transform:
   - {fileID: 236002459}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1071971657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071971655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429cd86598f374343b12347b60db3a1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1071971658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071971655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09893f7c3d57d9c44a796bf3bcc84a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
-  _lookTarget: {fileID: 0}
 --- !u!114 &1071971659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3167,19 +3191,7 @@ MonoBehaviour:
   - {fileID: 1712932879}
   _started:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1071971657}
-        m_TargetAssemblyTypeName: NarrationAction, Assembly-CSharp
-        m_MethodName: ShowScreen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _ended:
     m_PersistentCalls:
       m_Calls: []
@@ -3197,6 +3209,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firstNode: {fileID: 11400000, guid: a6dee8980070d5741b524a3c90ae15be, type: 2}
   _dialoguePlayer: {fileID: 1071971659}
+--- !u!114 &1071971661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071971655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17565d35ae63bc408b7e2c38171bdf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ended:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1071971662}
+        m_TargetAssemblyTypeName: EndGameAction, Assembly-CSharp
+        m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1071971662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071971655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6875654c8cf4b5a44b5172506f37b3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1262224479
 GameObject:
   m_ObjectHideFlags: 0
@@ -31291,9 +31342,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8089808887215632382, guid: 50dc2050381d60d4a822b3194f863a8e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3154116607
+      objectReference: {fileID: 0}
     - target: {fileID: 8724060934076473282, guid: 50dc2050381d60d4a822b3194f863a8e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8771152792442964525, guid: 50dc2050381d60d4a822b3194f863a8e, type: 3}
       propertyPath: m_Name
