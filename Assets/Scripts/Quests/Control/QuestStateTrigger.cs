@@ -15,7 +15,7 @@ public class QuestStateTrigger : MonoBehaviour
 	}
 
 	[SerializeField]
-	private Quest _stage;
+	private Quest _quest;
 	[SerializeField]
 	[Tooltip("An option that defines when the event is triggered.")]
 	private TriggerType _triggerType;
@@ -50,7 +50,7 @@ public class QuestStateTrigger : MonoBehaviour
 
 	private void OnQuestUpdated(QuestSystem questSystem, QuestStateUpdatedEventArgs e)
 	{
-		if (IsTriggered(e.newQuestState))
+		if (_quest == e.quest && IsTriggered(e.newQuestState))
 		{
 			_triggered.Invoke();
 		}

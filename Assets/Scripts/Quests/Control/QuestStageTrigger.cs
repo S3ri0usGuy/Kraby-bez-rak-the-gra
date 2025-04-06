@@ -50,7 +50,7 @@ public class QuestStageTrigger : MonoBehaviour
 
 	private void OnStageUpdated(QuestSystem questSystem, QuestStageUpdatedEventArgs e)
 	{
-		if (IsTriggered(e.newStageState))
+		if (e.stage == _stage && IsTriggered(e.newStageState))
 		{
 			_triggered.Invoke();
 		}

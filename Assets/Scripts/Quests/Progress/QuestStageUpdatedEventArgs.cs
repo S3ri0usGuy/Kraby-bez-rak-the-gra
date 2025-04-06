@@ -1,12 +1,14 @@
 public class QuestStageUpdatedEventArgs
 {
-	public Quest quest { get; }
+	public QuestStage stage { get; }
 	public QuestStageState oldStageState { get; }
 	public QuestStageState newStageState { get; }
 
-	public QuestStageUpdatedEventArgs(Quest quest, QuestStageState oldStageState, QuestStageState newStageState)
+	public Quest quest => stage.quest;
+
+	public QuestStageUpdatedEventArgs(QuestStage stage, QuestStageState oldStageState, QuestStageState newStageState)
 	{
-		this.quest = quest;
+		this.stage = stage;
 		this.oldStageState = oldStageState;
 		this.newStageState = newStageState;
 	}

@@ -8,10 +8,13 @@ public class QuestAction : MonoBehaviour
 {
 	public enum QuestActionType
 	{
+		Reveal,
 		Complete,
 		Fail
 	}
 
+	[SerializeField]
+	private bool _performOnEnable = false;
 	[SerializeField]
 	[Tooltip("A quest that is the receiver of this action.")]
 	private Quest _quest;
@@ -19,15 +22,33 @@ public class QuestAction : MonoBehaviour
 	[Tooltip("An action to perform.")]
 	private QuestActionType _action;
 
+	private void OnEnable()
+	{
+		if (_performOnEnable)
+		{
+			Perform();
+		}
+	}
+
 	public void Perform()
 	{
-		QuestState state = _action switch
+		QuestSystem questSystem = QuestSystem.instance;
+		switch (_action)
 		{
-			QuestActionType.Complete => QuestState.Completed,
-			QuestActionType.Fail => QuestState.Failed,
-			_ => throw new System.InvalidOperationException("Invalid quest action type.")
-		};
+			case QuestActionType.Reveal:
+				if (questSystem.GetQuestState(_quest) == QuestState.None)
+				{
+					questSystem.SetQuestState(_quest, QuestState.Active);
+				}
+				break;
 
-		QuestSystem.instance.SetQuestState(_quest, state);
+			case QuestActionType.Complete:
+				questSystem.SetQuestState(_quest, QuestState.Completed);
+				break;
+
+			case QuestActionType.Fail:
+				questSystem.SetQuestState(_quest, QuestState.Failed);
+				break;
+		}
 	}
 }

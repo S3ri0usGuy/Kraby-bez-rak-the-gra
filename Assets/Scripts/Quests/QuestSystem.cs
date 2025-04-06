@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 {
 	private Dictionary<Quest, QuestProgress> _quests = new();
 
-	public delegate void QuestAction(QuestSystem questSystem, Quest e);
+	public delegate void QuestAction(QuestSystem questSystem, Quest quest);
 	public delegate void QuestStateUpdatedAction(QuestSystem questSystem, QuestStateUpdatedEventArgs e);
 	public delegate void QuestStageUpdatedAction(QuestSystem questSystem, QuestStageUpdatedEventArgs e);
 
@@ -38,6 +39,37 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 	public void LoadQuests(Dictionary<Quest, QuestProgress> quests)
 	{
 		_quests = quests;
+	}
+
+	/// <summary>
+	/// Gets an enumerable containing all active, completed and failed quests.
+	/// </summary>
+	/// <returns>An enumerable containing all active, completed and failed quests.</returns>
+	public IEnumerable<Quest> GetQuests()
+	{
+		return _quests.Keys;
+	}
+
+	/// <summary>
+	/// Gets an enumerable containing all active, completed and failed stages of the quest.
+	/// </summary>
+	/// <returns>
+	/// An enumerable containing all active, completed and failed stages of the quest.
+	/// Empty if the quest was not found or if it has no stages.
+	/// </returns>
+	/// <exception cref="System.ArgumentNullException" />
+	public IEnumerable<QuestStage> GetQuestStages(Quest quest)
+	{
+		if (!quest)
+		{
+			throw new System.ArgumentNullException(nameof(quest));
+		}
+
+		if (_quests.TryGetValue(quest, out var progress))
+		{
+			return progress.stages.Keys;
+		}
+		return Enumerable.Empty<QuestStage>();
 	}
 
 	/// <summary>
@@ -162,7 +194,7 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 		var oldState = questProgress.GetStage(stage);
 		questProgress.SetStage(stage, state);
 
-		QuestStageUpdatedEventArgs eventArgs = new(quest, oldState, state);
+		QuestStageUpdatedEventArgs eventArgs = new(stage, oldState, state);
 		questStageUpdated?.Invoke(this, eventArgs);
 	}
 }
