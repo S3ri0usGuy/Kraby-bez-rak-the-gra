@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85337671d674cd541ab491ef9be98654, type: 3}
+  m_Name: EndingHeadNode
+  m_EditorClassIdentifier: 
+  _phrases: []
+  _options: []
+  _answerParams:
+    _answerType: 0
+    _timeToAnswer: 5
+  _branching:
+    _defaultNextNode: {fileID: 11400000, guid: 80a05f31a6110b245a6203a5e38d9882, type: 2}
+    _branches:
+    - _node: {fileID: 11400000, guid: 34648ad5f44b3dc49ad028f30e350249, type: 2}
+      _conditions:
+      - {fileID: 11400000, guid: 7db1fb875c2873641bf30117599fc23c, type: 2}
+  references:
+    version: 2
+    RefIds: []

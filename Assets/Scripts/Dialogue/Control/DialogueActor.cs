@@ -26,6 +26,11 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 	/// </summary>
 	public DialogueNode nextNode => _nextNode;
 
+	/// <summary>
+	/// Gets the dialogue player that is used by this component.
+	/// </summary>
+	public DialoguePlayer dialoguePlayer => _dialoguePlayer;
+
 	public delegate void PhraseStartedHandler(DialoguePhraseContext context);
 	public delegate void PhraseEndedHandler(DialoguePhraseContext context);
 	public delegate void OptionChosenHandler(DialogueOptionContext context);

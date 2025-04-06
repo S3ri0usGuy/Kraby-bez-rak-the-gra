@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Endings_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 23714e90e44598240afe776eabac972d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 128778608640
+    m_Localized: "You went to the designated place, drunk. The soldiers were already
+      waiting, impatiently. When you and Michel arrived, they cursed you out \u2014
+      said it would be hard marching with you. But then they added that they understood.
+      They had done the same when they were drafted."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 978213249024
+    m_Localized: You remember nothing more of that day.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5721923584
+    m_Localized: "You went to the designated place \u2014 the soldiers were already
+      waiting impatiently. They couldn\u2019t understand why you'd been given the
+      whole day instead of leaving the town immediately after the lottery was announced."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776379146240
+    m_Localized: "There were a few other men from your village besides you \u2014
+      you recognized each of their faces. Just as you were about to leave, Cl\xE9mence
+      ran up to you. She kissed you on the cheek and placed a handkerchief in your
+      hand."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 125238616064
+    m_Localized: "There were a few other men from your village besides you \u2014
+      you recognized each of their faces. As you departed, you looked toward a man
+      standing on a nearby hill. He was clad in white, with wings on his back. You
+      stopped being afraid. You knew God would not let you die."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1178109583360
+    m_Localized: "There were a few other men from your village besides you \u2014
+      you recognized each of their faces. Some were being seen off by mothers and
+      fathers, others by their wives. But no one came to see you off."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

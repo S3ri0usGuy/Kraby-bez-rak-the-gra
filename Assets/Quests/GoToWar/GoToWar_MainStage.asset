@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44a2d0fffb3e32d4995c5e972388300f, type: 3}
-  m_Name: MainQuest-Clementine
+  m_Name: GoToWar_MainStage
   m_EditorClassIdentifier: 
   _description:
     m_TableReference:
       m_TableCollectionName: GUID:60cbd1d65f7591744898ac7da59c0e9c
     m_TableEntryReference:
-      m_KeyId: 57110536192
+      m_KeyId: 141973835849728
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  _quest: {fileID: 11400000, guid: 44bd6bf8684f4224d9ab075c9c4d1706, type: 2}
-  _actionOnQuestPassed: 1
+  _quest: {fileID: 11400000, guid: 1f5bea21876b2324fb42e20a0e5d8929, type: 2}
+  _actionOnQuestPassed: 2
   _actionOnQuestFailed: 1
   references:
     version: 2
