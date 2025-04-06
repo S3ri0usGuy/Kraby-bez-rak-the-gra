@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: ClemenceDialogues_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: de3484e8d230c7a458dcdb74bdc76e3d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6854385664
+    m_Localized: "Pier\u2026 I\u2019m glad to see you. You were chosen to go to war,
+      right?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11203878912
+    m_Localized: Yes. It feels like my whole life until now was just a dream, and
+      only now am I making choices that actually matter.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13217144832
+    m_Localized: "The worst part is\u2026 I don\u2019t even know how to spend my
+      last day here."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15410765824
+    m_Localized: "If you\u2019d like\u2026 we could just talk."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 355665289216
+    m_Localized: Yes. Talking might quiet my restless thoughts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 444324487168
+    m_Localized: "I don\u2019t know if it\u2019s true, but my parents used to say,
+      \u201CGirls line up for a man in uniform.\u201D Hehe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 830724743168
+    m_Localized: "At one point, Pier kissed Cl\xE9mence, who blushed and ran off."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 909925785600
+    m_Localized: "Pier and Cl\xE9mence spent a lovely time together, talking about
+      everything and nothing. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1125622063104
+    m_Localized: Sorry, but I have other things to do.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3046613295104
+    m_Localized: "Cl\xE9mence"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

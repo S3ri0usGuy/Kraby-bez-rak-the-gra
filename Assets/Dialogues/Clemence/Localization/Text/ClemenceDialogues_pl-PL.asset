@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: ClemenceDialogues_pl-PL
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl-PL
+  m_SharedData: {fileID: 11400000, guid: de3484e8d230c7a458dcdb74bdc76e3d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6854385664
+    m_Localized: "Pier\u2026 ciesz\u0119 si\u0119, \u017Ce ci\u0119 widz\u0119. Zosta\u0142e\u015B
+      wylosowany do p\xF3j\u015Bcia na wojne, prawda?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11203878912
+    m_Localized: "Tak. Czuje jakby ca\u0142e moje dotychczasowe \u017Cycie by\u0142o
+      tylko snem i \u017Ce dopiero teraz podejmuje decyzje kt\xF3re maj\u0105 na
+      cokolwiek wp\u0142yw."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13217144832
+    m_Localized: "Najgorsze, \u017Ce nie wiem jak sp\u0119dzi\u0107 m\xF3j ostatni
+      dzie\u0144 tutaj."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15410765824
+    m_Localized: "Je\u015Bli chcesz\u2026 mo\u017Cemy po prostu porozmawia\u0107."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 355665289216
+    m_Localized: "Tak. Rozmowa uciszy moje szalej\u0105ce my\u015Bli."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 444324487168
+    m_Localized: "Nie wiem czy to prawda, ale moi rodziciele powiadaj\u0105, \u017Ce
+      za mundurem panny id\u0105 sznurem. He he\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 830724743168
+    m_Localized: "W pewnym momencie Pier poca\u0142owa\u0142 Cl\xE9mence kt\xF3ra
+      zarumieni\u0142a si\u0119 i uciek\u0142a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 909925785600
+    m_Localized: "Pier i Cl\xE9mence mi\u0142o sp\u0119dzili razem czas. Rozmawiaj\u0105c
+      o wszystkim i o niczym. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1125622063104
+    m_Localized: Wybacz, ale mam inne rzeczy do zrobienia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3046613295104
+    m_Localized: "Cl\xE9mence"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
