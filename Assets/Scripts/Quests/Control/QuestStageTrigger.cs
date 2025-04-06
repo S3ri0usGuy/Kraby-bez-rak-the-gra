@@ -4,7 +4,7 @@ using UnityEngine.Events;
 /// <summary>
 /// A component that triggers events when the quest stage is changed.
 /// </summary>
-public class QuestStageTrigger : MonoBehaviour
+public class QuestStageTrigger : Trigger
 {
 	public enum TriggerType
 	{
@@ -53,6 +53,7 @@ public class QuestStageTrigger : MonoBehaviour
 		if (e.stage == _stage && IsTriggered(e.newStageState))
 		{
 			_triggered.Invoke();
+			InvokeTriggered();
 		}
 	}
 }

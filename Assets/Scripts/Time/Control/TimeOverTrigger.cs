@@ -4,7 +4,7 @@ using UnityEngine.Events;
 /// <summary>
 /// A component that triggers the event when the time is over.
 /// </summary>
-public class TimeOverTrigger : MonoBehaviour
+public class TimeOverTrigger : Trigger
 {
 	[SerializeField]
 	private bool _initialStateCheck = true;
@@ -26,5 +26,6 @@ public class TimeOverTrigger : MonoBehaviour
 	private void OnTimeOver(Clock clock)
 	{
 		_triggered.Invoke();
+		InvokeTriggered();
 	}
 }

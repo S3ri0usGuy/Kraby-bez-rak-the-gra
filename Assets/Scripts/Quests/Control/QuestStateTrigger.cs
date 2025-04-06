@@ -4,7 +4,7 @@ using UnityEngine.Events;
 /// <summary>
 /// A component that triggers events when the quest state is changed.
 /// </summary>
-public class QuestStateTrigger : MonoBehaviour
+public class QuestStateTrigger : Trigger
 {
 	public enum TriggerType
 	{
@@ -53,6 +53,7 @@ public class QuestStateTrigger : MonoBehaviour
 		if (_quest == e.quest && IsTriggered(e.newQuestState))
 		{
 			_triggered.Invoke();
+			InvokeTriggered();
 		}
 	}
 }
