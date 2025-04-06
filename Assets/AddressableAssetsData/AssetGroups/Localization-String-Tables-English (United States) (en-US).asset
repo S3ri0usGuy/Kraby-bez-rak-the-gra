@@ -57,6 +57,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb2e3d42a74c42a4c98fc187312c0a9f
+    m_Address: NobodyEndingDialogue_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 5df763821935c8540b5811454e07cb8e, type: 2}
   m_SchemaSet:
