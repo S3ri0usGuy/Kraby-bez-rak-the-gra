@@ -51,7 +51,7 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
-    _duration: 7
+    _duration: 8
     _unskippable: 0
   - _speakerIndex: 0
     _text:
@@ -71,7 +71,7 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
-    _duration: 3.5
+    _duration: 4.5
     _unskippable: 0
   - _speakerIndex: 1
     _text:
@@ -91,7 +91,7 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
-    _duration: 6
+    _duration: 8
     _unskippable: 0
   - _speakerIndex: 1
     _text:
@@ -111,7 +111,7 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
-    _duration: 4.5
+    _duration: 8
     _unskippable: 0
   _options: []
   _answerParams:
