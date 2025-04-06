@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: General
   m_TableCollectionNameGuidString: 220ef341c086c4e4c8e7e1226ae91ddb
-  m_Entries: []
+  m_Entries:
+  - m_Id: 18046959982845952
+    m_Key: interact_dialogue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18047001468706816
+    m_Key: interact_leave_the_village
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
