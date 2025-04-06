@@ -54,6 +54,115 @@ MonoBehaviour:
     m_Localized: Pier
     m_Metadata:
       m_Items: []
+  - m_Id: 18082112146874368
+    m_Localized: Jacques
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082007482212352
+    m_Localized: 'Co takiego?
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082321069350912
+    m_Localized: "Prawdziwie wolny. Nie ograniczaj\u0105 wi\u0119zy spo\u0142eczne
+      bo najprawdopodobniej nigdy nas ju\u017C nie zobaczysz. Mo\u017Cesz zrobi\u0107
+      co chcesz. Co tylko chcesz .\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18081985495670784
+    m_Localized: "Prawdziw\u0105 wolno\u015B\u0107. Mo\u017Ce i nie ma decyzji co
+      do tego czy idziesz na wojn\u0119 czy nie. Ale dzisiaj. Jeste\u015B wolny."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18081913286533120
+    m_Localized: "Masz co\u015B, czego ci zazdroszcz\u0119, Pier.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082039124041728
+    m_Localized: "To co m\xF3wisz nie jest pocieszaj\u0105ce."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082788683915264
+    m_Localized: "No\xE9mie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082907617599488
+    m_Localized: "Je\u015Bli spotkasz mojego syna Trevora przeka\u017C mu \u017Ce
+      go kocham."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083082536853504
+    m_Localized: "Pami\u0119tasz Tervora prawda?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083175570710528
+    m_Localized: "Przeka\u017Ce, tak pami\u0119tam go"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083203680935936
+    m_Localized: Blondyn, ma 3 czarne krosty za uchem. Na Pewno rozpoznasz.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083705449717760
+    m_Localized: "\u017Bo\u0142nierz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083361948803072
+    m_Localized: "Jak to jest walczy\u0107 w wojsku Napoleona?\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083451866292224
+    m_Localized: "To ciebie teraz wylosowali tak? Przygotuj si\u0119 na d\u0142ugie
+      marsz, parszywe jedzenie i \u015Bmier\u0107. Jak nie twoj\u0105 to wszystko
+      w oko\u0142o.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083512272658432
+    m_Localized: "To co m\xF3wisz jest niepocieszaj\u0105ce."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083520963256320
+    m_Localized: "Nigdy nie mia\u0142o by\u0107. Wiesz ilu takich m\u0142odych jak
+      ty widzia\u0142em wys\u0142anych na wojn\u0119. Mnustwo. Z ostatniej potyczki
+      nie wr\xF3ci\u0142 nikt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083592471945216
+    m_Localized: " Ja prze\u017Cy\u0142em bo by\u0142em w zaopatrzeniu. z Dala od
+      linii frontu. Ale teraz Napoleon potrzebuje ka\u017Cdej pary r\u0105k. \u017Babojad
+      jeden.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084441571041280
+    m_Localized: Pies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084520772083712
+    m_Localized: "Ty to masz dobrze. Zero zmartwie\u0144. Wybiegasz si\u0119 za owcami.
+      A w okolicy mnustwo innych ps\xF3w."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084564363485184
+    m_Localized: Hau, Hau!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084605274726400
+    m_Localized: Dobrze powiedziane.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084626455961600
+    m_Localized: Hau!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084679975280640
+    m_Localized: Hau.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084661532925952
+    m_Localized: "Zdecydowanie Milordzie.\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

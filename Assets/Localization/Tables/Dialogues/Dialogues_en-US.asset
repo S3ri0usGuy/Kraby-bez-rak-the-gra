@@ -54,6 +54,110 @@ MonoBehaviour:
     m_Localized: Pier
     m_Metadata:
       m_Items: []
+  - m_Id: 18082112146874368
+    m_Localized: Jacques
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18081913286533120
+    m_Localized: You have something I envy, Pier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18081985495670784
+    m_Localized: "True freedom. Maybe you don\u2019t get to choose whether you go
+      to war or not. But today \u2014 today, you\u2019re free."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082321069350912
+    m_Localized: "Truly free. No social ties bind you, because chances are\u2026
+      you\u2019ll never see us again. You can do whatever you want. Anything at all."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082039124041728
+    m_Localized: "That\u2019s not exactly comforting."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082007482212352
+    m_Localized: "What\u2019s that?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082788683915264
+    m_Localized: "No\xE9mie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082907617599488
+    m_Localized: If you see my son Trevor, tell him I love him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083082536853504
+    m_Localized: "You remember Trevor, don\u2019t you?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083175570710528
+    m_Localized: "I\u2019ll tell him. Yes, I remember him."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083203680935936
+    m_Localized: "Blond boy, three dark moles behind his ear. You\u2019ll recognize
+      him for sure."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083705449717760
+    m_Localized: Guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083361948803072
+    m_Localized: "What\u2019s it like to fight in Napoleon\u2019s army?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083451866292224
+    m_Localized: "So you\u2019re the one they picked, huh? Get ready for endless
+      marching, rotten food, and death. If not yours \u2014 then everyone\u2019s
+      around you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083512272658432
+    m_Localized: "That\u2019s not exactly reassuring."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083520963256320
+    m_Localized: "It\u2019s not meant to be. You know how many boys like you I\u2019ve
+      seen sent off to war? Plenty. No one came back from the last skirmish."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083592471945216
+    m_Localized: "I only survived because I was in supply, far from the front lines.
+      But now Napoleon needs every pair of hands\u2026 Total frog-eating activity!."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084441571041280
+    m_Localized: Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084520772083712
+    m_Localized: "You\u2019ve got it good... No worries, just chasing sheep all day.
+      And plenty of other dogs around here too."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084564363485184
+    m_Localized: Woof, woof!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084605274726400
+    m_Localized: Well said.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084626455961600
+    m_Localized: Woof!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084679975280640
+    m_Localized: Woof.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084661532925952
+    m_Localized: Absolutely, Milord.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
