@@ -41,13 +41,13 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 	}
 
 	/// <summary>
-	/// Gets the stage of the quest.
+	/// Gets the state of the quest.
 	/// </summary>
 	/// <param name="quest">The quest to get the stage for.</param>
 	/// <returns>
 	/// The state of the quest or <see cref="QuestState.None" />, if the quest hasn't started yet.
 	/// </returns>
-	public QuestState GetQuestStage(Quest quest)
+	public QuestState GetQuestState(Quest quest)
 	{
 		if (_quests.TryGetValue(quest, out var progress))
 		{
