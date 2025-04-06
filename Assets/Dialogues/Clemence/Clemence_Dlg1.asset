@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85337671d674cd541ab491ef9be98654, type: 3}
+  m_Name: Clemence_Dlg1
+  m_EditorClassIdentifier: 
+  _phrases:
+  - _speakerIndex: 1
+    _text:
+      m_TableReference:
+        m_TableCollectionName: GUID:de3484e8d230c7a458dcdb74bdc76e3d
+      m_TableEntryReference:
+        m_KeyId: 6854385664
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _audioClip:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+    _duration: 5
+    _unskippable: 0
+  - _speakerIndex: 0
+    _text:
+      m_TableReference:
+        m_TableCollectionName: GUID:de3484e8d230c7a458dcdb74bdc76e3d
+      m_TableEntryReference:
+        m_KeyId: 11203878912
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _audioClip:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+    _duration: 6
+    _unskippable: 0
+  - _speakerIndex: 0
+    _text:
+      m_TableReference:
+        m_TableCollectionName: GUID:de3484e8d230c7a458dcdb74bdc76e3d
+      m_TableEntryReference:
+        m_KeyId: 13217144832
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _audioClip:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+    _duration: 5
+    _unskippable: 0
+  - _speakerIndex: 1
+    _text:
+      m_TableReference:
+        m_TableCollectionName: GUID:de3484e8d230c7a458dcdb74bdc76e3d
+      m_TableEntryReference:
+        m_KeyId: 15410765824
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _audioClip:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+    _duration: 5
+    _unskippable: 0
+  _options:
+  - _text:
+      m_TableReference:
+        m_TableCollectionName: GUID:8600c5b7fc58eab4395a04b59313f353
+      m_TableEntryReference:
+        m_KeyId: 734503644274688
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _branching:
+      _defaultNextNode: {fileID: 11400000, guid: 0375a62e4524d2748b95140d8286b2aa, type: 2}
+      _branches: []
+  - _text:
+      m_TableReference:
+        m_TableCollectionName: GUID:8600c5b7fc58eab4395a04b59313f353
+      m_TableEntryReference:
+        m_KeyId: 734604173352960
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _branching:
+      _defaultNextNode: {fileID: 11400000, guid: 7bde760fbfc776b4999ed72c855bb7a7, type: 2}
+      _branches: []
+  _answerParams:
+    _answerType: 0
+    _timeToAnswer: 5
+  _branching:
+    _defaultNextNode: {fileID: 0}
+    _branches: []
+  references:
+    version: 2
+    RefIds: []

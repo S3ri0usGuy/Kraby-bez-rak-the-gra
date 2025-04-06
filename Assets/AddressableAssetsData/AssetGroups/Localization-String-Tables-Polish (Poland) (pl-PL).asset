@@ -39,6 +39,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl-PL
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3ff09d271e04d548af9d6665c18e6c4
+    m_Address: ClemenceDialogues_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f4971c2741dd30542badc5c1afaf0755
     m_Address: Engings_pl-PL
     m_ReadOnly: 1
