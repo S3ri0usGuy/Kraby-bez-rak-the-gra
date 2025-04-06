@@ -189,9 +189,10 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 		{
 			// Create the new quest progress if it wasn't already created
 			SetQuestState(quest, QuestState.Active);
+			questProgress = _quests[quest];
 		}
 
-		var oldState = questProgress.GetStage(stage);
+		QuestStageState oldState = questProgress.GetStage(stage);
 		questProgress.SetStage(stage, state);
 
 		QuestStageUpdatedEventArgs eventArgs = new(stage, oldState, state);

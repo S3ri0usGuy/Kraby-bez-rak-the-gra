@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7904769131083803137, guid: fca0279d1105d9a45adfe77e79476f2f, type: 3}
       propertyPath: m_text
-      value: "Spend your last hours with Cl\xE9mence"
+      value: ...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

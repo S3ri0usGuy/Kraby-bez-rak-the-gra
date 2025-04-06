@@ -28,6 +28,8 @@ public class QuestListView : MonoBehaviour
 
 	private void Start()
 	{
+		if (!QuestSystem.exists) return;
+
 		var questSystem = QuestSystem.instance;
 		foreach (var quest in questSystem.GetQuests())
 		{
