@@ -30,21 +30,11 @@ public class DialoguePlayerLocker : MonoBehaviour
 		{
 			_camera.enabled = true;
 		}
-		if (InputActionsProvider.exists)
+		PlayerLocker.Lock();
+		if (Player.exists && _lookTarget)
 		{
-			InputActionsProvider.instance.SetGameActionsActive(false);
-		}
-		Cursor.visible = true;
-		Cursor.lockState = CursorLockMode.None;
-		if (Player.exists)
-		{
-			Player player = Player.instance;
-			player.movement.Freeze();
-
-			if (_lookTarget)
-			{
-				player.rotation.ForceRotation(_lookTarget.position - player.transform.position);
-			}
+			var player = Player.instance;
+			player.rotation.ForceRotation(_lookTarget.position - player.transform.position);
 		}
 	}
 
@@ -54,15 +44,6 @@ public class DialoguePlayerLocker : MonoBehaviour
 		{
 			_camera.enabled = false;
 		}
-		if (InputActionsProvider.exists)
-		{
-			InputActionsProvider.instance.SetGameActionsActive(true);
-		}
-		if (Player.exists)
-		{
-			Player.instance.movement.Unfreeze();
-		}
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
+		PlayerLocker.Unlock();
 	}
 }

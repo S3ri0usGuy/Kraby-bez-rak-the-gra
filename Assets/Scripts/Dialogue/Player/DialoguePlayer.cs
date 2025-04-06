@@ -96,7 +96,7 @@ public class DialoguePlayer : MonoBehaviour
 		foreach (var phrase in _currentNode.phrases)
 		{
 			AudioClip audio = null;
-			if (phrase.audioClip != null)
+			if (phrase.audioClip != null && phrase.audioClip.TableReference.ReferenceType != TableReference.Type.Empty)
 			{
 				var audioAsyncOperation = phrase.audioClip.LoadAssetAsync<AudioClip>();
 				yield return new WaitUntil(() => audioAsyncOperation.IsDone);
