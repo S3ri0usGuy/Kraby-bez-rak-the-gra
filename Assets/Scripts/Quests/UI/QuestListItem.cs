@@ -52,6 +52,6 @@ public class QuestListItem : MonoBehaviour
 
 	private void OnQuestStateUpdated(QuestSystem questSystem, QuestStateUpdatedEventArgs e)
 	{
-		UpdateState(e.newQuestState);
+		if (e.quest == quest) UpdateState(e.newQuestState);
 	}
 }

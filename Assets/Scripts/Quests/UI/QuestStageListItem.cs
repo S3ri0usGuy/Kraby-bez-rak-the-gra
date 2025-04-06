@@ -52,6 +52,6 @@ public class QuestStageListItem : MonoBehaviour
 
 	private void OnQuestStageUpdated(QuestSystem questSystem, QuestStageUpdatedEventArgs e)
 	{
-		UpdateState(e.newStageState);
+		if (e.stage == stage) UpdateState(e.newStageState);
 	}
 }
