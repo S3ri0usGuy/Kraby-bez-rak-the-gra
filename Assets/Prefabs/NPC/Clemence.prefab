@@ -528,6 +528,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4236538635013894492}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _phraseIndex: 0
 --- !u!114 &5152086658474250987
 MonoBehaviour:
@@ -615,7 +627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5370541392418113586, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
       propertyPath: m_Name
-      value: Clemence Variant
+      value: Clemence
       objectReference: {fileID: 0}
     - target: {fileID: 5990903845403365547, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -696,6 +708,11 @@ PrefabInstance:
 --- !u!4 &553931505133554252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+  m_PrefabInstance: {fileID: 8092066382900214126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4236538635013894492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5370541392418113586, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
   m_PrefabInstance: {fileID: 8092066382900214126}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7973087098846369537 stripped
