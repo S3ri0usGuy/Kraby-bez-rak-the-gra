@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 188f3b9872eb5ab4abe301e4cbe20a42
+    m_Address: AugustinDialogues_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1eba33e19d63e9c4ab5ba9917da1ce83
     m_Address: Engings_en-US
     m_ReadOnly: 1
