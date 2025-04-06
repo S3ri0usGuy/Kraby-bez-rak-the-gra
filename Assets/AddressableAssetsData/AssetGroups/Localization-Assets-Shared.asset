@@ -60,6 +60,11 @@ MonoBehaviour:
     - Locale-en-US
     - Locale-pl-PL
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60cbd1d65f7591744898ac7da59c0e9c
+    m_Address: Assets/Localization/Tables/Quests/Quests Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 744e109c41352994db2685ec1b9ac6ec
     m_Address: Assets/Dialogues/Michele/MicheleDialogues Shared Data.asset
     m_ReadOnly: 1
