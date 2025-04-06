@@ -30083,7 +30083,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64463227a1674b946aef028dfeba09d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionName: exit the village
+  _actionName:
+    m_TableReference:
+      m_TableCollectionName: GUID:220ef341c086c4e4c8e7e1226ae91ddb
+    m_TableEntryReference:
+      m_KeyId: 18047001468706816
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _requiresTime: 0
   _event:
     m_PersistentCalls:
@@ -30100,6 +30108,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1525878358
 GameObject:
   m_ObjectHideFlags: 0

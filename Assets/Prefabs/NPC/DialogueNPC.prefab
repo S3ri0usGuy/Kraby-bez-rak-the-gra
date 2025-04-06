@@ -142,10 +142,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55265025f05aa94d82a30c2239c056a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionName: speak
+  _actionName:
+    m_TableReference:
+      m_TableCollectionName: GUID:220ef341c086c4e4c8e7e1226ae91ddb
+    m_TableEntryReference:
+      m_KeyId: 18046959982845952
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _requiresTime: 1
   _cooldown: 0.4
   _dialogueActor: {fileID: 1795553811617546835}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &817943833918071675
 GameObject:
   m_ObjectHideFlags: 0

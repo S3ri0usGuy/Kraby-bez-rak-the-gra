@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 /// <summary>
 /// A component that allows the player to interact with objects
@@ -55,10 +56,12 @@ public class PlayerInteraction : MonoBehaviour
 
 	private void RefreshCurrentInteractable()
 	{
+#pragma warning disable UNT0028 // Use non-allocating physics APIs
 		var colliders = Physics.OverlapSphere(
 			transform.position + Vector3.up,
 			_player.movement.controller.radius,
 			_layerMask, QueryTriggerInteraction.Collide);
+#pragma warning restore UNT0028 // Use non-allocating physics APIs
 
 		List<Interactable> interactables = new();
 		foreach (var collider in colliders)
@@ -113,9 +116,15 @@ public class PlayerInteraction : MonoBehaviour
 	{
 		if (_currentInteractable)
 		{
-			string key = _actions.interact.GetBindingDisplayString();
-			_label.text = string.Format(_labelFormat, key, _currentInteractable.actionName);
+			var operation = _currentInteractable.actionName.GetLocalizedStringAsync();
+			operation.Completed += OnStringLoaded;
 		}
+	}
+
+	private void OnStringLoaded(AsyncOperationHandle<string> asyncOperationHandle)
+	{
+		string key = _actions.interact.GetBindingDisplayString();
+		_label.text = string.Format(_labelFormat, key, asyncOperationHandle.Result);
 	}
 
 	private void SetCurrentInteractable(Interactable interactable)

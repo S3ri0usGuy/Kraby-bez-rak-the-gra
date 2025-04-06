@@ -17,7 +17,15 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 220ef341c086c4e4c8e7e1226ae91ddb, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 18046959982845952
+    m_Localized: rozmawiaj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18047001468706816
+    m_Localized: "opu\u015B\u0107 wiosk\u0119"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

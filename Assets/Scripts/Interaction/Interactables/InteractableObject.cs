@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 /// <summary>
 /// A base class for interactable object components.
@@ -7,7 +8,7 @@ public abstract class Interactable : MonoBehaviour
 {
 	[SerializeField]
 	[Tooltip("An action name displayed on the UI canvas.")]
-	private string _actionName;
+	private LocalizedString _actionName;
 
 	[SerializeField]
 	[Tooltip("If checked, then this object will not be interactable when the time was spent.")]
@@ -16,7 +17,7 @@ public abstract class Interactable : MonoBehaviour
 	/// <summary>
 	/// Gets an action name displayed on the UI canvas.
 	/// </summary>
-	public virtual string actionName { get => _actionName; set => _actionName = value; }
+	public virtual LocalizedString actionName { get => _actionName; set => _actionName = value; }
 
 	/// <summary>
 	/// Checks whether the object is interactable at this moment.
