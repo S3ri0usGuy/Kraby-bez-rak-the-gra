@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: MicheleVoiceLines_pl-PL
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl-PL
+  m_SharedData: {fileID: 11400000, guid: aba90d18d68473b43a4d39f3b4d18158, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 662898057216
+    m_Localized: 02bb43b8d12ac0f41a711647e9fdba6f
+    m_Metadata:
+      m_Items: []
+  - m_Id: 676445659136
+    m_Localized: a393daf17b8a0694fb0aa8896c4222dd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 648851333120
+    m_Localized: 32577afcaf47d5d45909c640a7e60312
+    m_Metadata:
+      m_Items: []
+  - m_Id: 644527005696
+    m_Localized: a2f718b348ff9e74d92b6abd039a4949
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160139026735104
+    m_Localized: 7b4ac9db24ae33f4490d0c405b8d8ed8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 185184545513472
+    m_Localized: 4c3d4c4b5a4044b498a350e69e1fa44a
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

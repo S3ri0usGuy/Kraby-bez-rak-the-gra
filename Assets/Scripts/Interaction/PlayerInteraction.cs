@@ -46,7 +46,7 @@ public class PlayerInteraction : MonoBehaviour
 
 	private void Update()
 	{
-		if ((_currentInteractable && !_currentInteractable.CanBeInteractedWith(_player)) ||
+		if ((_currentInteractable && !_currentInteractable.IsInteractable(_player)) ||
 			_player.movement.isFreezed)
 		{
 			SetCurrentInteractable(null);
@@ -81,7 +81,7 @@ public class PlayerInteraction : MonoBehaviour
 			}
 		}
 		var newInteractable = interactables
-			.FirstOrDefault(x => x.CanBeInteractedWith(_player));
+			.FirstOrDefault(x => x.IsInteractable(_player));
 		if (newInteractable)
 		{
 			SetCurrentInteractable(newInteractable);

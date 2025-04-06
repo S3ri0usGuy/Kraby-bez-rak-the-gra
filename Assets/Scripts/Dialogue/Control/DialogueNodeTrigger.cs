@@ -61,6 +61,8 @@ public class DialogueNodeTrigger : MonoBehaviour
 
 	private void OnPhraseStarted(DialoguePhraseContext context)
 	{
+		if (!IsTargetNode(context.node)) return;
+
 		if (_phraseIndex >= context.node.phrases.Count)
 		{
 			Debug.LogWarning($"The phraseIndex ({_phraseIndex}) is incorrect and the " +
@@ -69,7 +71,7 @@ public class DialogueNodeTrigger : MonoBehaviour
 			return;
 		}
 
-		if (context.phraseIndex == _phraseIndex && IsTargetNode(context.node))
+		if (context.phraseIndex == _phraseIndex)
 		{
 			_started.Invoke();
 		}

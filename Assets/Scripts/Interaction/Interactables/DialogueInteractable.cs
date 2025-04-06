@@ -22,8 +22,19 @@ public class DialogueInteractable : Interactable
 		}
 	}
 
-	public override bool CanBeInteractedWith(Player player)
+	protected override bool CanBeInteractedWith(Player player)
 	{
+		var currentNode = _dialogueActor.nextNode;
+		if (currentNode.phrases.Count == 0)
+		{
+			var nextSelectedNode = currentNode.branching.SelectNode();
+			if (nextSelectedNode)
+			{
+				_dialogueActor.SetNextNode(nextSelectedNode);
+				return true;
+			}
+			return false;
+		}
 		return true;
 	}
 

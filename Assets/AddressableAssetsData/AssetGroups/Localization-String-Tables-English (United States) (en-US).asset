@@ -21,6 +21,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1eba33e19d63e9c4ab5ba9917da1ce83
+    m_Address: Engings_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a9523d093f253b4484854c165975dd6
+    m_Address: Quests_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f966b52914824b4ca93d568218db072
+    m_Address: MicheleDialogues_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 402153a2321c6f343aafa73f3da25295
     m_Address: Dialogues_en-US
     m_ReadOnly: 1

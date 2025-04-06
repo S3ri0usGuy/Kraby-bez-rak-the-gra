@@ -21,8 +21,26 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl-PL
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 413abfb3369c8334ab18b4a5dad25b4c
+    m_Address: MicheleDialogues_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a023f58a45b6f0b4baa3407865f0a7ce
+    m_Address: Quests_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a429068adfcdcc54e9ac83e0aa7cd571
     m_Address: Dialogues_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4971c2741dd30542badc5c1afaf0755
+    m_Address: Engings_pl-PL
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl-PL
