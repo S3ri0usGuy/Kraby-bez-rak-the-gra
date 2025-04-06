@@ -800,6 +800,45 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""system"",
+            ""id"": ""6b021873-4a2b-44f1-b069-ceda29b9cecf"",
+            ""actions"": [
+                {
+                    ""name"": ""pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca5008b8-ebbc-46c9-8a21-e5ba5a576566"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""cb8b0605-6bb1-4ea6-b66f-965150759fd6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1465d03e-7f2f-41ee-8726-7f7ac7e3fa55"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -884,12 +923,16 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_ui_ScrollWheel = m_ui.FindAction("ScrollWheel", throwIfNotFound: true);
         m_ui_TrackedDevicePosition = m_ui.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_ui_TrackedDeviceOrientation = m_ui.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // system
+        m_system = asset.FindActionMap("system", throwIfNotFound: true);
+        m_system_pause = m_system.FindAction("pause", throwIfNotFound: true);
     }
 
     ~@InputActions()
     {
         UnityEngine.Debug.Assert(!m_player.enabled, "This will cause a leak and performance issues, InputActions.player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_ui.enabled, "This will cause a leak and performance issues, InputActions.ui.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_system.enabled, "This will cause a leak and performance issues, InputActions.system.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -1143,6 +1186,52 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public UiActions @ui => new UiActions(this);
+
+    // system
+    private readonly InputActionMap m_system;
+    private List<ISystemActions> m_SystemActionsCallbackInterfaces = new List<ISystemActions>();
+    private readonly InputAction m_system_pause;
+    public struct SystemActions
+    {
+        private @InputActions m_Wrapper;
+        public SystemActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @pause => m_Wrapper.m_system_pause;
+        public InputActionMap Get() { return m_Wrapper.m_system; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SystemActions set) { return set.Get(); }
+        public void AddCallbacks(ISystemActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SystemActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SystemActionsCallbackInterfaces.Add(instance);
+            @pause.started += instance.OnPause;
+            @pause.performed += instance.OnPause;
+            @pause.canceled += instance.OnPause;
+        }
+
+        private void UnregisterCallbacks(ISystemActions instance)
+        {
+            @pause.started -= instance.OnPause;
+            @pause.performed -= instance.OnPause;
+            @pause.canceled -= instance.OnPause;
+        }
+
+        public void RemoveCallbacks(ISystemActions instance)
+        {
+            if (m_Wrapper.m_SystemActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISystemActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SystemActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SystemActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SystemActions @system => new SystemActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1208,5 +1297,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnScrollWheel(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface ISystemActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
 }
