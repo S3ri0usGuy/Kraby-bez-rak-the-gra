@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerTrigger : MonoBehaviour
+public class PlayerTrigger : Trigger
 {
 	[SerializeField]
 	private UnityEvent _playerEntered;
@@ -9,5 +9,6 @@ public class PlayerTrigger : MonoBehaviour
 	private void OnTriggerEnter(Collider other)
 	{
 		_playerEntered.Invoke();
+		InvokeTriggered();
 	}
 }
