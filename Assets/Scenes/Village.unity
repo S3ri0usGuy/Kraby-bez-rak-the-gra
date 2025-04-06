@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6480f622aa6c33547a941dc4a633cd27, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -18266,6 +18266,7 @@ GameObject:
   - component: {fileID: 722273263}
   - component: {fileID: 722273262}
   - component: {fileID: 722273264}
+  - component: {fileID: 722273265}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -18376,6 +18377,20 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &722273265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722273261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2b62e93a2e69d49b9fafd71e5e8e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fromAngle: {x: 45, y: 90, z: 0}
+  _toAngle: {x: 180, y: 270, z: 0}
 --- !u!43 &749752903
 Mesh:
   m_ObjectHideFlags: 0
