@@ -51,6 +51,102 @@ MonoBehaviour:
     m_Key: player_name
     m_Metadata:
       m_Items: []
+  - m_Id: 18082112146874368
+    m_Key: jacques_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18081913286533120
+    m_Key: jacques_dlg1_1_jacques
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082007482212352
+    m_Key: jacques_dlg1_2_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18081985495670784
+    m_Key: jacques_dlg1_3_jacques
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082321069350912
+    m_Key: jacques_dlg1_4_jacques
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082039124041728
+    m_Key: jacques_dlg1_5_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082788683915264
+    m_Key: noemie_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18082907617599488
+    m_Key: noemie_dlg1_1_noemie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083082536853504
+    m_Key: noemie_dlg1_2_noemie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083175570710528
+    m_Key: noemie_dlg1_3_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083203680935936
+    m_Key: noemie_dlg1_4_noemie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083705449717760
+    m_Key: patroling_guard_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083361948803072
+    m_Key: patroling_guard_dlg1_1_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083451866292224
+    m_Key: patroling_guard_dlg1_2_guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083512272658432
+    m_Key: patroling_guard_dlg1_3_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083520963256320
+    m_Key: patroling_guard_dlg1_4_guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18083592471945216
+    m_Key: patroling_guard_dlg1_5_guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084441571041280
+    m_Key: doggo_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084520772083712
+    m_Key: doggo_dlg1_1_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084564363485184
+    m_Key: doggo_dlg1_2_doggo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084605274726400
+    m_Key: doggo_dlg1_3_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084626455961600
+    m_Key: doggo_dlg1_4_doggo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084661532925952
+    m_Key: doggo_dlg1_5_pier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18084679975280640
+    m_Key: doggo_dlg1_6_doggo
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
