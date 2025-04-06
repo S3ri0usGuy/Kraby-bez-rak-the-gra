@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c344bf28d4ddb634ea370fb8edc56ffc, type: 3}
-  m_Name: NoemiDialogueGroup
+  m_Name: NoemieDialogueGroup
   m_EditorClassIdentifier: 
   _dialogues:
   - {fileID: 11400000, guid: c41d6e5b3a25e7e40a11f22368316a5c, type: 2}
