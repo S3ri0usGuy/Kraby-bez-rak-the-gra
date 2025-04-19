@@ -102,6 +102,10 @@ public class DialoguePlayer : MonoBehaviour
 				yield return new WaitUntil(() => audioAsyncOperation.IsDone);
 				audio = audioAsyncOperation.Result;
 			}
+			else if (phrase.defaultAudioClip)
+			{
+				audio = phrase.defaultAudioClip;
+			}
 
 			var textAsyncOperation = phrase.text.GetLocalizedStringAsync();
 			yield return new WaitUntil(() => textAsyncOperation.IsDone);
