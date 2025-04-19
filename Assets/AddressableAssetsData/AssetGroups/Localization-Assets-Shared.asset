@@ -15,13 +15,6 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 69ce76275a0a2c34f8cd0c68b6864cd6
   m_SerializeEntries:
-  - m_GUID: 02bb43b8d12ac0f41a711647e9fdba6f
-    m_Address: Michel_P_Dlg1_Yes
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Locale-pl-PL
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 13efbc98e7c1c9e4ca95f8712909474e
     m_Address: Horn_Yes
     m_ReadOnly: 1
@@ -44,22 +37,8 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 32577afcaf47d5d45909c640a7e60312
-    m_Address: Michel_Dlg1-2
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Locale-pl-PL
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 36fb391a7d63c5541a30893198238036
     m_Address: Horn_No
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Locale-pl-PL
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4c3d4c4b5a4044b498a350e69e1fa44a
-    m_Address: Michele_Narrator_Dlg1_Yes3
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
@@ -75,13 +54,6 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7b4ac9db24ae33f4490d0c405b8d8ed8
-    m_Address: Michel_Dlg1-Yes2
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Locale-pl-PL
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8600c5b7fc58eab4395a04b59313f353
     m_Address: Assets/Localization/Tables/Dialogues/Dialogues Shared Data.asset
     m_ReadOnly: 1
@@ -93,25 +65,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     - Locale-pl-PL
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a2f718b348ff9e74d92b6abd039a4949
-    m_Address: Michel_Dlg1-1
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Locale-pl-PL
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a393daf17b8a0694fb0aa8896c4222dd
-    m_Address: Michel_P_Dlg1_No
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    - Locale-pl-PL
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: aba90d18d68473b43a4d39f3b4d18158
-    m_Address: Assets/Dialogues/Michele/Table/MicheleVoiceLines Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: da54fd1a4bb4ad844a543faea8ebee12
     m_Address: Assets/Dialogues/Alpha/NobodyEnding/Localization/Text/NobodyEndingDialogue

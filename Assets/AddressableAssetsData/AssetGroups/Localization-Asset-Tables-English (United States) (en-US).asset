@@ -15,12 +15,6 @@ MonoBehaviour:
   m_GroupName: Localization-Asset-Tables-English (United States) (en-US)
   m_GUID: d3613b4c79b8b4b4ca19f2b38a849406
   m_SerializeEntries:
-  - m_GUID: 3188818350c80c74f8d0bf4f868c90e0
-    m_Address: MicheleVoiceLines_en-US
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en-US
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 597ef471cf94efb488b239724b47b084
     m_Address: VoiceLines_en-US
     m_ReadOnly: 1
