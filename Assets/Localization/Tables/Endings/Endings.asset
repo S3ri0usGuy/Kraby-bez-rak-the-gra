@@ -16,8 +16,42 @@ MonoBehaviour:
   m_Tables:
   - {fileID: 11400000, guid: 1eba33e19d63e9c4ab5ba9917da1ce83, type: 2}
   - {fileID: 11400000, guid: f4971c2741dd30542badc5c1afaf0755, type: 2}
-  m_Extensions: []
+  m_Extensions:
+  - rid: 4023525814400450576
   m_Group: String Table
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4023525814400450576
+      type: {class: CsvExtension, ns: UnityEditor.Localization.Plugins.CSV, asm: Unity.Localization.Editor}
+      data:
+        m_Collection: {fileID: 11400000}
+        m_ColumnsList:
+        - rid: 4023525814400450577
+        - rid: 4023525814400450578
+        - rid: 4023525814400450579
+        m_ConnectedFile: Localization/Engings.csv
+    - rid: 4023525814400450577
+      type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_IncludeId: 1
+        m_IncludeSharedComments: 1
+        m_KeyFieldName: Key
+        m_IdFieldName: Id
+        m_CommentFieldName: Shared Comments
+    - rid: 4023525814400450578
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: en-US
+        m_FieldName: English (United States)(en-US)
+        m_CommentFieldName: English (United States)(en-US) Comments
+        m_IncludeComments: 1
+    - rid: 4023525814400450579
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: pl-PL
+        m_FieldName: Polish (Poland)(pl-PL)
+        m_CommentFieldName: Polish (Poland)(pl-PL) Comments
+        m_IncludeComments: 1
