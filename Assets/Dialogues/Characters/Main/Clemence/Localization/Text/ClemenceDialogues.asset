@@ -16,8 +16,42 @@ MonoBehaviour:
   m_Tables:
   - {fileID: 11400000, guid: 7d101541abbe5fc45ae7b07ac7967fe6, type: 2}
   - {fileID: 11400000, guid: c3ff09d271e04d548af9d6665c18e6c4, type: 2}
-  m_Extensions: []
+  m_Extensions:
+  - rid: 4023525814400450608
   m_Group: String Table
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4023525814400450608
+      type: {class: CsvExtension, ns: UnityEditor.Localization.Plugins.CSV, asm: Unity.Localization.Editor}
+      data:
+        m_Collection: {fileID: 11400000}
+        m_ColumnsList:
+        - rid: 4023525814400450609
+        - rid: 4023525814400450610
+        - rid: 4023525814400450611
+        m_ConnectedFile: Localization/Dialogues/ClemenceDialogues.csv
+    - rid: 4023525814400450609
+      type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_IncludeId: 1
+        m_IncludeSharedComments: 1
+        m_KeyFieldName: Key
+        m_IdFieldName: Id
+        m_CommentFieldName: Shared Comments
+    - rid: 4023525814400450610
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: en-US
+        m_FieldName: English (United States)(en-US)
+        m_CommentFieldName: English (United States)(en-US) Comments
+        m_IncludeComments: 1
+    - rid: 4023525814400450611
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: pl-PL
+        m_FieldName: Polish (Poland)(pl-PL)
+        m_CommentFieldName: Polish (Poland)(pl-PL) Comments
+        m_IncludeComments: 1

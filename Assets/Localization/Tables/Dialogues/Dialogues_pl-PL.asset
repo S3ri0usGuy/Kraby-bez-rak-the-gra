@@ -67,7 +67,7 @@ MonoBehaviour:
   - m_Id: 18082321069350912
     m_Localized: "Prawdziwie wolny. Nie ograniczaj\u0105 wi\u0119zy spo\u0142eczne
       bo najprawdopodobniej nigdy nas ju\u017C nie zobaczysz. Mo\u017Cesz zrobi\u0107
-      co chcesz. Co tylko chcesz .\r"
+      co chcesz. Co tylko chcesz.\n"
     m_Metadata:
       m_Items: []
   - m_Id: 18081985495670784
@@ -76,7 +76,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18081913286533120
-    m_Localized: "Masz co\u015B, czego ci zazdroszcz\u0119, Pier.\r\n"
+    m_Localized: "Masz co\u015B, czego ci zazdroszcz\u0119, Pier.\n"
     m_Metadata:
       m_Items: []
   - m_Id: 18082039124041728
@@ -109,13 +109,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18083361948803072
-    m_Localized: "Jak to jest walczy\u0107 w wojsku Napoleona?\r"
+    m_Localized: "Jak to jest walczy\u0107 w wojsku Napoleona?\n"
     m_Metadata:
       m_Items: []
   - m_Id: 18083451866292224
     m_Localized: "To ciebie teraz wylosowali tak? Przygotuj si\u0119 na d\u0142ugie
       marsz, parszywe jedzenie i \u015Bmier\u0107. Jak nie twoj\u0105 to wszystko
-      w oko\u0142o.\r"
+      w oko\u0142o.\n"
     m_Metadata:
       m_Items: []
   - m_Id: 18083512272658432
@@ -131,7 +131,7 @@ MonoBehaviour:
   - m_Id: 18083592471945216
     m_Localized: " Ja prze\u017Cy\u0142em bo by\u0142em w zaopatrzeniu. z Dala od
       linii frontu. Ale teraz Napoleon potrzebuje ka\u017Cdej pary r\u0105k. \u017Babojad
-      jeden.\r"
+      jeden.\n"
     m_Metadata:
       m_Items: []
   - m_Id: 18084441571041280
@@ -160,7 +160,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18084661532925952
-    m_Localized: "Zdecydowanie Milordzie.\r"
+    m_Localized: 'Zdecydowanie Milordzie.
+
+'
     m_Metadata:
       m_Items: []
   references:

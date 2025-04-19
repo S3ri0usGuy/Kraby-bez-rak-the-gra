@@ -1,0 +1,41 @@
+Key,Id,Shared Comments,English (United States)(en-US),English (United States)(en-US) Comments,Polish (Poland)(pl-PL),Polish (Poland)(pl-PL) Comments
+"option_yes",734503644274688,"","Yes","","Tak",""
+"option_no",734604173352960,"","No","","Nie",""
+"test_phrase_1_1",734647777337344,"","Escape this cruel reality","","A gdybyś tak spróbował Escape'em?",""
+"test_phrase_1_2",742883104497664,"","Right now!","","Co byś na to powiedział?",""
+"test_phrase_2_No",743327407120384,"","WAKE THE FUCK UP!!!","","WSTAWAJ DO KURWY!!!",""
+"test_phrase_2_Yes",743643502452736,"","Hey, you. You're finally (a)wo(a)ke!","","Samuraju, masz malutki przycisk.",""
+"test_name_0",1009952064643072,"","You","","Ty",""
+"test_name_1",1010075733696512,"","Someone","","Ktoś",""
+"player_name",17459501356392448,"","Pier","","Pier",""
+"jacques_name",18082112146874368,"","Jacques","","Jacques",""
+"jacques_dlg1_1_jacques",18081913286533120,"","You have something I envy, Pier.","","Masz coś, czego ci zazdroszczę, Pier.
+",""
+"jacques_dlg1_2_pier",18082007482212352,"","What’s that?","","Co takiego?
+",""
+"jacques_dlg1_3_jacques",18081985495670784,"","True freedom. Maybe you don’t get to choose whether you go to war or not. But today — today, you’re free.","","Prawdziwą wolność. Może i nie ma decyzji co do tego czy idziesz na wojnę czy nie. Ale dzisiaj. Jesteś wolny.",""
+"jacques_dlg1_4_jacques",18082321069350912,"","Truly free. No social ties bind you, because chances are… you’ll never see us again. You can do whatever you want. Anything at all.","","Prawdziwie wolny. Nie ograniczają więzy społeczne bo najprawdopodobniej nigdy nas już nie zobaczysz. Możesz zrobić co chcesz. Co tylko chcesz.
+",""
+"jacques_dlg1_5_pier",18082039124041728,"","That’s not exactly comforting.","","To co mówisz nie jest pocieszające.",""
+"noemie_name",18082788683915264,"","Noémie","","Noémie",""
+"noemie_dlg1_1_noemie",18082907617599488,"","If you see my son Trevor, tell him I love him.","","Jeśli spotkasz mojego syna Trevora przekaż mu że go kocham.",""
+"noemie_dlg1_2_noemie",18083082536853504,"","You remember Trevor, don’t you?","","Pamiętasz Tervora prawda?",""
+"noemie_dlg1_3_pier",18083175570710528,"","I’ll tell him. Yes, I remember him.","","Przekaże, tak pamiętam go",""
+"noemie_dlg1_4_noemie",18083203680935936,"","Blond boy, three dark moles behind his ear. You’ll recognize him for sure.","","Blondyn, ma 3 czarne krosty za uchem. Na Pewno rozpoznasz.",""
+"patroling_guard_name",18083705449717760,"","Guard","","Żołnierz",""
+"patroling_guard_dlg1_1_pier",18083361948803072,"","What’s it like to fight in Napoleon’s army?","","Jak to jest walczyć w wojsku Napoleona?
+",""
+"patroling_guard_dlg1_2_guard",18083451866292224,"","So you’re the one they picked, huh? Get ready for endless marching, rotten food, and death. If not yours — then everyone’s around you.","","To ciebie teraz wylosowali tak? Przygotuj się na długie marsz, parszywe jedzenie i śmierć. Jak nie twoją to wszystko w około.
+",""
+"patroling_guard_dlg1_3_pier",18083512272658432,"","That’s not exactly reassuring.","","To co mówisz jest niepocieszające.",""
+"patroling_guard_dlg1_4_guard",18083520963256320,"","It’s not meant to be. You know how many boys like you I’ve seen sent off to war? Plenty. No one came back from the last skirmish.","","Nigdy nie miało być. Wiesz ilu takich młodych jak ty widziałem wysłanych na wojnę. Mnustwo. Z ostatniej potyczki nie wrócił nikt.",""
+"patroling_guard_dlg1_5_guard",18083592471945216,"","I only survived because I was in supply, far from the front lines. But now Napoleon needs every pair of hands… Frog-eating bastard!",""," Ja przeżyłem bo byłem w zaopatrzeniu. z Dala od linii frontu. Ale teraz Napoleon potrzebuje każdej pary rąk. Żabojad jeden.
+",""
+"doggo_name",18084441571041280,"","Dog","","Pies",""
+"doggo_dlg1_1_pier",18084520772083712,"","You’ve got it good... No worries, just chasing sheep all day. And plenty of other dogs around here too.","","Ty to masz dobrze. Zero zmartwień. Wybiegasz się za owcami. A w okolicy mnustwo innych psów.",""
+"doggo_dlg1_2_doggo",18084564363485184,"","Woof, woof!","","Hau, Hau!",""
+"doggo_dlg1_3_pier",18084605274726400,"","Well said.","","Dobrze powiedziane.",""
+"doggo_dlg1_4_doggo",18084626455961600,"","Woof!","","Hau!",""
+"doggo_dlg1_5_pier",18084661532925952,"","Absolutely, Milord.","","Zdecydowanie Milordzie.
+",""
+"doggo_dlg1_6_doggo",18084679975280640,"","Woof.","","Hau.",""
