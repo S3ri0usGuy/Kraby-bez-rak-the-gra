@@ -1,10 +1,10 @@
 /// <summary>
 /// Represents a state of the quest.
 /// </summary>
-public enum QuestStageState
+public enum QuestState
 {
 	/// <summary>
-	/// The stage has not been yet given.
+	/// The quest has not been yet given.
 	/// </summary>
 	None = 0,
 	/// <summary>

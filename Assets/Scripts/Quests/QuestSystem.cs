@@ -8,7 +8,7 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 
 	public delegate void QuestAction(QuestSystem questSystem, Quest quest);
 	public delegate void QuestStateUpdatedAction(QuestSystem questSystem, QuestStateUpdatedEventArgs e);
-	public delegate void QuestStageUpdatedAction(QuestSystem questSystem, QuestStageUpdatedEventArgs e);
+	public delegate void SubquestStateUpdatedAction(QuestSystem questSystem, SubquestStateUpdatedEventArgs e);
 
 	/// <summary>
 	/// Event that is triggered when the new quest is started.
@@ -21,16 +21,16 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 	/// Event that is triggered when the general quest state is updated.
 	/// </summary>
 	/// <remarks>
-	/// Not to be confused with <see cref="questStageUpdated" />.
+	/// Not to be confused with <see cref="subquestStateUpdated" />.
 	/// </remarks>
 	public event QuestStateUpdatedAction questStateUpdated;
 	/// <summary>
-	/// Event that is triggered when the stage state of one of the quests is updated.
+	/// Event that is triggered when the subquest state of one of the quests is updated.
 	/// </summary>
 	/// <remarks>
 	/// Not to be confused with <see cref="questStateUpdated" />.
 	/// </remarks>
-	public event QuestStageUpdatedAction questStageUpdated;
+	public event SubquestStateUpdatedAction subquestStateUpdated;
 
 	/// <summary>
 	/// Loads the quests progress.
@@ -51,14 +51,14 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 	}
 
 	/// <summary>
-	/// Gets an enumerable containing all active, completed and failed stages of the quest.
+	/// Gets an enumerable containing all active, completed and failed subquests of the quest.
 	/// </summary>
 	/// <returns>
-	/// An enumerable containing all active, completed and failed stages of the quest.
-	/// Empty if the quest was not found or if it has no stages.
+	/// An enumerable containing all active, completed and failed subquests of the quest.
+	/// Empty if the quest was not found or if it has no subquests.
 	/// </returns>
 	/// <exception cref="System.ArgumentNullException" />
-	public IEnumerable<QuestStage> GetQuestStages(Quest quest)
+	public IEnumerable<Subquest> GetQuestSubquests(Quest quest)
 	{
 		if (!quest)
 		{
@@ -67,15 +67,15 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 
 		if (_quests.TryGetValue(quest, out var progress))
 		{
-			return progress.stages.Keys;
+			return progress.subquests.Keys;
 		}
-		return Enumerable.Empty<QuestStage>();
+		return Enumerable.Empty<Subquest>();
 	}
 
 	/// <summary>
 	/// Gets the state of the quest.
 	/// </summary>
-	/// <param name="quest">The quest to get the stage for.</param>
+	/// <param name="quest">The quest to get the state for.</param>
 	/// <returns>
 	/// The state of the quest or <see cref="QuestState.None" />, if the quest hasn't started yet.
 	/// </returns>
@@ -89,13 +89,38 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 		return QuestState.None;
 	}
 
+	private void CascadeSubquests(QuestProgress progress, QuestState state)
+	{
+		List<(Subquest, SubquestState)> valuesToSet = new();
+		foreach (var (subquest, subquestState) in progress.subquests)
+		{
+			if (subquestState != SubquestState.Active)
+				continue;
+
+			var action = state == QuestState.Completed ? subquest.actionOnQuestPassed : subquest.actionOnQuestFailed;
+
+			if (action == Subquest.StateAction.None)
+				continue;
+
+			var newSubquestState = action == Subquest.StateAction.Pass ? SubquestState.Completed : SubquestState.Failed;
+			valuesToSet.Add((subquest, newSubquestState));
+		}
+		// Prevents the "Collection was modified" error
+		foreach (var (subquest, subquestState) in valuesToSet)
+		{
+			SetSubquestState(subquest, subquestState);
+		}
+	}
+
 	/// <summary>
 	/// Sets the quest state to a new value.
 	/// </summary>
 	/// <param name="quest">The quest which state is set.</param>
 	/// <param name="state">The new quest state value.</param>
 	/// <exception cref="System.ArgumentNullException" />
-	/// <exception cref="System.Argument" />
+	/// <exception cref="System.ArgumentException">
+	/// Attempted to set <see cref="QuestState.None" />.
+	/// </exception>
 	public void SetQuestState(Quest quest, QuestState state)
 	{
 		if (!quest)
@@ -127,25 +152,7 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 
 		if (state == QuestState.Completed || state == QuestState.Failed)
 		{
-			List<(QuestStage, QuestStageState)> valuesToSet = new();
-			foreach (var (stage, stageState) in progress.stages)
-			{
-				if (stageState != QuestStageState.Active)
-					continue;
-
-				var action = state == QuestState.Completed ? stage.actionOnQuestPassed : stage.actionOnQuestFailed;
-
-				if (action == QuestStage.StateAction.None)
-					continue;
-
-				var newStageState = action == QuestStage.StateAction.Pass ? QuestStageState.Completed : QuestStageState.Failed;
-				valuesToSet.Add((stage, newStageState));
-			}
-			// Prevents the "Collection was modified" error
-			foreach (var (stage, stageState) in valuesToSet)
-			{
-				SetStageState(stage, stageState);
-			}
+			CascadeSubquests(progress, state);
 		}
 
 		progress.state = state;
@@ -155,51 +162,53 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 	}
 
 	/// <summary>
-	/// Gets the state of the given stage.
+	/// Gets the state of the given subquest.
 	/// </summary>
-	/// <param name="stage"></param>
+	/// <param name="subquest">A subquest for which the state is needed to be found.</param>
 	/// <returns>
-	/// A state of the given stage. <see cref="QuestStageState.None" /> is returned
-	/// when the stage or its quest has not been encountered.
+	/// A state of the given subquest. <see cref="SubquestState.None" /> is returned
+	/// when the subquest or its quest has not been encountered.
 	/// </returns>
-	public QuestStageState GetStageState(QuestStage stage)
+	public SubquestState GetSubquestState(Subquest subquest)
 	{
-		if (!stage.quest)
+		if (!subquest.quest)
 		{
-			Debug.LogError($"The quest stage (\"{stage.name}\") has no quest assigned to it.", stage);
-			return QuestStageState.None;
+			Debug.LogError($"The subquest (\"{subquest.name}\") has no quest assigned to it.", subquest);
+			return SubquestState.None;
 		}
 
-		if (_quests.TryGetValue(stage.quest, out var progress))
+		if (_quests.TryGetValue(subquest.quest, out var progress))
 		{
-			return progress.GetStage(stage);
+			return progress.GetSubquestState(subquest);
 		}
 
-		return QuestStageState.None;
+		return SubquestState.None;
 	}
 
 	/// <summary>
-	/// Sets the stage to a new state.
+	/// Sets the subquest state.
 	/// </summary>
-	/// <param name="stage">The stage to manipulate.</param>
+	/// <param name="subquest">The subquest to manipulate.</param>
 	/// <param name="state">The state to set.</param>
 	/// <exception cref="System.ArgumentNullException" />
-	/// <exception cref="System.ArgumentException" />
-	public void SetStageState(QuestStage stage, QuestStageState state)
+	/// <exception cref="System.ArgumentException">
+	/// Attempted to set <see cref="SubquestState.None" />.
+	/// </exception>
+	public void SetSubquestState(Subquest subquest, SubquestState state)
 	{
-		if (!stage)
+		if (!subquest)
 		{
-			throw new System.ArgumentNullException(nameof(stage));
+			throw new System.ArgumentNullException(nameof(subquest));
 		}
-		if (state == QuestStageState.None)
+		if (state == SubquestState.None)
 		{
-			throw new System.ArgumentException("Cannot set the stage state to \"None\".", nameof(state));
+			throw new System.ArgumentException("Cannot set the subquest state to \"None\".", nameof(state));
 		}
 
-		Quest quest = stage.quest;
+		Quest quest = subquest.quest;
 		if (!quest)
 		{
-			Debug.LogError($"The quest stage (\"{stage.name}\") has no quest assigned to it.", stage);
+			Debug.LogError($"The subquest (\"{subquest.name}\") has no quest assigned to it.", subquest);
 			return;
 		}
 
@@ -207,7 +216,7 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 		{
 			if (questProgress.state != QuestState.Active)
 			{
-				Debug.LogWarning($"A stage of the non-active quest (\"{quest.name}\") was modified.");
+				Debug.LogWarning($"A subquest of the non-active quest (\"{quest.name}\") was modified.");
 			}
 		}
 		else
@@ -217,10 +226,10 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 			questProgress = _quests[quest];
 		}
 
-		QuestStageState oldState = questProgress.GetStage(stage);
-		questProgress.SetStage(stage, state);
+		SubquestState oldState = questProgress.GetSubquestState(subquest);
+		questProgress.SetSubquestState(subquest, state);
 
-		QuestStageUpdatedEventArgs eventArgs = new(stage, oldState, state);
-		questStageUpdated?.Invoke(this, eventArgs);
+		SubquestStateUpdatedEventArgs eventArgs = new(subquest, oldState, state);
+		subquestStateUpdated?.Invoke(this, eventArgs);
 	}
 }
