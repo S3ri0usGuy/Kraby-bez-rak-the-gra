@@ -101,6 +101,7 @@ public class DialoguePlayer : MonoBehaviour
 				var audioAsyncOperation = phrase.audioClip.LoadAssetAsync<AudioClip>();
 				yield return new WaitUntil(() => audioAsyncOperation.IsDone);
 				audio = audioAsyncOperation.Result;
+				if (!audio) audio = phrase.defaultAudioClip;
 			}
 			else if (phrase.defaultAudioClip)
 			{
