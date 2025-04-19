@@ -23,11 +23,12 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _defaultAudioClip: {fileID: 8300000, guid: a2f718b348ff9e74d92b6abd039a4949, type: 3}
     _audioClip:
       m_TableReference:
-        m_TableCollectionName: GUID:aba90d18d68473b43a4d39f3b4d18158
+        m_TableCollectionName: 
       m_TableEntryReference:
-        m_KeyId: 644527005696
+        m_KeyId: 0
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -43,11 +44,12 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _defaultAudioClip: {fileID: 8300000, guid: 32577afcaf47d5d45909c640a7e60312, type: 3}
     _audioClip:
       m_TableReference:
-        m_TableCollectionName: GUID:aba90d18d68473b43a4d39f3b4d18158
+        m_TableCollectionName: 
       m_TableEntryReference:
-        m_KeyId: 648851333120
+        m_KeyId: 0
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
