@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// A component that allows to complete or fail a the subquest. Can be
@@ -17,6 +18,7 @@ public class SubquestAction : MonoBehaviour
 	private bool _performOnEnable = false;
 	[SerializeField]
 	[Tooltip("A quest that is the receiver of this action.")]
+	[FormerlySerializedAs("_stage")]
 	private Subquest _subquest;
 	[SerializeField]
 	[Tooltip("An action to perform.")]
