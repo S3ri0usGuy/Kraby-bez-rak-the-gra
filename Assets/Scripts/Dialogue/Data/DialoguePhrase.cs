@@ -16,7 +16,10 @@ public class DialoguePhrase
 	[Tooltip("A localized text of the phrase.")]
 	private LocalizedString _text;
 	[SerializeField]
-	[Tooltip("An optional audio clip that will be played.")]
+	[Tooltip("An optional audio clip that will be played if the audioClip is not set.")]
+	private AudioClip _defaultAudioClip;
+	[SerializeField]
+	[Tooltip("An optional localized audio clip that will be played.")]
 	private LocalizedAudioClip _audioClip;
 	[SerializeField]
 	[Tooltip("A duration of the phrase in seconds. " +
@@ -36,6 +39,10 @@ public class DialoguePhrase
 	/// Gets a localized string used for this phrase.
 	/// </summary>
 	public LocalizedString text => _text;
+	/// <summary>
+	/// Gets an audio clip that is played if the <see cref="audioClip" /> is not assigned.
+	/// </summary>
+	public AudioClip defaultAudioClip => _defaultAudioClip;
 	/// <summary>
 	/// Gets an audio clip that is played for this phrase.
 	/// </summary>
