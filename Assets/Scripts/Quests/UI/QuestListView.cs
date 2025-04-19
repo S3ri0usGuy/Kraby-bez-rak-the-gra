@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 /// <summary>
@@ -10,12 +11,12 @@ public class QuestListView : MonoBehaviour
 	private class QuestItemsGroup
 	{
 		public QuestListItem questItem { get; }
-		public List<QuestStageListItem> stageItems { get; }
+		public List<SubquestListItem> subquestItems { get; }
 
 		public QuestItemsGroup(QuestListItem questItem)
 		{
 			this.questItem = questItem;
-			stageItems = new();
+			subquestItems = new();
 		}
 	}
 
@@ -24,7 +25,8 @@ public class QuestListView : MonoBehaviour
 	[SerializeField]
 	private QuestListItem _questItemPrefab;
 	[SerializeField]
-	private QuestStageListItem _questStageItemPrefab;
+	[FormerlySerializedAs("_questStageItemPrefab")]
+	private SubquestListItem _subquestItemPrefab;
 
 	private void Start()
 	{
@@ -34,14 +36,14 @@ public class QuestListView : MonoBehaviour
 		foreach (var quest in questSystem.GetQuests())
 		{
 			AddQuest(quest);
-			foreach (var stage in questSystem.GetQuestStages(quest))
+			foreach (var subquest in questSystem.GetQuestSubquests(quest))
 			{
-				AddStage(stage);
+				AddSubquest(subquest);
 			}
 		}
 
 		questSystem.questStarted += OnQuestStarted;
-		questSystem.questStageUpdated += OnStageUpdated;
+		questSystem.subquestStateUpdated += OnSubquestUpdated;
 	}
 
 	private void OnQuestStarted(QuestSystem questSystem, Quest quest)
@@ -49,9 +51,9 @@ public class QuestListView : MonoBehaviour
 		AddQuest(quest);
 	}
 
-	private void OnStageUpdated(QuestSystem questSystem, QuestStageUpdatedEventArgs e)
+	private void OnSubquestUpdated(QuestSystem questSystem, SubquestStateUpdatedEventArgs e)
 	{
-		AddStage(e.stage);
+		AddSubquest(e.subquest);
 	}
 
 	private void Reorder()
@@ -60,9 +62,9 @@ public class QuestListView : MonoBehaviour
 		foreach (var group in _questGroups)
 		{
 			group.questItem.transform.SetSiblingIndex(index++);
-			foreach (var stageItem in group.stageItems)
+			foreach (var subquestItem in group.subquestItems)
 			{
-				stageItem.transform.SetSiblingIndex(index++);
+				subquestItem.transform.SetSiblingIndex(index++);
 			}
 		}
 		LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
@@ -86,15 +88,15 @@ public class QuestListView : MonoBehaviour
 		return group;
 	}
 
-	private void AddStage(QuestStage stage)
+	private void AddSubquest(Subquest subquest)
 	{
-		var group = _questGroups.Find(x => x.questItem.quest == stage.quest) ?? AddQuest(stage.quest);
-		if (group.stageItems.FindIndex(x => x.stage == stage) == -1)
+		var group = _questGroups.Find(x => x.questItem.quest == subquest.quest) ?? AddQuest(subquest.quest);
+		if (group.subquestItems.FindIndex(x => x.subquest == subquest) == -1)
 		{
-			QuestStageListItem questStageItem = Instantiate(_questStageItemPrefab, transform);
-			questStageItem.Bind(stage);
+			SubquestListItem subquestItem = Instantiate(_subquestItemPrefab, transform);
+			subquestItem.Bind(subquest);
 
-			group.stageItems.Add(questStageItem);
+			group.subquestItems.Add(subquestItem);
 			Reorder();
 		}
 	}

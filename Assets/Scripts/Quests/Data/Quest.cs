@@ -11,7 +11,7 @@ public class Quest : ScriptableObject
 	[Tooltip("A localized name of the quest.")]
 	private LocalizedString _name;
 	[SerializeField]
-	[Tooltip("If checked, the quest and active stages will fail when the time is over.")]
+	[Tooltip("If checked, the quest and active subquests will fail when the time is over.")]
 	private bool _failOnTimeOver = true;
 
 	/// <summary>
@@ -20,7 +20,7 @@ public class Quest : ScriptableObject
 	public LocalizedString questName => _name;
 
 	/// <summary>
-	/// Gets a boolean indicating whether the quest and its active stages must fail
+	/// Gets a boolean indicating whether the quest and its active subquest must fail
 	/// after the time is over.
 	/// </summary>
 	public bool failOnTimeOver => _failOnTimeOver;

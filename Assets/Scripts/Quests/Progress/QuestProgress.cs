@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class QuestProgress
 {
-	private readonly Dictionary<QuestStage, QuestStageState> _stages;
+	private readonly Dictionary<Subquest, SubquestState> _subquests;
 
 	/// <summary>
 	/// Gets the quest reference.
@@ -19,57 +19,59 @@ public class QuestProgress
 	public QuestState state { get; set; }
 
 	/// <summary>
-	/// Gets a dictionary that maps the quest stages to their states.
+	/// Gets a dictionary that maps the subquests to their states.
 	/// </summary>
-	public Dictionary<QuestStage, QuestStageState> stages => _stages;
+	public Dictionary<Subquest, SubquestState> subquests => _subquests;
 
 	public QuestProgress(Quest quest, QuestState state)
 	{
 		this.quest = quest;
 		this.state = state;
 
-		_stages = new();
+		_subquests = new();
 	}
 
 	/// <summary>
-	/// Gets the stage state.
+	/// Gets the subquest state.
 	/// </summary>
-	/// <param name="stage">A stage of the quest.</param>
+	/// <param name="subquest">A subquest of the quest.</param>
 	/// <returns>
-	/// A state of the <paramref name="stage"/>.
+	/// A state of the <paramref name="subquest"/>.
 	/// </returns>
-	public QuestStageState GetStage(QuestStage stage)
+	/// <exception cref="System.ArgumentException">Thrown when the subquest is invalid for this quest.</exception>
+	public SubquestState GetSubquestState(Subquest subquest)
 	{
-		if (stage.quest != quest)
+		if (subquest.quest != quest)
 		{
 			throw new System.ArgumentException(
-				"Attempted to get a state of the stage that doesn't belong to the quest. " +
-				$"Quest name: \"{quest.name}\", the stage quest name: {stage.quest.name}.");
+				"Attempted to get a state of the subquest that doesn't belong to the quest. " +
+				$"Quest name: \"{quest.name}\", the subquest name: {subquest.quest.name}.");
 		}
 
-		return stages.GetValueOrDefault(stage, QuestStageState.None);
+		return subquests.GetValueOrDefault(subquest, SubquestState.None);
 	}
 
 	/// <summary>
-	/// Sets the stage state to a specific value.
+	/// Sets the subquest state to a specific value.
 	/// </summary>
-	/// <param name="stage">A stage of the quest.</param>
-	/// <param name="state">A state of the quest stage</param>
-	public void SetStage(QuestStage stage, QuestStageState state)
+	/// <param name="subquest">A subquest of the quest.</param>
+	/// <param name="state">A state of the subquest.</param>
+	/// <exception cref="System.ArgumentException">Thrown when the subquest is invalid for this quest.</exception>
+	public void SetSubquestState(Subquest subquest, SubquestState state)
 	{
-		if (stage.quest != quest)
+		if (subquest.quest != quest)
 		{
 			throw new System.ArgumentException(
-				"Attempted to set a state of the stage that doesn't belong to the quest. " +
-				$"Quest name: \"{quest.name}\", the stage quest name: {stage.quest.name}.");
+				"Attempted to set a state of the subquest that doesn't belong to the quest. " +
+				$"Quest name: \"{quest.name}\", the subquest name: {subquest.quest.name}.");
 		}
 
-		if (stages.TryGetValue(stage, out var previousState) &&
-			previousState != QuestStageState.Active)
+		if (subquests.TryGetValue(subquest, out var previousState) &&
+			previousState != SubquestState.Active)
 		{
-			Debug.LogWarning($"Suspicious quest stage (\"{stage.name}\") state change was detected: {previousState} -> {state}.", stage);
+			Debug.LogWarning($"Suspicious subquest (\"{subquest.name}\") state change was detected: {previousState} -> {state}.", subquest);
 		}
 
-		stages[stage] = state;
+		subquests[subquest] = state;
 	}
 }

@@ -24,11 +24,11 @@ public class QuestFailOnTimeOver : MonoBehaviour
 		foreach (var quest in _questSystem.GetQuests())
 		{
 			if (!quest.failOnTimeOver) continue;
-			foreach (var stage in _questSystem.GetQuestStages(quest))
+			foreach (var subquest in _questSystem.GetQuestSubquests(quest))
 			{
-				if (_questSystem.GetStageState(stage) == QuestStageState.Active)
+				if (_questSystem.GetSubquestState(subquest) == SubquestState.Active)
 				{
-					_questSystem.SetStageState(stage, QuestStageState.Failed);
+					_questSystem.SetSubquestState(subquest, SubquestState.Failed);
 				}
 			}
 			_questSystem.SetQuestState(quest, QuestState.Failed);
