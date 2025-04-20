@@ -2,6 +2,34 @@
 
 ![image](https://github.com/user-attachments/assets/ea64c03f-ae5a-4d6d-a73a-882bc9b5844e)
 
+- [Terminology](#terminology)
+- [Clock](#clock)
+- [Interactable Objects](#interactable-objects)
+- [Dialogues](#dialogues)
+  - [Overview](#overview)
+  - [Dialogue Nodes Guide](#dialogue-nodes-guide)
+    - [Dialogues Folder Structure (IMPORTANT!)](#dialogues-folder-structure-important)
+    - [Creating The Nodes](#creating-the-nodes)
+      - [Dialogue Groups (skippable for the game ending dialogue)](#1-dialogue-groups-skippable-for-the-game-ending-dialogue)
+      - [Dialogue Nodes](#2-dialogue-nodes)
+      - [Dialogue Phrases](#3-dialogue-phrases)
+      - [Dialogue Answer Options](#4-dialogue-answer-options)
+      - [Dialogue Next Node Branching](#5-dialogue-next-node-branching)
+    - [Dialogue Conditions](#dialogue-conditions)
+      - [Dialogue Condition Creation](#dialogue-condition-creation)
+      - [Dialogue Conditions Overview](#dialogue-conditions-overview)
+    - [Dialogue Save Events](#dialogue-save-events)
+    - [Localized Phrases](#localized-phrases)
+      - [Creating a New Localization Table for Dialogue Phrases](#creating-a-new-localization-table-for-dialogue-phrases)
+      - [Using an Already Existing Localization Table for Dialogue Phrases](#using-an-already-existing-localization-table-for-dialogue-phrases)
+    - [Localized Voice Lines](#localized-voice-lines)
+  - [Dialogue NPCs](#dialogue-npcs)
+    - [Creating an NPC with Dialogues](#creating-an-npc-with-dialogues)
+    - [Dialogue Node Triggers](#dialogue-node-triggers)
+- [Actions](#actions)
+  - [List of Actions](#list-of-actions)
+- [Triggers](#triggers)
+
 ## Terminology
 
 - **Entity** - An active in-game object that is not a player. Examples: NPCs, narration screen.
