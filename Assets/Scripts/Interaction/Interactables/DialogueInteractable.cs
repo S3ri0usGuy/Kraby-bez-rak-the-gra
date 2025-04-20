@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DialogueInteractable : Interactable
+public class DialogueInteractable : InteractableObject
 {
 	private float _timer;
 

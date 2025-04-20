@@ -8,7 +8,10 @@ public class PlayerTrigger : Trigger
 
 	private void OnTriggerEnter(Collider other)
 	{
-		_playerEntered.Invoke();
-		InvokeTriggered();
+		if (other.TryGetComponent<Player>(out _))
+		{
+			_playerEntered.Invoke();
+			InvokeTriggered();
+		}
 	}
 }

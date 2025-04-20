@@ -3,8 +3,8 @@ using UnityEngine;
 /// <summary>
 /// A condition that checks whether the quest has the right state.
 /// </summary>
-[CreateAssetMenu(fileName = "QuestStateCondition", menuName = "Dialogue/Conditions/Quest/Quest State")]
-public class DialogueStateQuestCondition : DialogueCondition
+[CreateAssetMenu(fileName = "DialogueQuestStateCondition", menuName = "Dialogue/Conditions/Quest/Quest State")]
+public class DialogueQuestStateCondition : DialogueCondition
 {
 	[SerializeField]
 	private Quest _quest;

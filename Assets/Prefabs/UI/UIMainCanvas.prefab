@@ -492,7 +492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3401073918795500072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questItemPrefab: {fileID: 729293793288514084, guid: 53d0481204cab114b8957483f1f6d18f, type: 3}
-  _questStageItemPrefab: {fileID: 2739853957368777612, guid: 0a13b89a18955fc4283ed3d9827186a7, type: 3}
+  _subquestItemPrefab: {fileID: 2739853957368777612, guid: 0a13b89a18955fc4283ed3d9827186a7, type: 3}
 --- !u!1 &7244471294772430900
 GameObject:
   m_ObjectHideFlags: 0
