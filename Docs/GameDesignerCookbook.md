@@ -26,6 +26,30 @@
 
 - **Action** - A component that usually has one method - `Perform`. This method is called by other components, especially **triggers**. The actions are meant to interact with in-game objects: play audio, start/complete/fail quests, save state.
 
+- **Interactable Object** - An object that has a trigger collider assigned to it and a component that ends with the `Interactable` suffix. Such objects show a prompt similiar to "Press X to do Y" 
+
+## Clock
+
+The game counts time in minutes. The starting number of minutes can be edited inside the `Player` prefab (use the `t:Prefab Player` search prompt in the Project window):
+
+![image](https://github.com/user-attachments/assets/18815167-e4c5-4a8d-9328-9607cbd82827)
+
+Minutes can be spent using the `SpendTimeAction` which can be triggered by dialogues or quests.
+
+## Interactable Objects
+
+Interactable objects are objects with a trigger collider and a component that ends with the `Interactable` suffix. Such objects show a prompt similiar to "Press X to do Y". Currently, there are two "Interactable" components:
+
+1. `EventInteractable` - a component that was used for the exit trigger in the alpha version. It's the most basic interactable object as it just triggers the "Event" when the player interacts with it:
+   ![image](https://github.com/user-attachments/assets/38bc1341-5eab-47d9-80d9-8170a677c6e6)
+2. `DialogueInteractable` - a special interactable component that is used to start dialogues. This component is present in the `DialogueNPC` prefab and it's assigned to the `EntryTrigger` component, so all NPCs with dialogues have it. Try to not think about it that much, [the less you know the better](https://www.youtube.com/watch?v=2SUwOgmvzK4). Just remember that it's your responsibility to give this trigger a proper action name, position and collider.
+
+Each interactable object has the "Action Name" which is shown when the player enters the trigger. The action names are stored in the `General` localization table.
+
+Almost all of interactable objects (objects that show you the "Press X to do Y" text) do not work if the number of minutes left is 0. If you want for some interactable object to always work, uncheck this checkbox:
+
+![image](https://github.com/user-attachments/assets/664a0576-7c32-4d18-8256-a3f1220e64c8)
+
 ## Dialogues
 
 ### Overview
@@ -80,7 +104,7 @@ Tip: you can create subfolders for the logical groups of nodes, it can make your
 Following this convention (especially for the characters) is very important, because otherwise some systems may not work properly, and it will be easier for others to modify dialogues.
 
 #### Creating The Nodes
-##### 1. **Dialogue Groups** (skippable for the game ending dialogue). 
+##### 1. **Dialogue Groups** (skippable for the game ending dialogue)
 
 For the NPCs, each dialogue node must belong to the dialogue node group (it's the saving system requirement). So, when making dialogue nodes for characters, in the root character folder (e.g. `Assets/Dialogues/Characters/Main/Clemence`) create the `Dialogue Nodes Group`:
 
@@ -91,7 +115,7 @@ node groups manually, as they populate themselves automatically.
 
 **Important:** Please, give the groups proper names, preferably in this format: `[CharacterName]DialogueGroup`.
 
-##### 2. **Dialogue Nodes**.
+##### 2. **Dialogue Nodes**
 
 So you've created the node group, your next step is to create your first node. It's done in the same way as groups, but you just need to choose a different option:
 
@@ -103,7 +127,7 @@ Once you've created a node, it should look like this:
 
 **Important:** Please, give the nodes proper names, preferably in this format: `[CharacterName]_Dlg[SequenceNo]` for the "parent node" of the dialogue sequence and `[CharacterName]_Dlg[SequenceNo]_[EntryName]`. Examples: `Michele_Dlg1`, `Michele_Dlg1_Yes`.
 
-##### 3. **Phrases**
+##### 3. **Dialogue Phrases**
 
 **Tip:** hover your mouse on the properties - this will show you tooltips.
 
@@ -123,6 +147,81 @@ Now, let's see how an average phrase looks like:
 4. **Audio Clip** (optional) - a localized audio clip that will be played during the phrase. See the [Localized Voice Lines](#localized-voice-lines) section for more details.
 5. **Duration** - how long the phrase lasts (in seconds). If the audio clip (either **Default Audio Clip** or **Audio Clip**) is assigned, and this value is zero or negative, the clip's duration is taken instead.
 6. **Unskippable** - if checked, the phrase will not be skippable; otherwise the player can press any key to skip the phrase.
+
+##### 4. **Dialogue Answer Options**
+
+Now take a look at the answer options.
+
+![image](https://github.com/user-attachments/assets/d153f3f7-8b49-40d9-8dd0-c2048ed76c01)
+
+You can see two options: yes and no. Their parameters are:
+
+1. **Text** - a localized option text that will be displayed to the player. Such string must be put either in the default Dialogue table or in the table that is specific to the character (same principle as with the [Localized Phrases](#localized-phrases)).
+2. **Branching** - the branching logic which is quite similiar to the next node branching (see the next section). But there is a main difference: where there is no node available (this means that no node is assigned as the default one and others are locked by conditions) the option will not be shown to the player.
+
+Answering the option leads to the dialogue sequence transitioning to the first available node in the branching (the default one comes last).
+
+If you don't specify any answers or if all answers will be locked behind the branching, the player won't be shown a prompt to answer. This ends the dialogue sequence, which leads to the the current NPC node (the node that will be played next) being updated based on the next node branching (see the next section).
+
+Optionally, you can add a time restriction to the node.
+
+![image](https://github.com/user-attachments/assets/9a48bc03-4bb7-45c7-9999-4f00381101a6)
+
+* **Default** - the player has no time limits to answer.
+* **TimedPickFirst** - the player's time to answer is limited (by "Time To Answer" seconds). If time is out, the first option is picked.
+* **TimedPickRandom** - the player's time to answer is limited (by "Time To Answer" seconds). If time is out, a random option is picked.
+
+##### 5. **Dialogue Next Node Branching**
+
+Now, the most complex and interesting stuff - branching. So, each object with dialogues has a one node saved as "current". This node changes either when the player chooses some answer, or when the dialogue sequence ends.
+
+![image](https://github.com/user-attachments/assets/4bc0c2dc-7855-49b0-87e0-5df9d9657341)
+
+- **Default Next Node** - a node that will be selected if there is no branch available.
+- **Branches** - a collection of potential next nodes. Each is checked in the same order you put them there. The first one with all conditions met is selected.
+    - **Node** - a node in a branch that will be selected if all conditions are satisfied and if it comes first.
+    - **Conditions** - a list of conditions that must be satisfied in order for the node to be selected. More info in the [Dialogue Conditions](#dialogue-conditions) section. Note that **ALL** conditions from the list must be satisfied for the node to be selected.
+
+The selected node is set as a current for the dialogue object. If it's not assigned (None), the node doesn't change and remains the same.
+
+**Pro-tip:** if a node is empty (no phrases and answers), the player won't be able to start the dialogue. But, the empty node can still have branching which will be updated each time the player enters the "dialogue start zone"! So, you can use empty nodes to temporary disable dialogues. There is also an already existing empty node that you can use to permanently disable the dialogues: `DialogueEmptyNode` (just don't edit it!).
+
+#### Dialogue Conditions
+
+Dialogue Conditions are files that can be combined in the branches in order to create more complex dialogue graphs. They are located in:
+- `Assets/Dialogues/Shared/Conditions` folder. It contains conditions that can be reused by many objects.
+- Folders specific to entities (more info [here](#dialogues-folder-structure-important)).
+
+##### Dialogue Condition Creation
+
+In order to create a dialogue condition follow these steps:
+
+1. Make sure that you're located in the appropriate folder (`Assets/Dialogues/Shared/Conditions` or a folder specific for the dialogue entity).
+2. Right click and inside the `Create -> Dialogue -> Conditions` choose a condition that you want to add.
+
+![image](https://github.com/user-attachments/assets/3af35f6a-4371-4946-b4f3-003b9c2c0665)
+
+3. Name the condition so it's easily recognizable. If it's a condition that is specific to an entity, put the entity name at the beginning of the name (e.g. `ClemenceRomanceCondition`).
+4. You're done! Now use it in the branching however you want.
+
+#### Dialogue Conditions Overview
+
+- **Quest** - conditions related to quests.
+    - **Quest State** (`DialogueQuestStateCondition`) - a condition that is satisfied when the specified quest has exactly the same state as defined by the "State" property.
+    ![image](https://github.com/user-attachments/assets/ed73cd29-d900-4d06-825d-dee2b7d1d7a0)
+    - **Subquest State** (`DialogueSubquestStateCondition`) - exactly same as the **Quest State** one, but for subquests.
+- **Random** (`DialogueRandomCondition`) - a condition that has a probability to be satisfied. It's completely random and a chance to be satisfied is defined by the "Probability" property (from 0 to 1: 0 meaning always failure, 1 meaning always success). This condition is not recommended to be actually used and was added to test the conditions feature before other conditions existed.
+  ![image](https://github.com/user-attachments/assets/2cfe7433-4b2c-4e07-9d6f-3009a8b4fc94)
+- **Save Event** (`DialogueSaveEventCondition`) - a condition that is satisfied if the specified save event (defined by the "Event" property) has the target state (defined by the "Target State" property).
+  ![image](https://github.com/user-attachments/assets/b6a7c272-32c7-4046-92b2-a1f8d3e2fe6e)
+- **Time Left** (`DialogueTimeLeftCondition`) - a condition that is satisfied only if the minutes left pass the comparison. It uses this formula to check if it's satisfied: `minutesLeft (Comparison) targetMinutesLeft`.
+    ![image](https://github.com/user-attachments/assets/37f60a59-ed14-42fd-b03b-d9a5afea80ae)
+    
+#### Dialogue Save Events
+
+Save Events are basically flags with two states: "exists" and "not exists". By default, all save events have the "not exists" state. Save Events can be created by choosing these options: `Create -> Dialogues -> Save Event`.
+
+To manipulate the state of events use the `DialogueSaveEventAction` component. To make dialogues responsive to the save events, use the `DialogueSaveEventCondition` condition.
 
 #### Localized Phrases
 
@@ -174,8 +273,7 @@ It's advised to create a new localization table per each main character. For the
    ![image](https://github.com/user-attachments/assets/5519223f-c716-4cf0-9632-df26e0934c6e)
 
 3. For new entries use this pattern: `[entityName*]_[node]_[speaker]` (* - omit the entityName if the table is unique for it). Examples: `dlg1_yes4_narrator` (`ClemenceDialogues` table, specific for the NPC), `jacques_dlg1_4_jacques` (NPC's name is specified because this phrase is inside the general `Dialogue` table)
-   
-   
+      
 #### Localized Voice Lines
 
 Voice lines use similiar tables as the text phrases. These tables must be used only if the voice lines use speech, otherwise they are redundant.
@@ -185,3 +283,95 @@ Like the text phrases, voice lines have its own default table `VoiceLines` that 
 In order to create a new voice lines table you do the same steps as [here](#creating-a-new-localization-table-for-dialogue-phrases), but in step #3 you must select "Asset Table Collection" instead of "String Table Collection" and in step #5 instead of putting the table it in the `Assets/Dialogues/.../[EntityCharacterName]/Localization/Text` folder, you must put it inside this folder: `Assets/Dialogues/.../[EntityCharacterName]/Localization/Voice`. Also, these tables do not support extensions so ignore other steps after #6.
 
 Editing such tables is pretty straightforward.
+
+### Dialogue NPCs
+
+Okay, you now can create dialogues, but how to add them to the NPCs?
+
+#### Creating an NPC with Dialogues
+
+All NPCs must be prefabs that are placed in the `Assets/Prefabs/NPC` folder. Also, these prefabs must be variants of the `DialogueNPC` prefabs as it makes refactoring waaaay easier.
+
+1. Find the `DialogueNPC` prefab (look in `Assets/Prefabs/NPC` or just use prompt `t:Prefab DialogueNPC`) and drag it to the scene.
+
+    ![image](https://github.com/user-attachments/assets/41954cb2-4cea-4822-89d3-21347b9182bb)
+
+2. Drag and drop this newly created object in the `Assets/Prefabs/NPC/Side` or `Assets/Prefabs/NPC/Main` folder. When asked to create "Prefab or Variant" choose "Prefab Variant".
+
+   ![image](https://github.com/user-attachments/assets/d3ad4674-073e-4576-bfb3-51d3da6a4c42)
+
+3. Rename the file to a character name immediately! Make sure to get rid of the "Variant" thing in the name, because it's cringe. Also, don't forget to rename the object on the scene too.
+
+4. Open this prefab by right clicking it on the scene and choosing `Prefab -> Open in Context`, then edit it in this window and try to not edit the NPC outside of it. If you want to edit this object directly on the scene remember these things:
+   - Your changes will be saved only on the scene. If you do so, update the prefab regulary by dragging and droping object from the scene direction onto the prefab.
+   - Using objects from the scene is a bad idea, as it breaks all purpose of our components architecture and it would be problematic to test specific NPCs on a separate scenes.
+
+5. Congratulations! You have created your first NPC that has the default test dialogues. Now you need to reassign them. Go to the root object of your prefab and change these things:
+
+    - "First Node" - put the first dialogue node that you want to be played.
+    - "Id" - set a unique identifier that will be used as a key in the save file. It's recommended to name it in this format: `[character_name]_actor` (everything in lowercase).
+    - "Group" - set a group that you've created during [this step](#1-dialogue-groups-skippable-for-the-game-ending-dialogue).
+
+    ![image](https://github.com/user-attachments/assets/abe7b301-8600-4834-b690-2e6578c3feb6)
+
+6. And if you think that this is all, you're delusional. Now go to the [localized table](#localized-phrases) that you've used for your NPC's dialogues and make an entry for their name there (`[character_name]_name`).
+7. Go to the `Speaker` object and in the `DialogueSpeaker` component assign your newly created entry in the `Name` property.
+
+   ![image](https://github.com/user-attachments/assets/b1e27600-e6e2-4a8b-b091-e5388ebc7851)
+
+8. Go to the `EntryTrigger` object. It is the interactable object that defines where the player can start the dialogue. Place it where you like it the most. Feel free to modify the collider properties (like radius, or you can remove it and replace with the box collider if you wish). I just don't recommend modifying the scale in the `Transform`, because it sometimes leads to strange bugs.
+9. Go to the `ViewCamera` object and place it where you like. This is the view that the player will see after initiating a conversation. **Pro-tip:** select this object and go to `GameObject -> Align With View`, this will copy a view from the `Scene` window.
+
+10. You're all set! The dialogues must work now. If not, you probably messed up somewhere, try to repeat all the steps. If nothing helps - make sure to note the warnings and/or errors in console if there are any.
+
+#### Dialogue Node Triggers
+
+Okay, now you want for dialogues to have an actual impact on something? Say no more! You have Dialogue Node Triggers for this that can be combined with any [action](#actions).
+
+Open your NPC prefab and go to the `Triggers` object. Add new gameobjects there, I recommend adding one per node and then add triggers as children. 
+
+You can also create separate objects for actions, especially when you have many of them and it's mandatory if you want to use more than one action of the same type. Try to name the triggers the same way you name dialogue nodes, but ommit the NPC name (e.g., for the `Clemence_Dlg1_No` you can name the trigger `Dlg1_No`).
+
+The `DialogueNodeTrigger` in itself may be scary, but it won't be after you use it 5 times or so.
+
+![image](https://github.com/user-attachments/assets/35289710-e590-40d7-8e66-570e5c898633)
+
+- **Target Node** - a node for which this trigger activates. If "None", this trigger will work for all nodes.
+- **Phrase Index** - an index of the phrase (starting from 0) that triggers the **Phrase Started** event.
+- **Phrase Started** - an event that is called when the phrase with the **Phrase Index** starts. Use this event for cosmetic stuff or to show the narration screen.
+- **Ended** - an event that is called when the node (**not a phrase!**) ends playing. Use this event to update quests, time and modify save events. It also can be used to hide the narration screen.
+
+**Warning:** don't use nodes from different NPCs as this obviously won't work.
+  
+## Actions
+
+Actions are components that end with the `Action` suffix. Usually, they have a one important method that is called `Perform` and they are meant to be used together with Unity events (they are provided by the [Triggers](#triggers) and by some of the [Interactable Objects](#interactable-objects)).
+
+### List of Actions
+
+1. `DelayedAction` - an action that triggers a Unity Event after the specified delay. It's not a "pure action" and feels more like "a glue". Method: `Perform`.
+2. `EndGameAction` - an action that was used in the Alpha version of the game. Its only purpose is to end the game. Method: `EndGame`.
+3. `NarrationAction` - an action that allows to show/hide the narration screen. Methods: `ShowScreen`, `HideScreen`.
+4. `DialogueSaveEventAction` - an action that manipulates the [dialogue save event](dialogue-save-events) state. Method: `Perform`.
+5. `PlayerLockAction` - an action that allows to lock/unlock the player input. Methods: `Lock`, `Unlock`.
+6. `QuestAction` - an action that changes the quest state. It has an additional flag "Perform On Enable` which if set, performs the action automatically when the object is enabled. Method: `Perform`.
+7. `SubquestAction` - same as the `QuestAction` but for the subquests. Method: `Perform`.
+8. `SpendTimeAction` - an action that spends the specified number of minutes. Method: `Perform`.
+
+## Triggers
+
+Triggers are components that usually end with the `Trigger` suffix. They provide Unity Event(s) that can be used to perform [Actions](#actions) or to interact with other objects. Some of the triggers need other components to exist in parent/children, but the majority of them can be put anywhere on the scene and still work. Please, put them somewhere appropriate so you'll be able to find them later.
+
+To combine triggers with actions, just add both trigger and action to your game object and then in the trigger add an even listener (use the "+" button). Then, drag and drop your action object there, choose an appropriate component and select the method you're interested in (look the [List of Actions](#list-of-actions) section).
+
+1. `ChainedTrigger` - a trigger that calls the event after all of the assigned to it triggers have called their event. Note that not all triggers can be used with this component. This is used in the alpha version to end the game after the player had failed all subquests of the main quest.
+2. `DialogueNodeTrigger` - a special dialogue trigger that is described [here](dialogue-node-triggers). Cannot be chained.
+3. `PlayerTrigger` - a trigger that calls the event when the player enters it. Requires a trigger collider. Can be chained.
+4. `QuestStateTrigger` - a trigger that calls the event when the specified quest updates its state. It has a different behaviour depending on the "Trigger Type" property:
+    - `StateChanged` - event is called when the state is changed to anything.
+    - `Started` - event is called only when the quest changes its state to `Active`.
+    - `Completed` - event is called only when the quest changes its state to `Completed`.
+    - `Failed` - event is called only when the quest changes its state to `Failed`.
+    Can be chained.
+5. `SubquestStateTrigger` - same as the `QuestStateTrigger` but for the subquests. Can be chained.
+6. `TimeOverTrigger` - a trigger that calls the event after the [time is over](#clock). Additionally, the "Initial State Check" flag defines whether the trigger should call the event if the game has started with 0 minutes left (possible when saves are used). Can be chained.
