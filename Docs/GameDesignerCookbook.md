@@ -266,18 +266,23 @@ All text phrases are localized. This means, that you must create localization ta
 It's advised to create a new localization table per each main character. For the side characters you can reuse the default one.
 
 1. Open the **Localization Tables** window (`Window -> Asset Management -> Localization Tables`).
-![image](https://github.com/user-attachments/assets/0a527b99-5472-458a-8912-ef20d6d91909)
+   
+	![image](https://github.com/user-attachments/assets/0a527b99-5472-458a-8912-ef20d6d91909)
 
-2. Press `+ New Table Collection` (top left corner).
-![image](https://github.com/user-attachments/assets/b6627df0-43f1-4d61-9e8b-3c1a521ef99b)
+3. Press `+ New Table Collection` (top left corner).
+   
+	![image](https://github.com/user-attachments/assets/b6627df0-43f1-4d61-9e8b-3c1a521ef99b)
 
-3. Name it in this pattern: `[EntityName]Dialogues`, make sure that all locales are selected and the type is set to "String Table Collection".
-![image](https://github.com/user-attachments/assets/83d703b8-4514-4d81-befb-648c95618e74)
+5. Name it in this pattern: `[EntityName]Dialogues`, make sure that all locales are selected and the type is set to "String Table Collection".
+   
+	![image](https://github.com/user-attachments/assets/83d703b8-4514-4d81-befb-648c95618e74)
 
-4. Smash the `Create` button.
-5. Select an appropriate folder. It must follow this convention: `Assets/Dialogues/.../[EntityCharacterName]/Localization/Text` (more about it #dialogues-folder-structure-important). Example: `Assets/Dialogues/Characters/Main/Demo/Localization/Text`.
-6. If you see this window then you probably did everything OK so far. Next steps are optional but recommended.
-![image](https://github.com/user-attachments/assets/0b922843-b7bf-4c72-b915-2368a60eb816)
+7. Smash the `Create` button.
+8. Select an appropriate folder. It must follow this convention: `Assets/Dialogues/.../[EntityCharacterName]/Localization/Text` (more about it #dialogues-folder-structure-important). Example: `Assets/Dialogues/Characters/Main/Demo/Localization/Text`.
+9. If you see this window then you probably did everything OK so far. Next steps are optional but recommended.
+   
+	![image](https://github.com/user-attachments/assets/0b922843-b7bf-4c72-b915-2368a60eb816)
+
 7 Editing dialogues in the `Localization Tables` is a next level torture, because this window was programmed by apes. So, in order to make yourself a life easier (not that easier tbh) you can add a CSV extension to the table. Just click the "+" button and select the "Csv Extension":
 
 ![image](https://github.com/user-attachments/assets/0c0c2774-f1be-4d8c-bc91-a3a9a1faaf45)
