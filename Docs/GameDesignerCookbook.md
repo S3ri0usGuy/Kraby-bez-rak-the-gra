@@ -26,9 +26,15 @@
   - [Dialogue NPCs](#dialogue-npcs)
     - [Creating an NPC with Dialogues](#creating-an-npc-with-dialogues)
     - [Dialogue Node Triggers](#dialogue-node-triggers)
+- [Quests](#quests)
+  - [Quest System](#quest-system)
+	- [Quest/Subquest States](#quest-subquest-states)
+	- [Creating Quests](#creating-quests)
 - [Actions](#actions)
   - [List of Actions](#list-of-actions)
 - [Triggers](#triggers)
+
+**IMPORTANT:** when you're editing the files (such as quest or dialogues), remember to always press `File -> Save Project` before committing, because Ctrl + S is not enough!
 
 ## Terminology
 
@@ -370,6 +376,75 @@ The `DialogueNodeTrigger` in itself may be scary, but it won't be after you use 
 - **Ended** - an event that is called when the node (**not a phrase!**) ends playing. Use this event to update quests, time and modify save events. It also can be used to hide the narration screen.
 
 **Warning:** don't use nodes from different NPCs as this obviously won't work.
+
+## Quests
+
+Quests are pretty straightforward in this game. The only thing you need are quest and subquest files, quest/subquest triggers and actions.
+
+Each quest can have its own subquests that can also be explained as "quest objectives" or "quest tasks".
+
+![image](https://github.com/user-attachments/assets/48dccae6-f6e9-44eb-ab84-c12a210e2788)
+
+### Quest/Subquest States
+
+Both quests and subquests can have one of the 4 states:
+
+1. **None** - the quest/subquest is hidden from the player, because it hasn't been started yet.
+2. **Active** - the quest/subquest is in progress and shown as a "blank checkbox".
+
+  ![image](https://github.com/user-attachments/assets/f9cee534-47b5-43ed-9bc5-55ea428ec867)
+
+3. **Completed** - the quest/subquest has been completed and marked with a green check mark.
+
+  ![image](https://github.com/user-attachments/assets/4bc868a2-6590-424f-bbb8-f5d05dbcfe8f)
+
+4. **Failed** - the quest/subquest has been failed and marked with a red cross.
+
+  ![image](https://github.com/user-attachments/assets/eeb1c4ba-900e-4aed-8836-ad332cbcc966)
+
+**Note:** changing the quest's state if it is already Completed or Failed is more likely a bad idea, so you'll see warnings in the console when attempted to do so (though it's technically possible).
+
+### Quest System
+
+In order to use quests your scene must contain the `QuestSystem` prefab (find it using this prompt: `t:Prefab QuestSystem`). Also you can put your quest actions, triggers and related objects into this object (don't apply them to the `QuestSystem`, instead make your own prefab variant).
+
+**Warning:** make sure that prefabs don't have dependencies on the scene objects.
+
+### Creating Quests
+
+In order to create a quest follow this steps:
+
+1. Go to the `Assets/Quests` folder. Create a dedicated folder for your quest and name it appropriately.
+2. Right click and select `Create -> Quests -> Quest`:
+
+   ![image](https://github.com/user-attachments/assets/f2c436ff-df11-40d6-b79f-a4102f1ef4f9)
+
+3. If you select this quest you will see its parameters
+
+   ![image](https://github.com/user-attachments/assets/a77dd29b-2675-46c3-834c-f4cf99bf4402)
+
+    * **Name** - a name of the quest that is displayed in the UI. It's a localized string, all such strings must be put in the `Quests` localized table (use `Quests t:StringTableCollection` prompt).
+    * **Fail On Time Over** - if checked, the quest and all of its subquests will be marked as failed once the time is over.
+
+4. (Optional) Once you have finished configuring your quest it's time to create subquests for it. Right click and select `Create -> Quests -> Subquest`:
+
+   ![image](https://github.com/user-attachments/assets/12bfaf00-fff8-4986-a80b-8602e88f4b6d)
+
+    * **Description** - a short description of the subquest that is displayed in the UI. It's a localized string, all such strings must be put in the `Quests` localized table (use `Quests t:StringTableCollection` prompt).
+    * **Quest** - a quest that is "an owner" of this subquest. If you forget to set this property, you will most likely see warning and errors in the console.
+    * **Action On Quest Passed** - what should happen with the subquest when the **Quest** is marked as **Completed**.
+    * **Action On Quest Failed** - what should happen with the subquest when the **Quest** is marked as **Failed**.
+
+5. (Optional) If you want for the quest/subquests to reveal themselves when the player launches the game use Quest/Subquest actions with the "Perform On Enable" checked and with the "Action" set to "Reveal":
+
+   ![image](https://github.com/user-attachments/assets/f34c9ee8-1d41-455f-a86a-1e47d7800005)
+
+   Revealing the subquest also reveals its quest.
+
+Now you're ready to use quests in: 
+  * [Triggers](#triggers) (`QuestStateTrigger`, `SubquestStateTrigger`).
+  * [Actions](#actions) (`QuestAction`, `SubquestAction`).
+  * [Dialogue Conditions](#dialogue-conditions) (`DialogueQuestStateCondition`, `DialogueSubquestStateCondition`).
   
 ## Actions
 
