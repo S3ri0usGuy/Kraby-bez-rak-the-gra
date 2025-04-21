@@ -4,7 +4,7 @@ using UnityEngine.Localization;
 /// <summary>
 /// A base class for interactable object components.
 /// </summary>
-public abstract class Interactable : MonoBehaviour
+public abstract class InteractableObject : MonoBehaviour
 {
 	[SerializeField]
 	[Tooltip("An action name displayed on the UI canvas.")]

@@ -7,6 +7,7 @@ using UnityEngine;
 public class DialogueRandomCondition : DialogueCondition
 {
 	[SerializeField]
+	[Range(0f, 1f)]
 	[Tooltip("A probability of the condition to be satisfied.")]
 	private float _probability = 0.5f;
 

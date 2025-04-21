@@ -26,7 +26,7 @@ public class ClockDisplayer : MonoBehaviour
 	{
 		int hours = _clock.minutesLeft / 60;
 		int minutes = _clock.minutesLeft % 60;
-		_label.text = $"{hours}:{minutes}";
+		_label.text = $"{hours:00}:{minutes:00}";
 	}
 
 	private void OnUpdated(Clock clock)

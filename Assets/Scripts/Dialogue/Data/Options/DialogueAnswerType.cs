@@ -15,7 +15,7 @@ public enum DialogueAnswerType
 	TimedPickFirst = 1,
 	/// <summary>
 	/// The player's time to answer is limited. If time is out,
-	/// the second option is picked.
+	/// a random option is picked.
 	/// </summary>
 	TimedPickRandom = 2
 }

@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 /// <summary>
 /// A condition that checks whether the subquest has the right state.
 /// </summary>
-[CreateAssetMenu(fileName = "SubquestStateCondition", menuName = "Dialogue/Conditions/Quest/Subquest State")]
+[CreateAssetMenu(fileName = "DialogueSubquestStateCondition", menuName = "Dialogue/Conditions/Quest/Subquest State")]
 public class DialogueSubquestStateCondition : DialogueCondition
 {
 	[SerializeField]

@@ -4,7 +4,7 @@ using UnityEngine.Events;
 /// <summary>
 /// An interactable object that calls an event when interacted with.
 /// </summary>
-public class EventInteractable : Interactable
+public class EventInteractable : InteractableObject
 {
 	[SerializeField]
 	private UnityEvent _event;

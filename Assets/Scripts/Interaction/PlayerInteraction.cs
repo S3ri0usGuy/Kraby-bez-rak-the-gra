@@ -8,7 +8,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 /// <summary>
 /// A component that allows the player to interact with objects
-/// that inherit the <see cref="Interactable" /> class.
+/// that inherit the <see cref="InteractableObject" /> class.
 /// </summary>
 public class PlayerInteraction : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour
 
 	private Player _player;
 	private InputActions.PlayerActions _actions;
-	private Interactable _currentInteractable;
+	private InteractableObject _currentInteractable;
 
 	[SerializeField]
 	private TMP_Text _label;
@@ -63,10 +63,10 @@ public class PlayerInteraction : MonoBehaviour
 			_layerMask, QueryTriggerInteraction.Collide);
 #pragma warning restore UNT0028 // Use non-allocating physics APIs
 
-		List<Interactable> interactables = new();
+		List<InteractableObject> interactables = new();
 		foreach (var collider in colliders)
 		{
-			if (collider.TryGetComponent<Interactable>(out var interactable))
+			if (collider.TryGetComponent<InteractableObject>(out var interactable))
 			{
 				interactables.Add(interactable);
 			}
@@ -127,7 +127,7 @@ public class PlayerInteraction : MonoBehaviour
 		_label.text = string.Format(_labelFormat, key, asyncOperationHandle.Result);
 	}
 
-	private void SetCurrentInteractable(Interactable interactable)
+	private void SetCurrentInteractable(InteractableObject interactable)
 	{
 		if (!interactable)
 		{

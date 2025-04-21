@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// A component that triggers events when the node starts or ends.
@@ -15,22 +16,28 @@ public class DialogueNodeTrigger : MonoBehaviour
 	[Tooltip("A node that triggers this component. If empty, all nodes trigger this component.")]
 	private DialogueNode _targetNode;
 
+	[SerializeField, Min(0)]
+	[Tooltip("An index of the phrase which activates the trigger.")]
+	private int _phraseIndex = 0;
+
 	[SerializeField]
-	[Tooltip("An event that is called when the node starts.")]
-	private UnityEvent _started;
+	[Tooltip("An event that is called when the phrase starts.")]
+	[FormerlySerializedAs("_started")]
+	private UnityEvent _phraseStarted;
 
 	[SerializeField]
 	[Tooltip("An event that is called when the node ends.")]
 	private UnityEvent _ended;
 
-	[SerializeField, Min(0)]
-	[Tooltip("An index of the phrase which activates the trigger.")]
-	private int _phraseIndex = 0;
+	/// <summary>
+	/// Gets an index of the phrase that activates the <see cref="phraseStarted" /> event.
+	/// </summary>
+	public int phraseIndex => _phraseIndex;
 
 	/// <summary>
-	/// An event that is called when the node ends.
+	/// An event that is called when the specified phrase starts.
 	/// </summary>
-	public UnityEvent started => _started;
+	public UnityEvent phraseStarted => _phraseStarted;
 
 	/// <summary>
 	/// An event that is called when the node ends.
@@ -73,7 +80,7 @@ public class DialogueNodeTrigger : MonoBehaviour
 
 		if (context.phraseIndex == _phraseIndex)
 		{
-			_started.Invoke();
+			_phraseStarted.Invoke();
 		}
 	}
 
