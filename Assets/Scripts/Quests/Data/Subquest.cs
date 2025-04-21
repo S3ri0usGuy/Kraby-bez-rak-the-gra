@@ -4,7 +4,7 @@ using UnityEngine.Localization;
 /// <summary>
 /// A class that represents the subquest (a task inside the quest).
 /// </summary>
-[CreateAssetMenu(fileName = "Quest", menuName = "Quests/Subquest")]
+[CreateAssetMenu(fileName = "Subquest", menuName = "Quests/Subquest")]
 public class Subquest : ScriptableObject
 {
 	public enum StateAction
