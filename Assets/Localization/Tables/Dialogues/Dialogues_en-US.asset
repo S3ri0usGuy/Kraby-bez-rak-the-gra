@@ -158,6 +158,18 @@ MonoBehaviour:
     m_Localized: Absolutely, Milord.
     m_Metadata:
       m_Items: []
+  - m_Id: 25661828999520256
+    m_Localized: GO BRING ME BEER!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25661889443635200
+    m_Localized: Thanks :3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25662108918980608
+    m_Localized: I SAID...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

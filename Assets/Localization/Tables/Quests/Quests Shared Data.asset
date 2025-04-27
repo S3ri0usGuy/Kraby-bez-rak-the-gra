@@ -39,6 +39,18 @@ MonoBehaviour:
     m_Key: go_to_war_objective
     m_Metadata:
       m_Items: []
+  - m_Id: 7843160987115520
+    m_Key: beer_quest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7843182088658944
+    m_Key: beer_1_find
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7843247893094400
+    m_Key: beer_2_bring
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
