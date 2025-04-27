@@ -147,6 +147,18 @@ MonoBehaviour:
     m_Key: doggo_dlg1_6_doggo
     m_Metadata:
       m_Items: []
+  - m_Id: 25661828999520256
+    m_Key: beer_dlg1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25662108918980608
+    m_Key: beer_dlg1_no_beer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25661889443635200
+    m_Key: beer_dlg2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

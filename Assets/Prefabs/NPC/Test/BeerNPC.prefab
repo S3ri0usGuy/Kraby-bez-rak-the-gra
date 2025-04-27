@@ -1,0 +1,350 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &548566606463529293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2521590911352501145}
+  m_Layer: 0
+  m_Name: QuestTriggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2521590911352501145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548566606463529293}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9171098581327013339}
+  m_Father: {fileID: 7385101308849048954}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &922050398146372414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9171098581327013339}
+  - component: {fileID: 7364327628816030558}
+  m_Layer: 0
+  m_Name: BeerFound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9171098581327013339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922050398146372414}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2521590911352501145}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7364327628816030558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922050398146372414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4a4426cf69c594daa156c6eaa6c476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _subquest: {fileID: 11400000, guid: 335e53d24beca0a4e808a6bf556e0646, type: 2}
+  _triggerType: 2
+  _triggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 681466767422258187}
+        m_TargetAssemblyTypeName: DialogueActor, Assembly-CSharp
+        m_MethodName: SetNextNode
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: f6385deb1e6d68e48aafdeafdc7f7f62, type: 2}
+          m_ObjectArgumentAssemblyTypeName: DialogueNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &1642308843854489105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4689397374938581566}
+  - component: {fileID: 7272700814449114425}
+  - component: {fileID: 6569574189528300874}
+  m_Layer: 0
+  m_Name: GiveBeerQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4689397374938581566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642308843854489105}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1113738479053213751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7272700814449114425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642308843854489105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5a161e10a5c434ea551b40dcc52c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetNode: {fileID: 11400000, guid: 73c368e39ac15984f898baf5b5fec4dc, type: 2}
+  _phraseIndex: 0
+  _phraseStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _ended:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6569574189528300874}
+        m_TargetAssemblyTypeName: SubquestAction, Assembly-CSharp
+        m_MethodName: Perform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6569574189528300874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642308843854489105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b26935c501f4d46b68c1b7da81868c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _performOnEnable: 0
+  _subquest: {fileID: 11400000, guid: 335e53d24beca0a4e808a6bf556e0646, type: 2}
+  _action: 0
+--- !u!1 &2205020087857180617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6231506067074430120}
+  - component: {fileID: 6273570584122205113}
+  - component: {fileID: 1983015154585169642}
+  m_Layer: 0
+  m_Name: CompleteBeerBroughtQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6231506067074430120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205020087857180617}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1113738479053213751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6273570584122205113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205020087857180617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5a161e10a5c434ea551b40dcc52c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetNode: {fileID: 11400000, guid: f6385deb1e6d68e48aafdeafdc7f7f62, type: 2}
+  _phraseIndex: 0
+  _phraseStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _ended:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1983015154585169642}
+        m_TargetAssemblyTypeName: QuestAction, Assembly-CSharp
+        m_MethodName: Perform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1983015154585169642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205020087857180617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daff5ecd29fdccc479a68d8eb2da8d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _performOnEnable: 0
+  _quest: {fileID: 11400000, guid: e065d00b041af6b4aabec7b9424211b3, type: 2}
+  _action: 1
+--- !u!1001 &1269479391079956056
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 855212716255834493, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: _group
+      value: 
+      objectReference: {fileID: 11400000, guid: 90cfc2bf22d005b439f938eea579bf49, type: 2}
+    - target: {fileID: 1795553811617546835, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: _firstNode
+      value: 
+      objectReference: {fileID: 11400000, guid: 73c368e39ac15984f898baf5b5fec4dc, type: 2}
+    - target: {fileID: 5370541392418113586, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_Name
+      value: BeerNPC Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.94209343
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.33535042
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -39.188
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 2521590911352501145}
+    - targetCorrespondingSourceObject: {fileID: 2227826033335823983, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4689397374938581566}
+    - targetCorrespondingSourceObject: {fileID: 2227826033335823983, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6231506067074430120}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+--- !u!114 &681466767422258187 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1795553811617546835, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+  m_PrefabInstance: {fileID: 1269479391079956056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c70eaa13e4dd3846a3734091de86922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1113738479053213751 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2227826033335823983, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+  m_PrefabInstance: {fileID: 1269479391079956056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7385101308849048954 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8638816974333784866, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+  m_PrefabInstance: {fileID: 1269479391079956056}
+  m_PrefabAsset: {fileID: 0}

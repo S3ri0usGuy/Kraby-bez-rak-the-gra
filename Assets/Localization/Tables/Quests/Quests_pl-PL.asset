@@ -42,6 +42,18 @@ MonoBehaviour:
     m_Localized: "Opu\u015B\u0107 wiosk\u0119"
     m_Metadata:
       m_Items: []
+  - m_Id: 7843160987115520
+    m_Localized: Beer!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7843182088658944
+    m_Localized: Find beer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7843247893094400
+    m_Localized: Bring beer
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
