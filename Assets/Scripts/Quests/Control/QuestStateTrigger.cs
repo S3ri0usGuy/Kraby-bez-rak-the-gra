@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// A component that triggers events when the quest state is changed.
@@ -20,9 +21,10 @@ public class QuestStateTrigger : Trigger
 	[Tooltip("An option that defines when the event is triggered.")]
 	private TriggerType _triggerType;
 	[SerializeField]
-	[Tooltip("If toggled, the state will be checked after loading the game. " +
+	[FormerlySerializedAs("_checkOnStart")]
+	[Tooltip("If checked, the state will be checked after loading the game. " +
 		"Use this if you want to check the state after continuing the game.")]
-	private bool _checkOnStart = true;
+	private bool _initialStateCheck = true;
 
 	[SerializeField]
 	private UnityEvent _triggered;
@@ -38,7 +40,7 @@ public class QuestStateTrigger : Trigger
 		QuestSystem questSystem = QuestSystem.instance;
 
 		questSystem.questStateUpdated += OnQuestUpdated;
-		if (_checkOnStart && IsTriggered(questSystem.GetQuestState(_quest)))
+		if (_initialStateCheck && IsTriggered(questSystem.GetQuestState(_quest)))
 		{
 			Trigger();
 		}
