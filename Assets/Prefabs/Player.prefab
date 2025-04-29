@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6756243041131944203}
   - component: {fileID: 2542461234868552012}
   m_Layer: 3
-  m_Name: Speaker
+  m_Name: PlayerSpeaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513648519354914691}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7119086467292122724}
+  m_Father: {fileID: 4318253877659320643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &6756243041131944203
 AudioSource:
@@ -154,6 +154,52 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &636055615753314097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4318253877659320643}
+  - component: {fileID: 6798547604962947115}
+  m_Layer: 3
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4318253877659320643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636055615753314097}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9049308865856208928}
+  m_Father: {fileID: 7119086467292122724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6798547604962947115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636055615753314097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c624a2afa674d842b40ec73e4afc60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sharedGroup: {fileID: 11400000, guid: 82bc62c8d82f41e48bc4104ae23dd644, type: 2}
 --- !u!1 &1014059809471077422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,7 +1113,7 @@ Transform:
   - {fileID: 7231063628934557969}
   - {fileID: 5957870956636181333}
   - {fileID: 2682713552509663914}
-  - {fileID: 9049308865856208928}
+  - {fileID: 4318253877659320643}
   - {fileID: 3974216078320560098}
   - {fileID: 1410108630627435345}
   m_Father: {fileID: 0}
