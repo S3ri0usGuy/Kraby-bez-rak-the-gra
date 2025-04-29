@@ -19,15 +19,28 @@ public class QuestStateTrigger : Trigger
 	[SerializeField]
 	[Tooltip("An option that defines when the event is triggered.")]
 	private TriggerType _triggerType;
+	[SerializeField]
+	[Tooltip("If toggled, the state will be checked after loading the game. " +
+		"Use this if you want to check the state after continuing the game.")]
+	private bool _checkOnStart = true;
 
 	[SerializeField]
 	private UnityEvent _triggered;
 
-	private void OnEnable()
+	private void Start()
 	{
-		if (QuestSystem.exists)
+		if (!QuestSystem.exists)
 		{
-			QuestSystem.instance.questStateUpdated += OnQuestUpdated;
+			Debug.LogWarning($"There is no quest system on the scene, the " +
+				$"trigger \"{name}\" will not work.", gameObject);
+			return;
+		}
+		QuestSystem questSystem = QuestSystem.instance;
+
+		questSystem.questStateUpdated += OnQuestUpdated;
+		if (_checkOnStart && IsTriggered(questSystem.GetQuestState(_quest)))
+		{
+			Trigger();
 		}
 	}
 
@@ -52,8 +65,13 @@ public class QuestStateTrigger : Trigger
 	{
 		if (_quest == e.quest && IsTriggered(e.newQuestState))
 		{
-			_triggered.Invoke();
-			InvokeTriggered();
+			Trigger();
 		}
+	}
+
+	private void Trigger()
+	{
+		_triggered.Invoke();
+		InvokeTriggered();
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 /// <summary>
 /// A component that triggers events when the subquest state is changed.
 /// </summary>
-public class SubquestTrigger : Trigger
+public class SubquestStateTrigger : Trigger
 {
 	public enum TriggerType
 	{
@@ -21,15 +21,28 @@ public class SubquestTrigger : Trigger
 	[SerializeField]
 	[Tooltip("An option that defines when the event is triggered.")]
 	private TriggerType _triggerType;
+	[SerializeField]
+	[Tooltip("If toggled, the state will be checked after loading the game. " +
+		"Use this if you want to check the state after continuing the game.")]
+	private bool _checkOnStart = true;
 
 	[SerializeField]
 	private UnityEvent _triggered;
 
-	private void OnEnable()
+	private void Start()
 	{
-		if (QuestSystem.exists)
+		if (!QuestSystem.exists)
 		{
-			QuestSystem.instance.subquestStateUpdated += OnSubquestUpdated;
+			Debug.LogWarning($"There is no quest system on the scene, the " +
+				$"trigger \"{name}\" will not work.", gameObject);
+			return;
+		}
+		QuestSystem questSystem = QuestSystem.instance;
+
+		questSystem.subquestStateUpdated += OnSubquestUpdated;
+		if (_checkOnStart && IsTriggered(questSystem.GetSubquestState(_subquest)))
+		{
+			Trigger();
 		}
 	}
 
@@ -47,15 +60,20 @@ public class SubquestTrigger : Trigger
 				return state == SubquestState.Failed;
 		}
 
-		throw new System.InvalidOperationException("");
+		throw new System.InvalidOperationException("Invalid subquest state.");
 	}
 
 	private void OnSubquestUpdated(QuestSystem questSystem, SubquestStateUpdatedEventArgs e)
 	{
 		if (e.subquest == _subquest && IsTriggered(e.newSubquestState))
 		{
-			_triggered.Invoke();
-			InvokeTriggered();
+			Trigger();
 		}
+	}
+
+	private void Trigger()
+	{
+		_triggered.Invoke();
+		InvokeTriggered();
 	}
 }
