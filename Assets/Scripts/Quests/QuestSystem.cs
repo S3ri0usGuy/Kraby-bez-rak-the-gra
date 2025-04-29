@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 {
-	private Dictionary<Quest, QuestProgress> _quests = new();
+	private readonly Dictionary<Quest, QuestProgress> _quests = new();
 
 	public delegate void QuestAction(QuestSystem questSystem, Quest quest);
 	public delegate void QuestStateUpdatedAction(QuestSystem questSystem, QuestStateUpdatedEventArgs e);
@@ -31,15 +31,6 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 	/// Not to be confused with <see cref="questStateUpdated" />.
 	/// </remarks>
 	public event SubquestStateUpdatedAction subquestStateUpdated;
-
-	/// <summary>
-	/// Loads the quests progress.
-	/// </summary>
-	/// <param name="quests">A dictionary containing the quest progresses.</param>
-	public void LoadQuests(Dictionary<Quest, QuestProgress> quests)
-	{
-		_quests = quests;
-	}
 
 	/// <summary>
 	/// Gets an enumerable containing all active, completed and failed quests.
