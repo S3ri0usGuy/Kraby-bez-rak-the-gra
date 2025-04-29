@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// A component that provides a default shared dialogue group.
 /// </summary>
-public class SharedDialogueGroupProvider : SingletonMonoBehaviour<SharedDialogueGroupProvider>
+public sealed class SharedDialogueGroupProvider : SingletonMonoBehaviour<SharedDialogueGroupProvider>
 {
 	[SerializeField]
 	private DialogueGroup _sharedGroup;
