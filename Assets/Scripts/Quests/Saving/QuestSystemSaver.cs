@@ -64,17 +64,6 @@ public class QuestSystemSaver : SavableComponent<QuestSystemSaveData>
 
 	protected override void OnLoad()
 	{
-		foreach (var quest in data.quests)
-		{
-			// Not allowed by the quest system
-			if (quest.state == QuestState.None) continue;
-
-			if (_globalQuestGroup.nameToObject.TryGetValue(quest.name, out var questObject))
-			{
-				_questSystem.SetQuestState(questObject, quest.state);
-			}
-		}
-
 		foreach (var subquest in data.subquests)
 		{
 			// Not allowed by the quest system
@@ -83,6 +72,17 @@ public class QuestSystemSaver : SavableComponent<QuestSystemSaveData>
 			if (_globalSubquestGroup.nameToObject.TryGetValue(subquest.name, out var subquestObject))
 			{
 				_questSystem.SetSubquestState(subquestObject, subquest.state);
+			}
+		}
+
+		foreach (var quest in data.quests)
+		{
+			// Not allowed by the quest system
+			if (quest.state == QuestState.None) continue;
+
+			if (_globalQuestGroup.nameToObject.TryGetValue(quest.name, out var questObject))
+			{
+				_questSystem.SetQuestState(questObject, quest.state);
 			}
 		}
 	}

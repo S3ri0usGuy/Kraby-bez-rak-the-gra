@@ -215,7 +215,7 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 		{
 			if (questProgress.state != QuestState.Active)
 			{
-				Debug.LogWarning($"A subquest of the non-active quest (\"{quest.name}\") was modified.");
+				Debug.LogWarning($"A subquest (\"{subquest.name}\") of the non-active quest (\"{quest.name}\") was modified.");
 			}
 		}
 		else
