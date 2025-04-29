@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4a4426cf69c594daa156c6eaa6c476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stage: {fileID: 11400000, guid: 2829b2273ead4b54980c3067d7478c61, type: 2}
+  _subquest: {fileID: 11400000, guid: 2829b2273ead4b54980c3067d7478c61, type: 2}
   _triggerType: 3
+  _checkOnStart: 1
   _triggered:
     m_PersistentCalls:
       m_Calls: []
@@ -93,8 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4a4426cf69c594daa156c6eaa6c476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stage: {fileID: 11400000, guid: 930019a1cc227bb44ac1b3d1edf20a2f, type: 2}
+  _subquest: {fileID: 11400000, guid: 930019a1cc227bb44ac1b3d1edf20a2f, type: 2}
   _triggerType: 3
+  _checkOnStart: 1
   _triggered:
     m_PersistentCalls:
       m_Calls: []
@@ -384,8 +386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4a4426cf69c594daa156c6eaa6c476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stage: {fileID: 11400000, guid: b203b867a86f56a4195f794b8b336dd8, type: 2}
+  _subquest: {fileID: 11400000, guid: b203b867a86f56a4195f794b8b336dd8, type: 2}
   _triggerType: 3
+  _checkOnStart: 1
   _triggered:
     m_PersistentCalls:
       m_Calls: []

@@ -158,6 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _quest: {fileID: 11400000, guid: 1f5bea21876b2324fb42e20a0e5d8929, type: 2}
   _triggerType: 1
+  _checkOnStart: 1
   _triggered:
     m_PersistentCalls:
       m_Calls:
