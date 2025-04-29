@@ -20,7 +20,7 @@ public class DialogueActorSaver : SavableComponent<DialogueSaveData>
 	{
 		if (string.IsNullOrEmpty(data.nextNodeName) || !_group) return;
 
-		if (!_group.nameToDialogue.ContainsKey(data.nextNodeName))
+		if (!_group.nameToObject.ContainsKey(data.nextNodeName))
 		{
 			Debug.LogWarning($"Couldn't find a dialogue node with \"{data.nextNodeName}\" name.", gameObject);
 			data.nextNodeName = null;
@@ -36,7 +36,7 @@ public class DialogueActorSaver : SavableComponent<DialogueSaveData>
 		}
 
 		if (!string.IsNullOrEmpty(data.nextNodeName) &&
-			_group.nameToDialogue.TryGetValue(data.nextNodeName, out var node))
+			_group.nameToObject.TryGetValue(data.nextNodeName, out var node))
 		{
 			actor.SetNextNode(node);
 		}
