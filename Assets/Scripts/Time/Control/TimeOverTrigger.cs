@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class TimeOverTrigger : Trigger
 {
 	[SerializeField]
+	[Tooltip("If checked, the component will be triggered if " +
+		"the game has started with 0 minutes left.")]
 	private bool _initialStateCheck = true;
 	[SerializeField]
 	private UnityEvent _triggered;

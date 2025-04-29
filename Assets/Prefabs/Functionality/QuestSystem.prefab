@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7289170023241170471}
   - component: {fileID: 1849214266258860259}
+  - component: {fileID: 2538035761117128725}
   m_Layer: 0
   m_Name: QuestSystem
   m_TagString: Untagged
@@ -44,3 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a263cadc48a5ff48a7b6a64503e3cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2538035761117128725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264291376921497032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8692cafab40006b4bac7c937ad9dca5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: quest_system
+  _globalQuestGroup: {fileID: 11400000, guid: 08caf766b84d13044aad78c8654942f9, type: 2}
+  _globalSubquestGroup: {fileID: 11400000, guid: a39c5783da3ddd047b3c47379bc21d27, type: 2}

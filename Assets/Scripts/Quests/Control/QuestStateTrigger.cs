@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// A component that triggers events when the quest state is changed.
@@ -19,15 +20,29 @@ public class QuestStateTrigger : Trigger
 	[SerializeField]
 	[Tooltip("An option that defines when the event is triggered.")]
 	private TriggerType _triggerType;
+	[SerializeField]
+	[FormerlySerializedAs("_checkOnStart")]
+	[Tooltip("If checked, the state will be checked after loading the game. " +
+		"Use this if you want to check the state after continuing the game.")]
+	private bool _initialStateCheck = true;
 
 	[SerializeField]
 	private UnityEvent _triggered;
 
-	private void OnEnable()
+	private void Start()
 	{
-		if (QuestSystem.exists)
+		if (!QuestSystem.exists)
 		{
-			QuestSystem.instance.questStateUpdated += OnQuestUpdated;
+			Debug.LogWarning($"There is no quest system on the scene, the " +
+				$"trigger \"{name}\" will not work.", gameObject);
+			return;
+		}
+		QuestSystem questSystem = QuestSystem.instance;
+
+		questSystem.questStateUpdated += OnQuestUpdated;
+		if (_initialStateCheck && IsTriggered(questSystem.GetQuestState(_quest)))
+		{
+			Trigger();
 		}
 	}
 
@@ -52,8 +67,13 @@ public class QuestStateTrigger : Trigger
 	{
 		if (_quest == e.quest && IsTriggered(e.newQuestState))
 		{
-			_triggered.Invoke();
-			InvokeTriggered();
+			Trigger();
 		}
+	}
+
+	private void Trigger()
+	{
+		_triggered.Invoke();
+		InvokeTriggered();
 	}
 }

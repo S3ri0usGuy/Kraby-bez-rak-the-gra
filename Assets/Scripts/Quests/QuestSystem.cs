@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 {
-	private Dictionary<Quest, QuestProgress> _quests = new();
+	private readonly Dictionary<Quest, QuestProgress> _quests = new();
 
 	public delegate void QuestAction(QuestSystem questSystem, Quest quest);
 	public delegate void QuestStateUpdatedAction(QuestSystem questSystem, QuestStateUpdatedEventArgs e);
@@ -31,15 +31,6 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 	/// Not to be confused with <see cref="questStateUpdated" />.
 	/// </remarks>
 	public event SubquestStateUpdatedAction subquestStateUpdated;
-
-	/// <summary>
-	/// Loads the quests progress.
-	/// </summary>
-	/// <param name="quests">A dictionary containing the quest progresses.</param>
-	public void LoadQuests(Dictionary<Quest, QuestProgress> quests)
-	{
-		_quests = quests;
-	}
 
 	/// <summary>
 	/// Gets an enumerable containing all active, completed and failed quests.
@@ -115,11 +106,11 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 	/// <summary>
 	/// Sets the quest state to a new value.
 	/// </summary>
-	/// <param name="quest">The quest which state is set.</param>
+	/// <param name="quest">The quest which state is set (<see cref="QuestState.None"/> is invalid).</param>
 	/// <param name="state">The new quest state value.</param>
 	/// <exception cref="System.ArgumentNullException" />
 	/// <exception cref="System.ArgumentException">
-	/// Attempted to set <see cref="QuestState.None" />.
+	/// Attempted to set an invalid quest state.
 	/// </exception>
 	public void SetQuestState(Quest quest, QuestState state)
 	{
@@ -130,6 +121,10 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 		if (state == QuestState.None)
 		{
 			throw new System.ArgumentException("Cannot set the quest state to \"None\".", nameof(state));
+		}
+		if (!System.Enum.IsDefined(typeof(QuestState), state))
+		{
+			throw new System.ArgumentException($"The quest state \"{state}\" is invalid.", nameof(state));
 		}
 
 		QuestState oldState = QuestState.None;
@@ -189,10 +184,10 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 	/// Sets the subquest state.
 	/// </summary>
 	/// <param name="subquest">The subquest to manipulate.</param>
-	/// <param name="state">The state to set.</param>
+	/// <param name="state">The state to set (<see cref="SubquestState.None"/> is invalid).</param>
 	/// <exception cref="System.ArgumentNullException" />
 	/// <exception cref="System.ArgumentException">
-	/// Attempted to set <see cref="SubquestState.None" />.
+	/// Attempted to set an invalid quest state.
 	/// </exception>
 	public void SetSubquestState(Subquest subquest, SubquestState state)
 	{
@@ -203,6 +198,10 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 		if (state == SubquestState.None)
 		{
 			throw new System.ArgumentException("Cannot set the subquest state to \"None\".", nameof(state));
+		}
+		if (!System.Enum.IsDefined(typeof(SubquestState), state))
+		{
+			throw new System.ArgumentException($"The subquest state \"{state}\" is invalid.", nameof(state));
 		}
 
 		Quest quest = subquest.quest;
@@ -216,7 +215,7 @@ public class QuestSystem : SingletonMonoBehaviour<QuestSystem>
 		{
 			if (questProgress.state != QuestState.Active)
 			{
-				Debug.LogWarning($"A subquest of the non-active quest (\"{quest.name}\") was modified.");
+				Debug.LogWarning($"A subquest (\"{subquest.name}\") of the non-active quest (\"{quest.name}\") was modified.");
 			}
 		}
 		else

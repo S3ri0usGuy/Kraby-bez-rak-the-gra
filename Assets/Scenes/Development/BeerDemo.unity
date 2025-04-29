@@ -2975,6 +2975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _quest: {fileID: 11400000, guid: e065d00b041af6b4aabec7b9424211b3, type: 2}
   _triggerType: 3
+  _checkOnStart: 1
   _triggered:
     m_PersistentCalls:
       m_Calls:
@@ -3004,6 +3005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _subquest: {fileID: 11400000, guid: b1b21b079d50cfd48a881a8fdc31dcd5, type: 2}
   _triggerType: 0
+  _checkOnStart: 1
   _triggered:
     m_PersistentCalls:
       m_Calls:
@@ -3033,6 +3035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _subquest: {fileID: 11400000, guid: 335e53d24beca0a4e808a6bf556e0646, type: 2}
   _triggerType: 1
+  _checkOnStart: 1
   _triggered:
     m_PersistentCalls:
       m_Calls:
@@ -30217,6 +30220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _subquest: {fileID: 11400000, guid: 335e53d24beca0a4e808a6bf556e0646, type: 2}
   _triggerType: 2
+  _checkOnStart: 1
   _triggered:
     m_PersistentCalls:
       m_Calls:

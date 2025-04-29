@@ -475,11 +475,11 @@ To combine triggers with actions, just add both trigger and action to your game 
 1. `ChainedTrigger` - a trigger that calls the event after all of the assigned to it triggers have called their event. Note that not all triggers can be used with this component. This is used in the alpha version to end the game after the player had failed all subquests of the main quest.
 2. `DialogueNodeTrigger` - a special dialogue trigger that is described [here](#dialogue-node-triggers). Cannot be chained.
 3. `PlayerTrigger` - a trigger that calls the event when the player enters it. Requires a trigger collider. Can be chained.
-4. `QuestStateTrigger` - a trigger that calls the event when the specified quest updates its state. It has a different behaviour depending on the "Trigger Type" property:
+4. `QuestStateTrigger` - a trigger that calls the event when the specified quest updates its state. If the `Initial State Check` option is checked, the state will be checked after loading the game. It has a different behaviour depending on the "Trigger Type" property:
     - `StateChanged` - event is called when the state is changed to anything.
     - `Started` - event is called only when the quest changes its state to `Active`.
     - `Completed` - event is called only when the quest changes its state to `Completed`.
     - `Failed` - event is called only when the quest changes its state to `Failed`.
     Can be chained.
 5. `SubquestStateTrigger` - same as the `QuestStateTrigger` but for the subquests. Can be chained.
-6. `TimeOverTrigger` - a trigger that calls the event after the [time is over](#clock). Additionally, the "Initial State Check" flag defines whether the trigger should call the event if the game has started with 0 minutes left (possible when saves are used). Can be chained.
+6. `TimeOverTrigger` - a trigger that calls the event after the [time is over](#clock). Additionally, the "Initial State Check" flag defines whether the trigger should call the event if the game has started with 0 minutes left. Can be chained.
