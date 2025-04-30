@@ -472,7 +472,7 @@ Triggers are components that usually end with the `Trigger` suffix. They provide
 
 To combine triggers with actions, just add both trigger and action to your game object and then in the trigger add an even listener (use the "+" button). Then, drag and drop your action object there, choose an appropriate component and select the method you're interested in (look the [List of Actions](#list-of-actions) section).
 
-1. `ChainedTrigger` - a trigger that calls the event after all of the assigned to it triggers have called their event. Note that not all triggers can be used with this component. This is used in the alpha version to end the game after the player had failed all subquests of the main quest.
+1. `ChainedTrigger` - a trigger that calls the event after all of the assigned to it triggers have called their event. In order work properly with the save system, the `ChainedTriggerSaver` component on the same object is required (you will get a warning if you forget about it). Note that not all triggers can be used with this component. This is used in the alpha version to end the game after the player had failed all subquests of the main quest.
 2. `DialogueNodeTrigger` - a special dialogue trigger that is described [here](#dialogue-node-triggers). Cannot be chained.
 3. `PlayerTrigger` - a trigger that calls the event when the player enters it. Requires a trigger collider. Can be chained.
 4. `QuestStateTrigger` - a trigger that calls the event when the specified quest updates its state. If the `Initial State Check` option is checked, the state will be checked after loading the game. It has a different behaviour depending on the "Trigger Type" property:
