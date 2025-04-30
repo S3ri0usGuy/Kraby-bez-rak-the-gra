@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _subquest: {fileID: 11400000, guid: 2829b2273ead4b54980c3067d7478c61, type: 2}
   _triggerType: 3
-  _checkOnStart: 1
+  _initialStateCheck: 1
   _triggered:
     m_PersistentCalls:
       m_Calls: []
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _subquest: {fileID: 11400000, guid: 930019a1cc227bb44ac1b3d1edf20a2f, type: 2}
   _triggerType: 3
-  _checkOnStart: 1
+  _initialStateCheck: 1
   _triggered:
     m_PersistentCalls:
       m_Calls: []
@@ -110,6 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7698668147630315199}
   - component: {fileID: 7584235621383913528}
+  - component: {fileID: 8281549104441314470}
   - component: {fileID: 772467374102191741}
   m_Layer: 0
   m_Name: NobodyEnding
@@ -167,6 +168,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8281549104441314470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699491829962614989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4f3f320d1f39c459354d12d63c8e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: nobody_ending_trigger
 --- !u!114 &772467374102191741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,7 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _subquest: {fileID: 11400000, guid: b203b867a86f56a4195f794b8b336dd8, type: 2}
   _triggerType: 3
-  _checkOnStart: 1
+  _initialStateCheck: 1
   _triggered:
     m_PersistentCalls:
       m_Calls: []
