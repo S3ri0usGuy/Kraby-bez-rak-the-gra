@@ -4,7 +4,7 @@ using UnityEngine;
 /// A component that saves the <see cref="DelayedAction" /> state.
 /// </summary>
 [DisallowMultipleComponent]
-[RequireComponent(typeof(DelayedActionSaver))]
+[RequireComponent(typeof(DelayedAction))]
 public class DelayedActionSaver : SavableComponent<DelayedActionSaveData>
 {
 	private DelayedAction _delayedAction;
