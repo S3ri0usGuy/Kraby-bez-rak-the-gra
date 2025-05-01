@@ -457,7 +457,7 @@ Actions are components that end with the `Action` suffix. Usually, they have a o
 
 ### List of Actions
 
-1. `DelayedAction` - an action that triggers a Unity Event after the specified delay. It's not a "pure action" and feels more like "a glue". Method: `Perform`.
+1. `DelayedAction` - an action that triggers a Unity Event after the specified delay in real seconds. It's not a "pure action" and feels more like "a glue". Can be paired with the `DelayedActionSaver` if the action progress should be saved (information about the action has started and how much time is left for it to be executed). Method: `Perform`.
 2. `EndGameAction` - an action that was used in the Alpha version of the game. Its only purpose is to end the game. Method: `EndGame`.
 3. `NarrationAction` - an action that allows to show/hide the narration screen. Methods: `ShowScreen`, `HideScreen`.
 4. `DialogueSaveEventAction` - an action that manipulates the [dialogue save event](dialogue-save-events) state. Method: `Perform`.
