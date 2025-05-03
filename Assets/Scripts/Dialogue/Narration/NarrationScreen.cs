@@ -19,8 +19,10 @@ public class NarrationScreen : SingletonMonoBehaviour<NarrationScreen>
 	/// </summary>
 	public DialogueSpeaker narratorSpeaker => _narratorSpeaker;
 
-	private void Start()
+	protected override void Awake()
 	{
+		base.Awake();
+
 		_animator = GetComponent<Animator>();
 		_shownBoolId = Animator.StringToHash(_shownBoolName);
 	}
