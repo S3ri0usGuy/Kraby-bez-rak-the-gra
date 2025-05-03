@@ -33,6 +33,10 @@ public class Subquest : ScriptableObject
 	[Tooltip("If checked, the subquest will not be visible. " +
 		"This setting doesn't matter if the assigned quest is not visible.")]
 	private bool _hidden = false;
+	[SerializeField]
+	[Tooltip("Defines the order of the subquest in the UI, relative to the assigned quest. " +
+		"The lesser the value, the higher the subquest.")]
+	private int _order = 0;
 
 	[SerializeField]
 	private StateAction _actionOnQuestPassed = StateAction.Pass;
@@ -67,4 +71,10 @@ public class Subquest : ScriptableObject
 	/// after the quest is failed.
 	/// </summary>
 	public StateAction actionOnQuestFailed => _actionOnQuestFailed;
+
+	/// <summary>
+	/// Defines the order of the subquest in the UI, relative to the assigned quest. 
+	/// The lesser the value, the higher the subquest.
+	/// </summary>
+	public int order => _order;
 }
