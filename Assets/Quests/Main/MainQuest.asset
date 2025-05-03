@@ -22,6 +22,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   _failOnTimeOver: 0
+  _hidden: 0
+  _order: 0
   references:
     version: 2
     RefIds: []

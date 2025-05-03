@@ -426,11 +426,12 @@ In order to create a quest follow this steps:
 
 3. If you select this quest you will see its parameters
 
-   ![image](https://github.com/user-attachments/assets/a5799c7f-d173-437a-b89b-1aa8d7ff5f29)
+   ![image](https://github.com/user-attachments/assets/2ce01363-4db8-49c6-b93c-ca26ec38d7df)
 
     * **Name** - a name of the quest that is displayed in the UI. It's a localized string, all such strings must be put in the `Quests` localized table (use `Quests t:StringTableCollection` prompt).
     * **Fail On Time Over** - if checked, the quest and all of its subquests will be marked as failed once the time is over.
     * **Hidden** - if checked, the quest and all of its subquests will be hidden in the UI.
+    * **Order** - the order of the quest in the UI. The lesser the value, the higher the quest. Quests with the same order will be sorted based on which quest was revealed first.
 
 4. (Optional) Once you have finished configuring your quest it's time to create subquests for it. Right click and select `Create -> Quests -> Subquest`:
 
@@ -438,11 +439,13 @@ In order to create a quest follow this steps:
 
 5. If you select this subquest you will see its parameters
 
-   ![image](https://github.com/user-attachments/assets/f762e8e0-9e25-46c7-93d0-c9e268a89a9a)
+   ![image](https://github.com/user-attachments/assets/d375276f-8fff-4742-bc14-0507136c3027)
+
    
     * **Description** - a short description of the subquest that is displayed in the UI. It's a localized string, all such strings must be put in the `Quests` localized table (use `Quests t:StringTableCollection` prompt).
     * **Quest** - a quest that is "an owner" of this subquest. If you forget to set this property, you will most likely see warning and errors in the console.
     * **Hidden** - whether this subquest should be hidden in the UI. If the assigned quest is hidden, this setting will be ignored because all subquests of the hidden quest will be hidden by default.
+    * **Order** - the order of the subquest in the UI. The lesser the value, the higher the subquest. Subquests with the same order will be sorted based on which subquest was revealed first.
     * **Action On Quest Passed** - what should happen with the subquest when the **Quest** is marked as **Completed**.
     * **Action On Quest Failed** - what should happen with the subquest when the **Quest** is marked as **Failed**.
 

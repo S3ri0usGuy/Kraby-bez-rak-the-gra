@@ -16,6 +16,10 @@ public class Quest : ScriptableObject
 	[SerializeField]
 	[Tooltip("If checked, the quest and all of its subquests will not be visible.")]
 	private bool _hidden = false;
+	[SerializeField]
+	[Tooltip("Defines the order of the quest in the UI. " +
+		"The lesser the value, the higher the quest.")]
+	private int _order = 1000;
 
 	/// <summary>
 	/// Gets a localized name of the quest.
@@ -32,4 +36,9 @@ public class Quest : ScriptableObject
 	/// Gets a flag indicating whether this quest is hidden in the UI.
 	/// </summary>
 	public bool hidden => _hidden;
+
+	/// <summary>
+	/// Defines the order of the quest in the UI. The lesser the value, the higher the quest.
+	/// </summary>
+	public int order => _order;
 }

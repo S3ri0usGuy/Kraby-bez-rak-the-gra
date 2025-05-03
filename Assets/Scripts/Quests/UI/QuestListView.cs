@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -11,16 +12,21 @@ public class QuestListView : MonoBehaviour
 	private class QuestItemsGroup
 	{
 		public QuestListItem questItem { get; }
-		public List<SubquestListItem> subquestItems { get; }
+		public List<SubquestListItem> subquestItems { get; private set; }
 
 		public QuestItemsGroup(QuestListItem questItem)
 		{
 			this.questItem = questItem;
 			subquestItems = new();
 		}
+
+		public void SortItems()
+		{
+			subquestItems = subquestItems.OrderBy(x => x.subquest.order).ToList();
+		}
 	}
 
-	private readonly List<QuestItemsGroup> _questGroups = new();
+	private List<QuestItemsGroup> _questGroups = new();
 
 	[SerializeField]
 	private QuestListItem _questItemPrefab;
@@ -82,6 +88,8 @@ public class QuestListView : MonoBehaviour
 
 			QuestItemsGroup newGroup = new(questItem);
 			_questGroups.Add(newGroup);
+			_questGroups = _questGroups.OrderBy(x => x.questItem.quest.order).ToList();
+
 			Reorder();
 
 			return newGroup;
@@ -103,6 +111,8 @@ public class QuestListView : MonoBehaviour
 			subquestItem.Bind(subquest);
 
 			group.subquestItems.Add(subquestItem);
+			group.SortItems();
+
 			Reorder();
 		}
 	}
