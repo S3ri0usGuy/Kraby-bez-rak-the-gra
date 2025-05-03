@@ -154,7 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetNode: {fileID: 11400000, guid: 02892a84ffbf9a54ca489d96c2b0ef80, type: 2}
-  _started:
+  _phraseIndex: 0
+  _phraseStarted:
     m_PersistentCalls:
       m_Calls: []
   _ended:
@@ -172,7 +173,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _phraseIndex: 0
 --- !u!114 &8509069509222824381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _performOnEnable: 0
-  _stage: {fileID: 11400000, guid: 2829b2273ead4b54980c3067d7478c61, type: 2}
+  _subquest: {fileID: 11400000, guid: 2829b2273ead4b54980c3067d7478c61, type: 2}
   _action: 2
 --- !u!1 &1650641388453825714
 GameObject:
@@ -300,7 +300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetNode: {fileID: 11400000, guid: a4c645c6a7cc4cb4aa837c1b136f2bf0, type: 2}
-  _started:
+  _phraseIndex: 2
+  _phraseStarted:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8738811525854374503}
@@ -330,7 +331,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _phraseIndex: 2
 --- !u!114 &8738811525854374503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetNode: {fileID: 11400000, guid: a4c645c6a7cc4cb4aa837c1b136f2bf0, type: 2}
-  _started:
+  _phraseIndex: 0
+  _phraseStarted:
     m_PersistentCalls:
       m_Calls: []
   _ended:
@@ -420,7 +421,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _phraseIndex: 0
 --- !u!114 &5056515797841499557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _performOnEnable: 0
-  _stage: {fileID: 11400000, guid: 2829b2273ead4b54980c3067d7478c61, type: 2}
+  _subquest: {fileID: 11400000, guid: 2829b2273ead4b54980c3067d7478c61, type: 2}
   _action: 1
 --- !u!1 &7852537927590388096
 GameObject:
@@ -566,6 +566,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 855212716255834493, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
+      propertyPath: _id
+      value: augustin_actor
+      objectReference: {fileID: 0}
+    - target: {fileID: 855212716255834493, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
       propertyPath: _group
       value: 
       objectReference: {fileID: 11400000, guid: 8c9e80c952891d24a891bb79f097b8bc, type: 2}
@@ -583,7 +587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5370541392418113586, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
       propertyPath: m_Name
-      value: Augustin Variant
+      value: Augustin
       objectReference: {fileID: 0}
     - target: {fileID: 5990903845403365547, guid: e5bcc1fe187ea844cb5f9390f7b61407, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
