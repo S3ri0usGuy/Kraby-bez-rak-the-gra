@@ -55,6 +55,14 @@ public class DialoguePlayer : MonoBehaviour
 	/// </summary>
 	public UnityEvent ended => _ended;
 
+#if UNITY_EDITOR
+	/// <summary>
+	/// Gets/sets a flag that indicates whether all phrases must be forced
+	/// to be skippable
+	/// </summary>
+	public static bool forcedSkippable { get; set; } = false;
+#endif
+
 	private void End()
 	{
 		_listener.OnEnded(_currentNode);
@@ -141,6 +149,16 @@ public class DialoguePlayer : MonoBehaviour
 		SubtitlesDisplayer.instance.Cancel();
 	}
 
+	private bool IsSkipped(DialoguePhrase phrase)
+	{
+		bool canBeSkipped = !phrase.unskippable;
+#if UNITY_EDITOR
+		if (forcedSkippable) canBeSkipped = true;
+#endif
+
+		return _skipPhrase && canBeSkipped;
+	}
+
 	private IEnumerator PlayPhrases()
 	{
 		// Wait for the speaker names to load
@@ -169,10 +187,10 @@ public class DialoguePlayer : MonoBehaviour
 
 			// Wait for the phrase to end
 			_skipPhrase = false;
-			if (!phrase.unskippable) InputSystem.onEvent += OnInputEvent;
+			InputSystem.onEvent += OnInputEvent;
 			for (float t = 0f; t < duration; t += Time.deltaTime)
 			{
-				if (t >= phraseSkipDelay && _skipPhrase)
+				if (t >= phraseSkipDelay && IsSkipped(phrase))
 				{
 					CancelPhrase(phrase);
 					break;
@@ -181,7 +199,7 @@ public class DialoguePlayer : MonoBehaviour
 
 				yield return null;
 			}
-			if (!phrase.unskippable) InputSystem.onEvent -= OnInputEvent;
+			InputSystem.onEvent -= OnInputEvent;
 
 			_listener.OnPhraseEnded(phraseContext);
 		}
