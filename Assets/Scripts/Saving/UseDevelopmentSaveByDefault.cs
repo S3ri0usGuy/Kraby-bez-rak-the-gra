@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// A component that enforces the development save slot if 
@@ -11,13 +12,23 @@ public class UseDevelopmentSaveByDefault : MonoBehaviour
 
 	[SerializeField]
 	private string _developmentSlotName = "dev";
+	[SerializeField]
+	private bool _useSceneName = true;
 
 	private void Awake()
 	{
 		_system = GetComponent<SaveSystem>();
 		if (_system.currentSaveSlot == null)
 		{
-			SaveSlot devSave = new(_developmentSlotName);
+			string slotName = _developmentSlotName;
+			if (_useSceneName)
+			{
+				string sceneName = SceneManager.GetActiveScene().name
+					.Replace(" ", "")
+					.Trim();
+				slotName = $"{slotName}-{sceneName}";
+			}
+			SaveSlot devSave = new(slotName);
 
 			var persistence = SavePersistenceFactory.CreatePersistence();
 			persistence.Load(devSave);
@@ -25,7 +36,7 @@ public class UseDevelopmentSaveByDefault : MonoBehaviour
 			SaveSystem.SetSave(devSave);
 
 			// If this appears in production then something is wrong
-			Debug.Log("The development save slot is used.");
+			Debug.Log($"The development save slot is used (\"{slotName}\").");
 		}
 	}
 }
