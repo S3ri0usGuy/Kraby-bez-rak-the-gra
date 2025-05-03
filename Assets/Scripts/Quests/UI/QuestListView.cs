@@ -72,6 +72,8 @@ public class QuestListView : MonoBehaviour
 
 	private QuestItemsGroup AddQuest(Quest quest)
 	{
+		if (quest.hidden) return null;
+
 		var group = _questGroups.Find(x => x.questItem.quest == quest);
 		if (group == null)
 		{
@@ -90,7 +92,11 @@ public class QuestListView : MonoBehaviour
 
 	private void AddSubquest(Subquest subquest)
 	{
+		if (subquest.hidden) return;
+
 		var group = _questGroups.Find(x => x.questItem.quest == subquest.quest) ?? AddQuest(subquest.quest);
+		if (group == null) return;
+
 		if (group.subquestItems.FindIndex(x => x.subquest == subquest) == -1)
 		{
 			SubquestListItem subquestItem = Instantiate(_subquestItemPrefab, transform);

@@ -29,6 +29,10 @@ public class Subquest : ScriptableObject
 	[SerializeField]
 	[Tooltip("The quest that this subquest is a part of.")]
 	private Quest _quest;
+	[SerializeField]
+	[Tooltip("If checked, the subquest will not be visible. " +
+		"This setting doesn't matter if the assigned quest is not visible.")]
+	private bool _hidden = false;
 
 	[SerializeField]
 	private StateAction _actionOnQuestPassed = StateAction.Pass;
@@ -43,6 +47,14 @@ public class Subquest : ScriptableObject
 	/// Gets the quest related to this subquest.
 	/// </summary>
 	public Quest quest => _quest;
+	/// <summary>
+	/// Gets a flag indicating whether this subquest is hidden.
+	/// </summary>
+	/// <remarks>
+	/// Note that this property doesn't matter if the <see cref="quest" /> is
+	/// hidden.
+	/// </remarks>
+	public bool hidden => _hidden;
 
 	/// <summary>
 	/// Gets an action that will automatically happen to this subquest 
