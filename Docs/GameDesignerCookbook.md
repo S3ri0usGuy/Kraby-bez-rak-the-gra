@@ -426,17 +426,23 @@ In order to create a quest follow this steps:
 
 3. If you select this quest you will see its parameters
 
-   ![image](https://github.com/user-attachments/assets/a77dd29b-2675-46c3-834c-f4cf99bf4402)
+   ![image](https://github.com/user-attachments/assets/a5799c7f-d173-437a-b89b-1aa8d7ff5f29)
 
     * **Name** - a name of the quest that is displayed in the UI. It's a localized string, all such strings must be put in the `Quests` localized table (use `Quests t:StringTableCollection` prompt).
     * **Fail On Time Over** - if checked, the quest and all of its subquests will be marked as failed once the time is over.
+    * **Hidden** - if checked, the quest and all of its subquests will be hidden in the UI.
 
 4. (Optional) Once you have finished configuring your quest it's time to create subquests for it. Right click and select `Create -> Quests -> Subquest`:
 
    ![image](https://github.com/user-attachments/assets/12bfaf00-fff8-4986-a80b-8602e88f4b6d)
 
+5. If you select this subquest you will see its parameters
+
+   ![image](https://github.com/user-attachments/assets/f762e8e0-9e25-46c7-93d0-c9e268a89a9a)
+   
     * **Description** - a short description of the subquest that is displayed in the UI. It's a localized string, all such strings must be put in the `Quests` localized table (use `Quests t:StringTableCollection` prompt).
     * **Quest** - a quest that is "an owner" of this subquest. If you forget to set this property, you will most likely see warning and errors in the console.
+    * **Hidden** - whether this subquest should be hidden in the UI. If the assigned quest is hidden, this setting will be ignored because all subquests of the hidden quest will be hidden by default.
     * **Action On Quest Passed** - what should happen with the subquest when the **Quest** is marked as **Completed**.
     * **Action On Quest Failed** - what should happen with the subquest when the **Quest** is marked as **Failed**.
 
