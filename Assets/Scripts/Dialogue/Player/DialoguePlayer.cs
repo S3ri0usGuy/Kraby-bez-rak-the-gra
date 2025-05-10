@@ -141,7 +141,7 @@ public class DialoguePlayer : MonoBehaviour
 
 		string subtitle = preloadedPhrase.text;
 		string speakerName = _speakerNames[phrase.speakerIndex];
-		_currentSubtitlesDisplayer = SubtitlesProvider.instance.GetFor(phrase.profile);
+		_currentSubtitlesDisplayer = SubtitlesProvider.instance.GetFor(phrase.subtitlesProfile);
 		_currentSubtitlesDisplayer.Display(
 			subtitle, duration, SubtitlePriority.Dialogue, speakerName);
 	}

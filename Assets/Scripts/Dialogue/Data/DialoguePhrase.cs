@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Represents a dialogue phrase.
@@ -30,8 +31,9 @@ public class DialoguePhrase
 	[Tooltip("Check if it's not possible to skip the phrase.")]
 	private bool _unskippable = false;
 	[SerializeField]
+	[FormerlySerializedAs("_profile")]
 	[Tooltip("The subtitles profile used for the phrase. Can be left empty.")]
-	private SubtitlesProfile _profile;
+	private SubtitlesProfile _subtitlesProfile;
 
 	/// <summary>
 	/// Gets an index of the speaker who says this phrase.
@@ -65,5 +67,5 @@ public class DialoguePhrase
 	/// <summary>
 	/// Gets the subtitles profile used for the phrase. Can be left empty.
 	/// </summary>
-	public SubtitlesProfile profile => _profile;
+	public SubtitlesProfile subtitlesProfile => _subtitlesProfile;
 }
