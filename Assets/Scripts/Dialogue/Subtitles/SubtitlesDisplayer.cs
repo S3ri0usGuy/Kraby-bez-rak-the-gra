@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// A component that allows to display subtitles.
 /// </summary>
-public class SubtitlesDisplayer : SingletonMonoBehaviour<SubtitlesDisplayer>
+public class SubtitlesDisplayer : MonoBehaviour
 {
 	private bool _subtitleActive = false;
 	private Coroutine _subtitleCoroutine;
@@ -32,6 +32,9 @@ public class SubtitlesDisplayer : SingletonMonoBehaviour<SubtitlesDisplayer>
 		"immediately.")]
 	private float _typeAnimationRatio = 0.8f;
 
+	[SerializeField]
+	private SubtitlesProfile _profile;
+
 	/// <summary>
 	/// Gets/sets the lowest priority of the subtitle that can be shown.
 	/// Priorities less important than this value will be ignored.
@@ -40,6 +43,16 @@ public class SubtitlesDisplayer : SingletonMonoBehaviour<SubtitlesDisplayer>
 	{
 		get => _priorityFilter;
 		set => _priorityFilter = value;
+	}
+
+	/// <summary>
+	/// Gets the subtitiles profile associated with the displayer.
+	/// </summary>
+	public SubtitlesProfile profile => _profile;
+
+	private void Awake()
+	{
+		SubtitlesProvider.instance.Register(this);
 	}
 
 	private IEnumerator ShowSubtitle(string subtitlePrefix, string subtitle, float duration)

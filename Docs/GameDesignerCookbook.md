@@ -173,7 +173,7 @@ The phrases will be played at the same order as in this array. Of course, you're
 
 Now, let's see how an average phrase looks like:
 
-![image](https://github.com/user-attachments/assets/e7e36c2c-ef59-411f-8de6-b83ee7936dbd)
+![image](https://github.com/user-attachments/assets/a523c1f3-71df-4535-8f90-678181548f5d)
 
 1. **Speaker Index** - an index of the speaker who says this phrase. Usually, it's 0 for the protagonist, 1 for the NPC, 2 for the narrator (depends on the `DialoguePlayer` settings). This index is required for the systems (subtitles and audio players) to differentiate who says what.
 2. **Text** - a localized text of the phrase that is displayed in subtitles. See the [Localized Phrases](#localized-phrases) section for more details.
@@ -181,6 +181,7 @@ Now, let's see how an average phrase looks like:
 4. **Audio Clip** (optional) - a localized audio clip that will be played during the phrase. See the [Localized Voice Lines](#localized-voice-lines) section for more details.
 5. **Duration** - how long the phrase lasts (in seconds). If the audio clip (either **Default Audio Clip** or **Audio Clip**) is assigned, and this value is zero or negative, the clip's duration is taken instead.
 6. **Unskippable** - if checked, the phrase will not be skippable; otherwise the player can press any key to skip the phrase.
+7. **Subtitles Profile** - the subtitles profile that will be used for this phrase. Can be left as "None", then the default one will be used.
 
 ##### 4. **Dialogue Answer Options**
 
@@ -242,13 +243,20 @@ In order to create a dialogue condition follow these steps:
 
 - **Quest** - conditions related to quests.
     - **Quest State** (`DialogueQuestStateCondition`) - a condition that is satisfied when the specified quest has exactly the same state as defined by the "State" property.
+  
     ![image](https://github.com/user-attachments/assets/ed73cd29-d900-4d06-825d-dee2b7d1d7a0)
+
     - **Subquest State** (`DialogueSubquestStateCondition`) - exactly same as the **Quest State** one, but for subquests.
 - **Random** (`DialogueRandomCondition`) - a condition that has a probability to be satisfied. It's completely random and a chance to be satisfied is defined by the "Probability" property (from 0 to 1: 0 meaning always failure, 1 meaning always success). This condition is not recommended to be actually used and was added to test the conditions feature before other conditions existed.
+  
   ![image](https://github.com/user-attachments/assets/2cfe7433-4b2c-4e07-9d6f-3009a8b4fc94)
+  
 - **Save Event** (`DialogueSaveEventCondition`) - a condition that is satisfied if the specified save event (defined by the "Event" property) has the target state (defined by the "Target State" property).
+  
   ![image](https://github.com/user-attachments/assets/b6a7c272-32c7-4046-92b2-a1f8d3e2fe6e)
+  
 - **Time Left** (`DialogueTimeLeftCondition`) - a condition that is satisfied only if the minutes left pass the comparison. It uses this formula to check if it's satisfied: `minutesLeft (Comparison) targetMinutesLeft`.
+  
     ![image](https://github.com/user-attachments/assets/37f60a59-ed14-42fd-b03b-d9a5afea80ae)
     
 #### Dialogue Save Events
