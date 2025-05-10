@@ -14,6 +14,8 @@ public class DialoguePlayer : MonoBehaviour
 {
 	public const float phraseSkipDelay = 0.2f;
 
+	private SubtitlesDisplayer _currentSubtitlesDisplayer;
+
 	private DialogueNode _currentNode;
 	private readonly List<DialoguePreloadedPhrase> _preloadedPhrases = new();
 	private readonly List<string> _speakerNames = new();
@@ -139,14 +141,15 @@ public class DialoguePlayer : MonoBehaviour
 
 		string subtitle = preloadedPhrase.text;
 		string speakerName = _speakerNames[phrase.speakerIndex];
-		SubtitlesDisplayer.instance.Display(
+		_currentSubtitlesDisplayer = SubtitlesProvider.instance.GetFor(phrase.profile);
+		_currentSubtitlesDisplayer.Display(
 			subtitle, duration, SubtitlePriority.Dialogue, speakerName);
 	}
 
 	private void CancelPhrase(DialoguePhrase phrase)
 	{
 		_speakers[phrase.speakerIndex].Stop();
-		SubtitlesDisplayer.instance.Cancel();
+		_currentSubtitlesDisplayer.Cancel();
 	}
 
 	private bool IsSkipped(DialoguePhrase phrase)

@@ -29,6 +29,9 @@ public class DialoguePhrase
 	[SerializeField]
 	[Tooltip("Check if it's not possible to skip the phrase.")]
 	private bool _unskippable = false;
+	[SerializeField]
+	[Tooltip("The subtitles profile used for the phrase. Can be left empty.")]
+	private SubtitlesProfile _profile;
 
 	/// <summary>
 	/// Gets an index of the speaker who says this phrase.
@@ -59,4 +62,8 @@ public class DialoguePhrase
 	/// Gets a flag that determines whether the phrase cannot be skipped.
 	/// </summary>
 	public bool unskippable => _unskippable;
+	/// <summary>
+	/// Gets the subtitles profile used for the phrase. Can be left empty.
+	/// </summary>
+	public SubtitlesProfile profile => _profile;
 }
