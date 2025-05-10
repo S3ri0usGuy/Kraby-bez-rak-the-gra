@@ -23,6 +23,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _defaultAudioClip: {fileID: 0}
     _audioClip:
       m_TableReference:
         m_TableCollectionName: 
@@ -33,6 +34,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
     _duration: 12
     _unskippable: 1
+    _profile: {fileID: 11400000, guid: b5c0a7e26e954af4a8abeb9ab007e6aa, type: 2}
   _options: []
   _answerParams:
     _answerType: 0
