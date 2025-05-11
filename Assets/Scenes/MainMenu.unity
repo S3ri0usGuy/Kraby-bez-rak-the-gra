@@ -509,8 +509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainAudioMixer: {fileID: 24100000, guid: 531c0fb2f912309429292072444d0692, type: 2}
   _masterVolumeSlider: {fileID: 1831000746}
-  _sfxVolumeSlider: {fileID: 1471844014}
-  _dialogueVolumeSlider: {fileID: 582180380}
+  _sfxVolumeSlider: {fileID: 582180380}
+  _dialogueVolumeSlider: {fileID: 1471844014}
 --- !u!1001 &303179311
 PrefabInstance:
   m_ObjectHideFlags: 0
