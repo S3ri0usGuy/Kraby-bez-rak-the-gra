@@ -30,6 +30,11 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 	public SaveSlot currentSaveSlot => _slot;
 
 	/// <summary>
+	/// An event that is called  the save system saves something.
+	/// </summary>
+	public event Action saved;
+
+	/// <summary>
 	/// Starts tracking a savable object and initializes it with a save data.
 	/// </summary>
 	/// <remarks>
@@ -104,6 +109,7 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 		{
 			throw new InvalidOperationException("Attempted to save but there is no current save slot set.");
 		}
+		saved?.Invoke();
 
 #if UNITY_EDITOR
 		// Find non-unique IDs
