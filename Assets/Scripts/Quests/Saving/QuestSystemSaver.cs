@@ -24,8 +24,20 @@ public class QuestSystemSaver : SavableComponent<QuestSystemSaveData>
 	protected override void Awake()
 	{
 		_questSystem = GetComponent<QuestSystem>();
+		_questSystem.questStateUpdated += OnQuestUpdated;
+		_questSystem.subquestStateUpdated += OnSubquestUpdated;
 
 		base.Awake();
+	}
+
+	private void OnQuestUpdated(QuestSystem questSystem, QuestStateUpdatedEventArgs e)
+	{
+		RequestAutoSave();
+	}
+
+	private void OnSubquestUpdated(QuestSystem questSystem, SubquestStateUpdatedEventArgs e)
+	{
+		RequestAutoSave();
 	}
 
 	protected override void Validate(QuestSystemSaveData data)

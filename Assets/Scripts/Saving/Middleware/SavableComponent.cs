@@ -12,6 +12,7 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 	where TData : class
 {
 	private TData _data;
+	private bool _isLoading;
 
 	[SerializeField]
 	[Tooltip("A unique identifier that represents this object.")]
@@ -75,14 +76,18 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 	/// </summary>
 	protected virtual void OnSave() { }
 
+	/// <summary>
+	/// Requests the auto save. Doesn't do anything if called while loading.
+	/// </summary>
+	protected void RequestAutoSave()
+	{
+		if (!_isLoading) SaveSystem.RequestAutoSave();
+	}
+
 	public void Load(object data)
 	{
-		if (data == null)
-		{
-			_data = fallbackData;
-			OnLoad();
-			return;
-		}
+		data ??= fallbackData;
+		_isLoading = true;
 
 		if (data is TData unboxedData)
 		{
@@ -101,6 +106,7 @@ public abstract class SavableComponent<TData> : MonoBehaviour, ISavable
 		}
 
 		OnLoad();
+		_isLoading = false;
 	}
 
 	public object Save()

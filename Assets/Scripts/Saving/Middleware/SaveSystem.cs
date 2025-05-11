@@ -11,7 +11,14 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 {
 	private static SaveSlot _slot;
 
+	/// <summary>
+	/// Gets/sets a flag indicating whether the game should use autosaves.
+	/// </summary>
+	public static bool autoSaveEnabled { get; set; } = true;
+
 	private readonly HashSet<ISavable> _savables = new();
+
+	private bool _saveRequested = false;
 
 	/// <summary>
 	/// Gets a current save slot. Nullable.
@@ -89,7 +96,7 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 	}
 
 	/// <summary>
-	/// Saves registered savable objects to the current slot.
+	/// Saves registered savable objects to the current slot immediately.
 	/// </summary>
 	public void Save()
 	{
@@ -137,6 +144,28 @@ public sealed class SaveSystem : SingletonMonoBehaviour<SaveSystem>
 
 		ISavePersistence provider = SavePersistenceFactory.CreatePersistence();
 		provider.Save(_slot);
+	}
+
+	/// <summary>
+	/// Requests the autosave operation to be performed in the end of this frame. 
+	/// </summary>
+	/// <remarks>
+	/// Will not work if the auto save is disabled.
+	/// </remarks>
+	public static void RequestAutoSave()
+	{
+		if (!exists || !autoSaveEnabled) return;
+
+		instance._saveRequested = true;
+	}
+
+	private void LateUpdate()
+	{
+		if (_saveRequested)
+		{
+			Save();
+			_saveRequested = false;
+		}
 	}
 }
 
