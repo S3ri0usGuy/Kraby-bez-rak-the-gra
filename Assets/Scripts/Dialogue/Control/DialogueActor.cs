@@ -58,6 +58,15 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 	/// has exited the dialogue state).
 	/// </summary>
 	public event DialogueEndedHandler dialogueEnded;
+	/// <summary>
+	/// An event that is called when the <see cref="nextNode" /> changes.
+	/// </summary>
+	/// <remarks>
+	/// This event is triggered only after an entire dialogue ends or
+	/// after the <see cref="SetNextNode(DialogueNode)" /> call. It is not
+	/// triggered when the node changes after answering.
+	/// </remarks>
+	public event DialogueEndedHandler nextNodeChanged;
 
 	private void Start()
 	{
@@ -75,6 +84,7 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 			throw new System.ArgumentNullException(nameof(node));
 
 		_nextNode = node;
+		nextNodeChanged?.Invoke(node);
 	}
 
 	/// <summary>
@@ -115,5 +125,6 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 	void IDialogueListener.OnEnded(DialogueNode node)
 	{
 		dialogueEnded?.Invoke(node);
+		nextNodeChanged?.Invoke(_nextNode);
 	}
 }
