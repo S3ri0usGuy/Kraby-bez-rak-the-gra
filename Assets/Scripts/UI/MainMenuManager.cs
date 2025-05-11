@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 //<Summary>
 //Controls Main Menu: Changes scene and quits game
 //</Summary>
-//TO DO: Integrate safe system, refactor change scene function
+//TO DO: Integrate save system, refactor change scene function
 
 public class MainMenuManager : MonoBehaviour //should be singleton ?
 {
