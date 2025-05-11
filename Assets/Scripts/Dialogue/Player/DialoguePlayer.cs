@@ -248,6 +248,14 @@ public class DialoguePlayer : MonoBehaviour
 			var optionNode = option.branching.SelectNode();
 			if (optionNode)
 			{
+				if (_options.Count >= DialogueNode.maxDialogueOptions)
+				{
+					Debug.LogWarning($"The maximum number of options " +
+						$"({DialogueNode.maxDialogueOptions}) was exceeded. Some " +
+						$"of the options are ignored.");
+					break;
+				}
+
 				_options.Add(option);
 				_optionNodes.Add(optionNode);
 			}
