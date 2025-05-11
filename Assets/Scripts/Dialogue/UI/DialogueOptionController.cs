@@ -8,11 +8,10 @@ using UnityEngine;
 /// </summary>
 public class DialogueOptionController : SingletonMonoBehaviour<DialogueOptionController>
 {
-	// TODO: add input handling to allow players
-	// press a button to pick an option instead of clicking
-
 	private DialogueOptionCallback _callback;
 	private DialogueOptionButton[] _optionButtons;
+
+	private int _availableOptionsCount;
 
 	[SerializeField]
 	private GameObject _window;
@@ -35,13 +34,6 @@ public class DialogueOptionController : SingletonMonoBehaviour<DialogueOptionCon
 			button.optionIndex = i;
 			button.clicked += OnButtonClicked;
 		}
-	}
-
-	private void SelectOption(int optionIndex)
-	{
-		_window.SetActive(false);
-		_callback?.Invoke(optionIndex);
-		_callback = null; // Make sure it's one-time call only
 	}
 
 	private void OnButtonClicked(DialogueOptionButton button)
@@ -110,6 +102,7 @@ public class DialogueOptionController : SingletonMonoBehaviour<DialogueOptionCon
 		StopAllCoroutines();
 
 		SetButtonsActive(options.Count);
+		_availableOptionsCount = options.Count;
 		for (int i = 0; i < options.Count; i++)
 		{
 			_optionButtons[i].SetText(options[i]);
@@ -118,5 +111,32 @@ public class DialogueOptionController : SingletonMonoBehaviour<DialogueOptionCon
 		_window.SetActive(true);
 
 		StartCoroutine(ForcedChoiceCountdown(answerParams, options.Count));
+	}
+
+	/// <summary>
+	/// Selects the option by its index.
+	/// </summary>
+	/// <remarks>
+	/// Does nothing if the index is invalid or there is no options to select.
+	/// </remarks>
+	/// <param name="optionIndex">
+	/// An index of the option to choose from 0 to
+	/// <see cref="DialogueNode.maxDialogueOptions" /> - 1.
+	/// </param>
+	/// <exception cref="System.ArgumentOutOfRangeException">
+	/// The <paramref name="optionIndex"/> is out of the range.
+	/// </exception>
+	public void SelectOption(int optionIndex)
+	{
+		if (optionIndex < 0 || optionIndex >= DialogueNode.maxDialogueOptions)
+		{
+			throw new System.ArgumentOutOfRangeException(nameof(optionIndex));
+		}
+
+		if (_callback == null || optionIndex >= _availableOptionsCount) return;
+
+		_window.SetActive(false);
+		_callback?.Invoke(optionIndex);
+		_callback = null; // Make sure it's one-time call only
 	}
 }

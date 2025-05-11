@@ -23,6 +23,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _defaultAudioClip: {fileID: 0}
     _audioClip:
       m_TableReference:
         m_TableCollectionName: 
@@ -33,6 +34,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
     _duration: 5
     _unskippable: 0
+    _subtitlesProfile: {fileID: 0}
   - _speakerIndex: 0
     _text:
       m_TableReference:
@@ -43,6 +45,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _defaultAudioClip: {fileID: 0}
     _audioClip:
       m_TableReference:
         m_TableCollectionName: 
@@ -53,6 +56,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
     _duration: 6
     _unskippable: 0
+    _subtitlesProfile: {fileID: 0}
   - _speakerIndex: 0
     _text:
       m_TableReference:
@@ -63,6 +67,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _defaultAudioClip: {fileID: 0}
     _audioClip:
       m_TableReference:
         m_TableCollectionName: 
@@ -73,6 +78,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
     _duration: 5
     _unskippable: 0
+    _subtitlesProfile: {fileID: 0}
   - _speakerIndex: 1
     _text:
       m_TableReference:
@@ -83,6 +89,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _defaultAudioClip: {fileID: 0}
     _audioClip:
       m_TableReference:
         m_TableCollectionName: 
@@ -93,6 +100,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
     _duration: 5
     _unskippable: 0
+    _subtitlesProfile: {fileID: 0}
   _options:
   - _text:
       m_TableReference:
