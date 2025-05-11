@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -7,6 +8,11 @@ using UnityEngine;
 public sealed class DialogueSaveEventsProvider : SingletonMonoBehaviour<DialogueSaveEventsProvider>
 {
 	private DialogueSaveEventsStorage _storage;
+
+	/// <summary>
+	/// Gets a collection of all events that were saved.
+	/// </summary>
+	public IEnumerable<string> savedEvents => _storage.keys;
 
 	protected override void Awake()
 	{
