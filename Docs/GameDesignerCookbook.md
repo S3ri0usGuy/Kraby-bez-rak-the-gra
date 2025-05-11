@@ -206,6 +206,8 @@ Optionally, you can add a time restriction to the node.
 * **TimedPickFirst** - the player's time to answer is limited (by "Time To Answer" seconds). If time is out, the first option is picked.
 * **TimedPickRandom** - the player's time to answer is limited (by "Time To Answer" seconds). If time is out, a random option is picked.
 
+**Important**: the limit of the answer options is 4. If you have more than 4 answer options available, only the first 4 will be displayed (and you'll see a warning in the console).
+
 ##### 5. **Dialogue Next Node Branching**
 
 Now, the most complex and interesting stuff - branching. So, each object with dialogues has a one node saved as "current". This node changes either when the player chooses some answer, or when the dialogue sequence ends.
