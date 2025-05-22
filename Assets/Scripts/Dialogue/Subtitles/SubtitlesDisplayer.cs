@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class SubtitlesDisplayer : MonoBehaviour
 {
+	private bool _isTyping = false;
 	private bool _subtitleActive = false;
 	private Coroutine _subtitleCoroutine;
 
@@ -50,6 +51,12 @@ public class SubtitlesDisplayer : MonoBehaviour
 	/// </summary>
 	public SubtitlesProfile profile => _profile;
 
+	/// <summary>
+	/// Gets a flag indicating whether the subtitiles currently in the
+	/// typing animation state.
+	/// </summary>
+	public bool isTyping => _isTyping;
+
 	private void Awake()
 	{
 		SubtitlesProvider.instance.Register(this);
@@ -64,13 +71,24 @@ public class SubtitlesDisplayer : MonoBehaviour
 		float typingDuration = duration * _typeAnimationRatio;
 		float symbolDuration = typingDuration / subtitle.Length;
 
-		for (int i = 0; i < subtitle.Length; i++)
+		float t = 0f;
+		_isTyping = true;
+		for (int i = 0; i < subtitle.Length && _isTyping; i++)
 		{
 			_label.text += subtitle[i];
+			while (_isTyping && t < symbolDuration)
+			{
+				t += Time.deltaTime;
+				duration -= Time.deltaTime;
+				yield return null;
+			}
+			t -= symbolDuration;
 			yield return new WaitForSeconds(symbolDuration);
 		}
+		_isTyping = false;
+		_label.text = subtitlePrefix + subtitle;
 
-		yield return new WaitForSeconds(duration - typingDuration);
+		yield return new WaitForSeconds(duration);
 
 		_label.gameObject.SetActive(false);
 		_subtitleActive = false;
@@ -105,6 +123,14 @@ public class SubtitlesDisplayer : MonoBehaviour
 			"" : string.Format(_speakerNameFormat, speaker);
 
 		_subtitleCoroutine = StartCoroutine(ShowSubtitle(subtitlePrefix, subtitle, duration));
+	}
+
+	/// <summary>
+	/// Skips the typing animation if it's active.
+	/// </summary>
+	public void SkipTyping()
+	{
+		_isTyping = false;
 	}
 
 	/// <summary>
