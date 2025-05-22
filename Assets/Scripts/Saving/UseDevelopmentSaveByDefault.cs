@@ -20,6 +20,9 @@ public class UseDevelopmentSaveByDefault : MonoBehaviour
 		_system = GetComponent<SaveSystem>();
 		if (_system.currentSaveSlot == null)
 		{
+#if !UNITY_EDITOR
+			SaveSystem.autoSaveEnabled = false;
+#endif
 			string slotName = _developmentSlotName;
 			if (_useSceneName)
 			{
