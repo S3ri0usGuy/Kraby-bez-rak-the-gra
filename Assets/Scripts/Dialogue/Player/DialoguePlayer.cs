@@ -146,10 +146,17 @@ public class DialoguePlayer : MonoBehaviour
 			subtitle, duration, SubtitlePriority.Dialogue, speakerName);
 	}
 
-	private void CancelPhrase(DialoguePhrase phrase)
+	private bool CancelPhrase(DialoguePhrase phrase)
 	{
+		if (_currentSubtitlesDisplayer.isTyping)
+		{
+			_currentSubtitlesDisplayer.SkipTyping();
+			return false;
+		}
 		_speakers[phrase.speakerIndex].Stop();
 		_currentSubtitlesDisplayer.Cancel();
+
+		return true;
 	}
 
 	private bool IsSkipped(DialoguePhrase phrase)
@@ -195,8 +202,10 @@ public class DialoguePlayer : MonoBehaviour
 			{
 				if (t >= phraseSkipDelay && IsSkipped(phrase))
 				{
-					CancelPhrase(phrase);
-					break;
+					if (CancelPhrase(phrase))
+					{
+						break;
+					}
 				}
 				_skipPhrase = false;
 
