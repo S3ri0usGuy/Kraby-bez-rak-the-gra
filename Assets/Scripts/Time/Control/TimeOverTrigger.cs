@@ -22,6 +22,7 @@ public class TimeOverTrigger : Trigger
 		if (_initialStateCheck && Clock.instance.minutesLeft <= 0)
 		{
 			_triggered.Invoke();
+			InvokeTriggered();
 		}
 	}
 
