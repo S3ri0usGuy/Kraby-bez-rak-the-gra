@@ -25,6 +25,11 @@ public class TimeRangeTrigger : Trigger
 		CheckCondition();
 	}
 
+	private void OnValidate()
+	{
+		_maxMinutesLeft = Mathf.Max(_maxMinutesLeft, _minMinutesLeft);
+	}
+
 	private void OnTimeUpdated(Clock clock)
 	{
 		CheckCondition();
