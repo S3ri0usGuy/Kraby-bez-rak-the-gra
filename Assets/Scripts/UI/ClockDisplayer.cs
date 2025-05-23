@@ -11,6 +11,9 @@ public class ClockDisplayer : MonoBehaviour
 	[SerializeField]
 	private TMP_Text _label;
 
+	[SerializeField, Min(0)]
+	private int _startTimeMinutes = 7 * 60;
+
 	private void Start()
 	{
 		if (Clock.exists)
@@ -24,8 +27,10 @@ public class ClockDisplayer : MonoBehaviour
 
 	private void UpdateTime()
 	{
-		int hours = _clock.minutesLeft / 60;
-		int minutes = _clock.minutesLeft % 60;
+		int totalMinutes = _clock.minutesAtStart - _clock.minutesLeft + _startTimeMinutes;
+
+		int hours = totalMinutes / 60;
+		int minutes = totalMinutes % 60;
 		_label.text = $"{hours:00}:{minutes:00}";
 	}
 
