@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
 	[Header("Gravity")]
 	[SerializeField]
-	private ModifiableFloat _gravity = new(9.8f, minValue: 0f);
+	private ModifiableFloat _gravity = new(19.6f, minValue: 0f);
 	[SerializeField, Min(float.Epsilon)]
 	private float _coyoteTime = 0.1f;
 	[SerializeField, Min(0f)]
