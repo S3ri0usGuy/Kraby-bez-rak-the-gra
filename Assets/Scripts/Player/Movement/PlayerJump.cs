@@ -45,6 +45,6 @@ public class PlayerJump : MonoBehaviour
 		_movement.Jump(_jumpVelocity);
 		performed?.Invoke(this);
 
-		return true;
+		return false;
 	}
 }
