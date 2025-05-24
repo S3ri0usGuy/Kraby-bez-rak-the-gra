@@ -1166,8 +1166,8 @@ MonoBehaviour:
     _baseValue: 1.5
     _actualValue: 1.5
   _gravity:
-    _baseValue: 18
-    _actualValue: 18
+    _baseValue: 19
+    _actualValue: 19
   _coyoteTime: 0.15
   _maxVelocityY: 20
   _groundLayers:
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8771152792442964525}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1867d93c48784c84eb9be4077d2997b5, type: 3}
   m_Name: 
