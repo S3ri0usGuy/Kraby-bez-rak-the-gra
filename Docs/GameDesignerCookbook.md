@@ -66,7 +66,7 @@
 
 The game counts time in minutes. The starting number of minutes can be edited inside the `Player` prefab (use the `t:Prefab Player` search prompt in the Project window):
 
-![image](https://github.com/user-attachments/assets/18815167-e4c5-4a8d-9328-9607cbd82827)
+![image](https://github.com/user-attachments/assets/0dcf20d3-6208-49fc-8595-2676fab78df8)
 
 Minutes can be spent using the `SpendTimeAction` which can be triggered by dialogues or quests.
 
