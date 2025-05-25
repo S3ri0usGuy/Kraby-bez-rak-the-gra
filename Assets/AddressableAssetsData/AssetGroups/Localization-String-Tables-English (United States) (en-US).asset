@@ -69,6 +69,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f21f64e81e848444841a626f2e23f46
+    m_Address: LyamDialogues_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bb2e3d42a74c42a4c98fc187312c0a9f
     m_Address: NobodyEndingDialogue_en-US
     m_ReadOnly: 1
