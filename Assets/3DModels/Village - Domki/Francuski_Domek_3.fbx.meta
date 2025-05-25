@@ -3,7 +3,67 @@ guid: 8e7196fec516ba843855c76c22c99a2e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drewno.004
+    second: {fileID: 2100000, guid: 5bf9485e42af32f49b4f16c06826261d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drewno.005
+    second: {fileID: 2100000, guid: 5bf9485e42af32f49b4f16c06826261d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drewno.006
+    second: {fileID: 2100000, guid: 5bf9485e42af32f49b4f16c06826261d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drewno.007
+    second: {fileID: 2100000, guid: 5bf9485e42af32f49b4f16c06826261d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drewno.008
+    second: {fileID: 2100000, guid: 5bf9485e42af32f49b4f16c06826261d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drewno.009
+    second: {fileID: 2100000, guid: 5bf9485e42af32f49b4f16c06826261d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sciany.001
+    second: {fileID: 2100000, guid: 56305be948ab25348aeeea3622450653, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Szyba.001
+    second: {fileID: 2100000, guid: 8f3fe43f2b5a72b4288f7dbba160caf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Szyba.002
+    second: {fileID: 2100000, guid: 8f3fe43f2b5a72b4288f7dbba160caf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Szyba.003
+    second: {fileID: 2100000, guid: 8f3fe43f2b5a72b4288f7dbba160caf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Szyba.004
+    second: {fileID: 2100000, guid: 8f3fe43f2b5a72b4288f7dbba160caf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: szklo
+    second: {fileID: 2100000, guid: 8f3fe43f2b5a72b4288f7dbba160caf6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

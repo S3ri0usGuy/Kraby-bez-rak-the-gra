@@ -3,7 +3,12 @@ guid: 36b1d1a8f35ba084fad2a0068040b8c1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sciany.002
+    second: {fileID: 2100000, guid: 56305be948ab25348aeeea3622450653, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

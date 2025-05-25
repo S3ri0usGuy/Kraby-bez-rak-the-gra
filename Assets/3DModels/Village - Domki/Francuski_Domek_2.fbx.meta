@@ -3,7 +3,32 @@ guid: 37265233c04deaa489d7f92370d3ffdf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drewno.002
+    second: {fileID: 2100000, guid: 5bf9485e42af32f49b4f16c06826261d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Drewno.003
+    second: {fileID: 2100000, guid: 5bf9485e42af32f49b4f16c06826261d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: b6a4ef17114a32542a616b12a5bf11a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sciany
+    second: {fileID: 2100000, guid: 56305be948ab25348aeeea3622450653, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Szklo
+    second: {fileID: 2100000, guid: 8f3fe43f2b5a72b4288f7dbba160caf6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
