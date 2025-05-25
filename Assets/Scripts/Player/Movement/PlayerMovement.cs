@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField]
 	private float _idleDownforce = 0.1f;
 	#endregion
+	
 
 	#region Properties
 	public CharacterController controller => _controller;
