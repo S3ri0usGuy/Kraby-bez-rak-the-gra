@@ -72,6 +72,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9b172bec666c124790116d8ebbbed22
+    m_Address: Assets/Dialogues/Characters/Main/Balbine/Localization/Text/Balbine
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: da54fd1a4bb4ad844a543faea8ebee12
     m_Address: Assets/Dialogues/Alpha/NobodyEnding/Localization/Text/NobodyEndingDialogue
       Shared Data.asset

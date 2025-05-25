@@ -10,23 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: New Table Shared Data
+  m_Name: Balbine Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: New Table
-  m_TableCollectionNameGuidString: 8d91e726478d5894587e1576d4dffe95
-  m_Entries:
-  - m_Id: 40374808608768
-    m_Key: lucie_name
-    m_Metadata:
-      m_Items: []
+  m_TableCollectionName: Balbine
+  m_TableCollectionNameGuidString: b9b172bec666c124790116d8ebbbed22
+  m_Entries: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 5209915481037471814
+    rid: 5209915485583310917
   references:
     version: 2
     RefIds:
-    - rid: 5209915481037471814
+    - rid: 5209915485583310917
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1748184301895
+        m_CustomEpoch: 1748200382145

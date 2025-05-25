@@ -16,9 +16,9 @@ MonoBehaviour:
   - _speakerIndex: 1
     _text:
       m_TableReference:
-        m_TableCollectionName: GUID:de3484e8d230c7a458dcdb74bdc76e3d
+        m_TableCollectionName: GUID:8d91e726478d5894587e1576d4dffe95
       m_TableEntryReference:
-        m_KeyId: 3046613295104
+        m_KeyId: 56994637545472
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0

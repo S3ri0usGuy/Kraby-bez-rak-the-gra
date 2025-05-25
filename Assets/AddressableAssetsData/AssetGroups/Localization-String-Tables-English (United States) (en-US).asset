@@ -52,7 +52,13 @@ MonoBehaviour:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 473d81cb077528046a937c55118f9d5e
-    m_Address: New Table_en-US
+    m_Address: Lucie_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b7b396ab1ee88f41a575bf2fc58402c
+    m_Address: Balbine_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US

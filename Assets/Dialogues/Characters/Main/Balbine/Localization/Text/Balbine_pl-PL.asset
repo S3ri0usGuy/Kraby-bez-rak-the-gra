@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: New Table_pl-PL
+  m_Name: Balbine_pl-PL
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: pl-PL
-  m_SharedData: {fileID: 11400000, guid: 8d91e726478d5894587e1576d4dffe95, type: 2}
+  m_SharedData: {fileID: 11400000, guid: b9b172bec666c124790116d8ebbbed22, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData:
-  - m_Id: 40374808608768
-    m_Localized: Lucie
-    m_Metadata:
-      m_Items: []
+  m_TableData: []
   references:
     version: 2
     RefIds: []

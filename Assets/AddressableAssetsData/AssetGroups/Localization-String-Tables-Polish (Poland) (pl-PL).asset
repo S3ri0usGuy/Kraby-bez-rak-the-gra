@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Polish (Poland) (pl-PL)
   m_GUID: 1ba4bffac2c48cd4bbbc2cacb65b884f
   m_SerializeEntries:
+  - m_GUID: 17c427d0daf1ac74abfdfbd9c1d23ad5
+    m_Address: Balbine_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2c851899ce1f9134a9a1123088614177
     m_Address: General_pl-PL
     m_ReadOnly: 1
@@ -64,7 +70,7 @@ MonoBehaviour:
     - Locale-pl-PL
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa4e777b21bcf2844aa7ffb14a4d4d47
-    m_Address: New Table_pl-PL
+    m_Address: Lucie_pl-PL
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl-PL
