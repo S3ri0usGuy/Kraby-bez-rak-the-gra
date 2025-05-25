@@ -11,9 +11,6 @@ public class ClockDisplayer : MonoBehaviour
 	[SerializeField]
 	private TMP_Text _label;
 
-	[SerializeField, Min(0)]
-	private int _startTimeMinutes = 7 * 60;
-
 	private void Start()
 	{
 		if (Clock.exists)
@@ -27,7 +24,7 @@ public class ClockDisplayer : MonoBehaviour
 
 	private void UpdateTime()
 	{
-		int totalMinutes = _clock.minutesAtStart - _clock.minutesLeft + _startTimeMinutes;
+		int totalMinutes = _clock.minutesAtStart - _clock.minutesLeft + _clock.startTimeMinutes;
 
 		int hours = totalMinutes / 60;
 		int minutes = totalMinutes % 60;
