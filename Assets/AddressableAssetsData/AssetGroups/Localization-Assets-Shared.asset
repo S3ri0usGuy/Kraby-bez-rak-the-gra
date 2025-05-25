@@ -37,11 +37,6 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2718f598eb510ee4ba94c00acc19f1d3
-    m_Address: Assets/Dialogues/Beta/Intro/Intro Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 36fb391a7d63c5541a30893198238036
     m_Address: Horn_No
     m_ReadOnly: 1

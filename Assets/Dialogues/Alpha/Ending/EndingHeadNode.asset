@@ -18,8 +18,11 @@ MonoBehaviour:
     _answerType: 0
     _timeToAnswer: 5
   _branching:
-    _defaultNextNode: {fileID: 11400000, guid: 92821265edb69494fb08f9e970f32558, type: 2}
-    _branches: []
+    _defaultNextNode: {fileID: 11400000, guid: 80a05f31a6110b245a6203a5e38d9882, type: 2}
+    _branches:
+    - _node: {fileID: 11400000, guid: 34648ad5f44b3dc49ad028f30e350249, type: 2}
+      _conditions:
+      - {fileID: 11400000, guid: 7db1fb875c2873641bf30117599fc23c, type: 2}
   references:
     version: 2
     RefIds: []

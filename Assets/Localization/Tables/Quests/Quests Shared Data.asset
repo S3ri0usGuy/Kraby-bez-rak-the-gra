@@ -51,10 +51,6 @@ MonoBehaviour:
     m_Key: beer_2_bring
     m_Metadata:
       m_Items: []
-  - m_Id: 18029768378744832
-    m_Key: spend_your_last_day
-    m_Metadata:
-      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
