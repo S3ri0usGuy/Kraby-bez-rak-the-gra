@@ -177,6 +177,11 @@ MonoBehaviour:
     m_Localized: I SAID...
     m_Metadata:
       m_Items: []
+  - m_Id: 35861353719201792
+    m_Localized: "\rZako\u0144czenia jeszcze nie ma, ale obiecujemy, \u017Ce ka\u017Cdy
+      Tw\xF3j wyb\xF3r b\u0119dzie mia\u0142 na nie wp\u0142yw!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

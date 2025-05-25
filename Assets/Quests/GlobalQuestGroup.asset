@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GlobalQuestGroup
   m_EditorClassIdentifier: 
   _children:
+  - {fileID: 11400000, guid: 1502d514846f1c74983c4aef070847bc, type: 2}
   - {fileID: 11400000, guid: 1f5bea21876b2324fb42e20a0e5d8929, type: 2}
   - {fileID: 11400000, guid: 44bd6bf8684f4224d9ab075c9c4d1706, type: 2}
   - {fileID: 11400000, guid: e065d00b041af6b4aabec7b9424211b3, type: 2}

@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: Bring beer
     m_Metadata:
       m_Items: []
+  - m_Id: 18029768378744832
+    m_Localized: "Sp\u0119d\u017A sw\xF3j ostatni dzie\u0144 (porozmawiaj ze spo\u0142eczno\u015Bci\u0105)"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

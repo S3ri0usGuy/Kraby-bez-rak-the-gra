@@ -159,6 +159,12 @@ MonoBehaviour:
     m_Key: beer_dlg2
     m_Metadata:
       m_Items: []
+  - m_Id: 35861353719201792
+    m_Key: 'ending
+
+'
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

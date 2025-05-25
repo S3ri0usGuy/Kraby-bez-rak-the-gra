@@ -9,17 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85337671d674cd541ab491ef9be98654, type: 3}
-  m_Name: EndingHeadNode
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Intro_en-US
   m_EditorClassIdentifier: 
-  _phrases: []
-  _options: []
-  _answerParams:
-    _answerType: 0
-    _timeToAnswer: 5
-  _branching:
-    _defaultNextNode: {fileID: 11400000, guid: 92821265edb69494fb08f9e970f32558, type: 2}
-    _branches: []
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 2718f598eb510ee4ba94c00acc19f1d3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData: []
   references:
     version: 2
     RefIds: []
