@@ -51,6 +51,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 473d81cb077528046a937c55118f9d5e
+    m_Address: New Table_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d101541abbe5fc45ae7b07ac7967fe6
     m_Address: ClemenceDialogues_en-US
     m_ReadOnly: 1
