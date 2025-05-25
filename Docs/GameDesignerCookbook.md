@@ -502,4 +502,5 @@ To combine triggers with actions, just add both trigger and action to your game 
     Can be chained.
 5. `SubquestStateTrigger` - same as the `QuestStateTrigger` but for the subquests. Can be chained.
 6. `TimeOverTrigger` - a trigger that calls the event after the [time is over](#clock). Additionally, the "Initial State Check" flag defines whether the trigger should call the event if the game has started with 0 minutes left. Can be chained.
-7. `TimeRangeTrigger` - a trigger that calls the event when the [minutes left](#clock) value is in within the range from "Min Minutes Left" (inclusive) to "Max Minutes Left" (inclusive). This event is called only once.
+7. ~~`TimeRangeTrigger`~~ (obsolete, use `HourRangeTrigger` instead) - a trigger that calls the event when the [minutes left](#clock) value is in within the range from "Min Minutes Left" (inclusive) to "Max Minutes Left" (inclusive). This event is called only once.
+8. `HourRangeTrigger` - a trigger that calls the event when the current hour is in within the range "From" - "To". In the "Triggered When", if the "Out Range" option is selected the trigger will call event if the current hour is outside of the range. This event is called only once.
