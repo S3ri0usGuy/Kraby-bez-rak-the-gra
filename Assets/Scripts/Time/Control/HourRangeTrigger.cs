@@ -32,11 +32,6 @@ public class HourRangeTrigger : Trigger
 		CheckCondition();
 	}
 
-	private void OnValidate()
-	{
-		_to = Mathf.Max(_to, _from);
-	}
-
 	private void OnTimeUpdated(Clock clock)
 	{
 		CheckCondition();
