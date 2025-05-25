@@ -5,15 +5,21 @@ using UnityEngine.Events;
 /// A component that triggers the event when the time left is in
 /// a specific range.
 /// </summary>
-[System.Obsolete("Use HourRangeTrigger instead.")]
-public class TimeRangeTrigger : Trigger
+public class HourRangeTrigger : Trigger
 {
+	private enum TriggerWhen
+	{
+		InRange, OutRange
+	}
+
 	private bool _wasTriggered = false;
 
-	[SerializeField, Min(0)]
-	private int _minMinutesLeft;
-	[SerializeField, Min(0)]
-	private int _maxMinutesLeft;
+	[SerializeField, Min(0f)]
+	private float _from = 7f;
+	[SerializeField, Min(0f)]
+	private float _to = 8.5f;
+	[SerializeField]
+	private TriggerWhen _triggerWhen;
 	[SerializeField]
 	private UnityEvent _triggered;
 
@@ -28,7 +34,7 @@ public class TimeRangeTrigger : Trigger
 
 	private void OnValidate()
 	{
-		_maxMinutesLeft = Mathf.Max(_maxMinutesLeft, _minMinutesLeft);
+		_to = Mathf.Max(_to, _from);
 	}
 
 	private void OnTimeUpdated(Clock clock)
@@ -40,11 +46,17 @@ public class TimeRangeTrigger : Trigger
 	{
 		if (_wasTriggered) return;
 
-		if (Clock.instance.minutesLeft >= _minMinutesLeft &&
-			Clock.instance.minutesLeft <= _maxMinutesLeft)
+		Clock clock = Clock.instance;
+		int currentMinutes = clock.minutesAtStart - clock.minutesLeft + clock.startTimeMinutes;
+		float currentHour = currentMinutes / 60f;
+
+		bool condition = currentHour >= _from && currentHour <= _to;
+		if (_triggerWhen == TriggerWhen.OutRange)
+			condition = !condition;
+
+		if (condition)
 		{
 			_wasTriggered = true;
-
 			_triggered.Invoke();
 			InvokeTriggered();
 		}

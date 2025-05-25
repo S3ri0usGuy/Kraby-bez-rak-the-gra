@@ -11,6 +11,9 @@ public class Clock : SingletonMonoBehaviour<Clock>
 	[SerializeField]
 	[Tooltip("How many minutes player is given at the start.")]
 	private int _minutesAtStart = 60 * 24;
+	[SerializeField]
+	[Tooltip("Time when the game starts.")]
+	private int _startTimeMinutes = 7 * 60;
 
 	/// <summary>
 	/// Gets/sets a number of minutes left.
@@ -37,6 +40,10 @@ public class Clock : SingletonMonoBehaviour<Clock>
 			}
 		}
 	}
+	/// <summary>
+	/// Gets the time in minutes when the game starts.
+	/// </summary>
+	public int startTimeMinutes => _startTimeMinutes;
 
 	/// <summary>
 	/// Gets a number of minutes that player is given at the start.
