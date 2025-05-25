@@ -311,8 +311,11 @@ It's advised to create a new localization table per each main character. For the
 
 1. Select the localization table file in the `Project` window (it looks like a file explorer). Tip: use `t:StringTableCollection` search prompt to find all localization tables.
 2. Select the `Dialogues` file and in the `Inspector` smash the `Open in Table Editor` button and edit phrases there.
+
    2.1. OR, in your file explorer (not in Unity!) go to the `/Localization` folder (inside the root folder of the project).
+   
    2.2. Find the corresponding CSV file, open it in your favourite editor and edit it there. **Note:** you should not add IDs manually when adding new entries. Instead, just add a new row, then enter the key and translations.
+   
    2.3. After editing, save the file and press the `Import` button.
    
    ![image](https://github.com/user-attachments/assets/9632ea82-676c-4366-8387-aecd849d8562)
@@ -321,7 +324,7 @@ It's advised to create a new localization table per each main character. For the
    
    ![image](https://github.com/user-attachments/assets/5519223f-c716-4cf0-9632-df26e0934c6e)
 
-3. For new entries use this pattern: `[entityName*]_[node]_[speaker]` (* - omit the entityName if the table is unique for it). Examples: `dlg1_yes4_narrator` (`ClemenceDialogues` table, specific for the NPC), `jacques_dlg1_4_jacques` (NPC's name is specified because this phrase is inside the general `Dialogue` table)
+4. For new entries use this pattern: `[entityName*]_[node]_[speaker]` (* - omit the entityName if the table is unique for it). Examples: `dlg1_yes4_narrator` (`ClemenceDialogues` table, specific for the NPC), `jacques_dlg1_4_jacques` (NPC's name is specified because this phrase is inside the general `Dialogue` table)
       
 #### Localized Voice Lines
 
