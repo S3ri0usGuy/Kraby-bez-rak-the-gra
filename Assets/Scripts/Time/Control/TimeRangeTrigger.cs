@@ -5,6 +5,7 @@ using UnityEngine.Events;
 /// A component that triggers the event when the time left is in
 /// a specific range.
 /// </summary>
+[System.Obsolete("Use HourRangeTrigger instead.")]
 public class TimeRangeTrigger : Trigger
 {
 	private bool _wasTriggered = false;

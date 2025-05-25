@@ -83,7 +83,6 @@ public class SubtitlesDisplayer : MonoBehaviour
 				yield return null;
 			}
 			t -= symbolDuration;
-			yield return new WaitForSeconds(symbolDuration);
 		}
 		_isTyping = false;
 		_label.text = subtitlePrefix + subtitle;
