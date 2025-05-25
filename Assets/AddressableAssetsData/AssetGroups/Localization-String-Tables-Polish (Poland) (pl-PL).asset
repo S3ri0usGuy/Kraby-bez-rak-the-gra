@@ -15,8 +15,20 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Polish (Poland) (pl-PL)
   m_GUID: 1ba4bffac2c48cd4bbbc2cacb65b884f
   m_SerializeEntries:
+  - m_GUID: 17c427d0daf1ac74abfdfbd9c1d23ad5
+    m_Address: Balbine_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2c851899ce1f9134a9a1123088614177
     m_Address: General_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e25acd2222507b4e9486aba7333977d
+    m_Address: Intro_pl-PL
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl-PL
@@ -57,8 +69,26 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl-PL
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db6c55e13ff4d2c458ca38b1dc39d3ce
+    m_Address: LyamDialogues_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f4971c2741dd30542badc5c1afaf0755
     m_Address: Engings_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f61ca46fbfcd21f43aabce6f10f13c36
+    m_Address: ManonDialogue_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa4e777b21bcf2844aa7ffb14a4d4d47
+    m_Address: Lucie_pl-PL
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl-PL

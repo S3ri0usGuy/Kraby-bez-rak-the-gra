@@ -51,14 +51,44 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 473d81cb077528046a937c55118f9d5e
+    m_Address: Lucie_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b7b396ab1ee88f41a575bf2fc58402c
+    m_Address: Balbine_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d101541abbe5fc45ae7b07ac7967fe6
     m_Address: ClemenceDialogues_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f21f64e81e848444841a626f2e23f46
+    m_Address: LyamDialogues_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: acb6518faceef33498a18cb78cabe278
+    m_Address: ManonDialogue_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bb2e3d42a74c42a4c98fc187312c0a9f
     m_Address: NobodyEndingDialogue_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6d2b7e6b5665e740808c4f1cf9312f3
+    m_Address: Intro_en-US
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-US

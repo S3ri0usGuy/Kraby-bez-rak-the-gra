@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c344bf28d4ddb634ea370fb8edc56ffc, type: 3}
+  m_Name: LucieGroup
+  m_EditorClassIdentifier: 
+  _children:
+  - {fileID: 11400000, guid: 77d21ae254c4f784098f50b33ff46691, type: 2}
+  - {fileID: 11400000, guid: 3174bf3034f4f0343bfe868c966bc32b, type: 2}
+  - {fileID: 11400000, guid: d8cd8ebc3b8e37346ab6a4ea6de8c19f, type: 2}

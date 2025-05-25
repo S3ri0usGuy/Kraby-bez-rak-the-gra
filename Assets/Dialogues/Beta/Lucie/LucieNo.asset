@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85337671d674cd541ab491ef9be98654, type: 3}
-  m_Name: EndingNobody
+  m_Name: LucieNo
   m_EditorClassIdentifier: 
   _phrases:
   - _speakerIndex: 0
     _text:
       m_TableReference:
-        m_TableCollectionName: GUID:23714e90e44598240afe776eabac972d
+        m_TableCollectionName: GUID:8d91e726478d5894587e1576d4dffe95
       m_TableEntryReference:
-        m_KeyId: 1178109583360
+        m_KeyId: 56994666905602
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -32,15 +32,37 @@ MonoBehaviour:
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
-    _duration: 6
-    _unskippable: 1
-    _subtitlesProfile: {fileID: 11400000, guid: b5c0a7e26e954af4a8abeb9ab007e6aa, type: 2}
+    _duration: 4
+    _unskippable: 0
+    _subtitlesProfile: {fileID: 0}
+  - _speakerIndex: 1
+    _text:
+      m_TableReference:
+        m_TableCollectionName: GUID:8d91e726478d5894587e1576d4dffe95
+      m_TableEntryReference:
+        m_KeyId: 56994666905603
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _defaultAudioClip: {fileID: 0}
+    _audioClip:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+    _duration: 4
+    _unskippable: 0
+    _subtitlesProfile: {fileID: 0}
   _options: []
   _answerParams:
     _answerType: 0
     _timeToAnswer: 5
   _branching:
-    _defaultNextNode: {fileID: 0}
+    _defaultNextNode: {fileID: 11400000, guid: 5c0f89d7655a07c47bed42e69a630cd1, type: 2}
     _branches: []
   references:
     version: 2

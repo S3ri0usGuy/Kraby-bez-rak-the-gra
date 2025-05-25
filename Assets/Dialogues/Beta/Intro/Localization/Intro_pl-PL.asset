@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Intro_pl-PL
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl-PL
+  m_SharedData: {fileID: 11400000, guid: 2718f598eb510ee4ba94c00acc19f1d3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8977448960
+    m_Localized: "To ten dzie\u0144. Tw\xF3j ostatni dzie\u0144..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11951210496
+    m_Localized: "Wczoraj wieczorem so\u0142tys zwo\u0142a\u0142 wszystkich mieszka\u0144c\xF3w.
+      Powiedzia\u0142, \u017Ce Napoleon potrzebuje nowych \u017Co\u0142nierzy. Tym
+      razem twoje szcz\u0119\u015Bcie si\u0119 sko\u0144czy\u0142o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13998030848
+    m_Localized: "Wylosowano twoje imi\u0119."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16111960064
+    m_Localized: "Dzi\u015B ko\u0142o 21 zabior\u0105 ci\u0119 z Montelune. Na wojn\u0119,
+      z kt\xF3rej pewnie nie wr\xF3cisz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46776516608
+    m_Localized: "Wykorzystaj ten dzie\u0144 najlepiej, jak potrafisz."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

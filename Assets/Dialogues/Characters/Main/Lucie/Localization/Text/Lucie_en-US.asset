@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Lucie_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 8d91e726478d5894587e1576d4dffe95, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 40374808608768
+    m_Localized: Lucie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994637545472
+    m_Localized: Pardon?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994662711296
+    m_Localized: Do you need help? You look worried.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905600
+    m_Localized: What, yes, yes. I'm old already, as you can see. My son was taken
+      away a year ago.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905601
+    m_Localized: And my husband is no longer with me either. I need to cut wood.
+      But my hands can't handle it anymore.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905602
+    m_Localized: May God help you and give you strength.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905603
+    m_Localized: Thank you, thank you. It will certainly come in handy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905604
+    m_Localized: I will be happy to help you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905605
+    m_Localized: 'Really? You were always so helpful. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905606
+    m_Localized: Come on, let's eat something first - you can't do on an empty stomach.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905607
+    m_Localized: 'You and your neighbour ate apple pie together and shot the breeze. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905608
+    m_Localized: 'Before you knew it, a lot of time had passed. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56994666905609
+    m_Localized: When you finally went out into the garden, you quickly dealt with
+      the wood. There wasn't that much of it.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
