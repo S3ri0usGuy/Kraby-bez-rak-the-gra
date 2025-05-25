@@ -38,6 +38,7 @@ public class UseDevelopmentSaveByDefault : MonoBehaviour
 
 			SaveSystem.SetSave(devSave);
 
+			SaveSystem.autoSaveEnabled = false;
 			// If this appears in production then something is wrong
 			Debug.Log($"The development save slot is used (\"{slotName}\").");
 		}
