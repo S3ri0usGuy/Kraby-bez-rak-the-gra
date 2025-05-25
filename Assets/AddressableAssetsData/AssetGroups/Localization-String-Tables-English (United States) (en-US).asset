@@ -75,6 +75,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-US
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: acb6518faceef33498a18cb78cabe278
+    m_Address: ManonDialogue_en-US
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-US
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bb2e3d42a74c42a4c98fc187312c0a9f
     m_Address: NobodyEndingDialogue_en-US
     m_ReadOnly: 1

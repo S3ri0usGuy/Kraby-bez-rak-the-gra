@@ -84,6 +84,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cef95ce76a52f4e46b7c8dc2995064d4
+    m_Address: Assets/Dialogues/Characters/Main/Manon/Localization/Text/ManonDialogue
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: da54fd1a4bb4ad844a543faea8ebee12
     m_Address: Assets/Dialogues/Alpha/NobodyEnding/Localization/Text/NobodyEndingDialogue
       Shared Data.asset

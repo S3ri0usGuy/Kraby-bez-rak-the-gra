@@ -75,6 +75,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl-PL
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f61ca46fbfcd21f43aabce6f10f13c36
+    m_Address: ManonDialogue_pl-PL
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl-PL
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa4e777b21bcf2844aa7ffb14a4d4d47
     m_Address: Lucie_pl-PL
     m_ReadOnly: 1
