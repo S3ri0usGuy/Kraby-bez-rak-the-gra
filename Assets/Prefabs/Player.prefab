@@ -42,7 +42,7 @@ AudioSource:
   m_GameObject: {fileID: 513648519354914691}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6749037938989020495, guid: 531c0fb2f912309429292072444d0692, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -542,6 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minutesAtStart: 840
+  _startTimeMinutes: 420
 --- !u!114 &461929490183140148
 MonoBehaviour:
   m_ObjectHideFlags: 0

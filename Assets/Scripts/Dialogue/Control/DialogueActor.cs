@@ -99,6 +99,11 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 		}
 
 		_dialoguePlayer.Play(_nextNode, this);
+
+		if (SoundtrackController.exists)
+		{
+			SoundtrackController.instance.muffled = true;
+		}
 	}
 
 	void IDialogueListener.OnPhraseStarted(DialoguePhraseContext context)
@@ -126,5 +131,10 @@ public class DialogueActor : MonoBehaviour, IDialogueListener
 	{
 		dialogueEnded?.Invoke(node);
 		nextNodeChanged?.Invoke(_nextNode);
+
+		if (SoundtrackController.exists)
+		{
+			SoundtrackController.instance.muffled = false;
+		}
 	}
 }
