@@ -115,7 +115,7 @@ AudioMixerController:
     - 8040d0a51aa24464c8cabad21c36a90e
     name: DynamicSoundtrack
   m_CurrentViewIndex: 1
-  m_TargetSnapshot: {fileID: 1704436345522507769}
+  m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -179,7 +179,9 @@ AudioMixerSnapshotController:
     8763d32bc68ad37469cc62e8230a29a1: 10
     1949b73b3846dee429d637366bc27415: 0.996
     64f119ebc3e20b841ac300848ccdc9b0: 0
+    9cb0a84c542d1f647812744bc1e4caa9: -2.4012718
     c9d3f15cd664e5341936b572f0cf00bf: 8.82
+    0c2387bc6ba9b014ca11aa2ebc54887a: -6.3860617
     a123e04ddc16ea04c8f72ce756f3508c: 1
     58c37b1e1433910448bb807fdb7e0571: 0
     c42207cef56fa8f4e96ad6c308440985: 2111
@@ -376,6 +378,8 @@ AudioMixerSnapshotController:
     c4e93c20d5a0fda4b8c154309f2708c8: 0.0070016375
     a8e892f2f4219a14d8c3d99e66b8f41c: -80
     64f119ebc3e20b841ac300848ccdc9b0: 0
+    9cb0a84c542d1f647812744bc1e4caa9: -5.402011
+    0c2387bc6ba9b014ca11aa2ebc54887a: -2.6324453
   m_TransitionOverrides: {}
 --- !u!244 &8463092068166518412
 AudioMixerEffectController:

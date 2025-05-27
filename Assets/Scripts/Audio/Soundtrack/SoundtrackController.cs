@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -71,31 +70,27 @@ public class SoundtrackController : SingletonMonoBehaviour<SoundtrackController>
 		}
 		else
 		{
-			weights[0] = 1f; // Default always has base weight
-			if (_muffled) weights[1] = 1f; // Muffled
+			float zoneWeight = 1f;
+			if (_muffled)
+			{
+				zoneWeight = 0.5f;
+				weights[1] = 1f; // Muffled
+			}
 
 			switch (_zone)
 			{
 				case SoundtrackZone.Town:
-					weights[3] = 1f;
+					weights[3] = zoneWeight;
 					break;
 				case SoundtrackZone.Church:
-					weights[4] = 1f;
+					weights[4] = zoneWeight;
+					break;
+				default:
+					weights[0] = 1f;
 					break;
 			}
 		}
 
-		Normalize(weights);
-
 		_mixer.TransitionToSnapshots(snapshots, weights, _transitionTime);
-	}
-
-	private void Normalize(float[] weights)
-	{
-		float sum = weights.Sum();
-		if (sum == 0f) return;
-
-		for (int i = 0; i < weights.Length; i++)
-			weights[i] /= sum;
 	}
 }
