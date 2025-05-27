@@ -22594,6 +22594,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6358817675378878790, guid: 46045ff24531d0244b18dd3ee22ac247, type: 3}
   m_PrefabInstance: {fileID: 518572966}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &520282794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 387.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 59.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 229.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69703925
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6970393
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.11889603
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.118896015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -19.36
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a1b6e056d0ddfc341b5b5aa252ed983b, type: 2}
+    - target: {fileID: 919132149155446097, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
+      propertyPath: m_Name
+      value: GiantAssCross
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26c3df8828a2c7940a69ceda7d9daba9, type: 3}
 --- !u!1 &526252459
 GameObject:
   m_ObjectHideFlags: 0
@@ -95700,3 +95761,4 @@ SceneRoots:
   - {fileID: 1480018884}
   - {fileID: 764821727}
   - {fileID: 869071979}
+  - {fileID: 520282794}
