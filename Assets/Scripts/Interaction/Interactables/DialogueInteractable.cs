@@ -24,6 +24,8 @@ public class DialogueInteractable : InteractableObject
 
 	protected override bool CanBeInteractedWith(Player player)
 	{
+		if (_dialogueActor.dialoguePlayer.isPlaying) return false;
+
 		var currentNode = _dialogueActor.nextNode;
 		if (currentNode.phrases.Count == 0)
 		{
@@ -43,7 +45,7 @@ public class DialogueInteractable : InteractableObject
 		_timer = _cooldown;
 	}
 
-	public override bool Interact(Player player)
+	protected override bool PerformInteract(Player player)
 	{
 		if (_timer > 0f) return false;
 

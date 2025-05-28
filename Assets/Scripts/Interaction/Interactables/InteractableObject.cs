@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -13,6 +14,8 @@ public abstract class InteractableObject : MonoBehaviour
 	[SerializeField]
 	[Tooltip("If checked, then this object will not be interactable when the time was spent.")]
 	private bool _requiresTime = true;
+
+	public event Action<InteractableObject> interacted;
 
 	/// <summary>
 	/// Gets an action name displayed on the UI canvas.
@@ -45,6 +48,8 @@ public abstract class InteractableObject : MonoBehaviour
 		return CanBeInteractedWith(player);
 	}
 
+	protected abstract bool PerformInteract(Player player);
+
 	/// <summary>
 	/// A method that is called when the player presses the "interact" button.
 	/// When overriden, performs some action.
@@ -54,5 +59,10 @@ public abstract class InteractableObject : MonoBehaviour
 	/// <see langword="true" /> if this object must be "forgotten about" after an
 	/// interaction; otherwise <see langword="false" />.
 	/// </returns>
-	public abstract bool Interact(Player player);
+	public bool Interact(Player player)
+	{
+		bool result = PerformInteract(player);
+		interacted?.Invoke(this);
+		return result;
+	}
 }

@@ -14,7 +14,7 @@ public class EventInteractable : InteractableObject
 		return true;
 	}
 
-	public override bool Interact(Player player)
+	protected override bool PerformInteract(Player player)
 	{
 		_event.Invoke();
 		return true;
