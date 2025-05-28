@@ -62,7 +62,7 @@ public abstract class InteractableObject : MonoBehaviour
 	public bool Interact(Player player)
 	{
 		bool result = PerformInteract(player);
-		interacted.Invoke(this);
+		interacted?.Invoke(this);
 		return result;
 	}
 }
